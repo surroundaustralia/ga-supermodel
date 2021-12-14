@@ -16,7 +16,7 @@
 |**Creator** | link:https://linked.data.gov.au/org/ga[Geoscience Australia]
 |**Publisher** | link:https://linked.data.gov.au/org/ga[Geoscience Australia]
 |**License** | link:https://creativecommons.org/licenses/by/4.0/[Creative Commons Attribution 4.0 International (CC BY 4.0)]
-|**Machine-readable form** | https://linked.data.gov.au/def/ga-supermodel.ttl
+|**Machine-readable form** | link:https://surroundaustralia.github.io/ga-supermodel/supermodel.ttl[supermodel.ttl]
 |===
 
 == Preamble
