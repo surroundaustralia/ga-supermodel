@@ -1,0 +1,180 @@
+= Gescience Australia Supermodel
+:toc:
+:table-stripes: even
+:sectnums:
+
+== Metadata
+
+[width=75%, frame=none, grid=none, cols="1,5"]
+|===
+|**IRI** | https://linked.data.gov.au/def/ga-supermodel
+|**Title** | National Data Exchange Standard's Specifciation
+|**Description** | This Model - the GA Supermodel - is link:https://www.ga.gov.au[Geoscience Australia]'s overarching data model that provides integration logic for data elements in many of GA's specialised domains.
+|**Created** | 2021-12-14
+|**Modified** | 2021-12-14
+|**Issued** | 0000-00-00
+|**Creator** | link:https://linked.data.gov.au/org/ga[Geoscience Australia]
+|**Publisher** | link:https://linked.data.gov.au/org/ga[Geoscience Australia]
+|**License** | link:https://creativecommons.org/licenses/by/4.0/[Creative Commons Attribution 4.0 International (CC BY 4.0)]
+|**Machine-readable form** | https://linked.data.gov.au/def/ga-supermodel.ttl
+|===
+
+== Preamble
+
+=== Abstract
+
+This Model - the GA Supermodel - is link:https://www.ga.gov.au[Geoscience Australia]'s overarching data model that provides integration logic for data elements in many of GA's specialised domains.
+
+=== Namespaces
+
+This model is built on a "baseline" of Semantic Web models which use a variatey of namespaces. Prefixes for this namespaces, used througout this document, are listed below.
+
+[width=75%, frame=none, grid=none]
+|===
+|Prefix | Namespace | Description
+
+| **`super`** | **`https://linked.data.gov.au/def/ga-supermodel/`** | **this model**
+|`dcterms:` | `http://purl.org/dc/terms/` | Dublin Core Terms vocabulary namespace
+|`ex:` | `http://example.com/thing` | Generic examples namespace
+|`owl:` | `http://www.w3.org/2002/07/owl#` | Web Ontology Language ontology namespace
+|`rdfs:` | `http://www.w3.org/2000/01/rdf-schema#` | RDF Schema ontology namespace
+|`sosa:` | `http://www.w3.org/ns/sosa/` | Sensor, Observation, Sample, and Actuator ontology namespace
+|`skos:` | `http://www.w3.org/2004/02/skos/core#` | Simple Knowledge Organization System (SKOS) ontology namespace
+|`time:` | `http://www.w3.org/2006/time#` | Time Ontology in OWL namespace
+|`void:` | `http://rdfs.org/ns/void#` | Vocabulary of Interlinked Data (VoID) ontology namespace
+|`xsd:` | `http://www.w3.org/2001/XMLSchema#` | XML Schema Definitions ontology namespace
+|===
+
+=== Terms & Definitions
+
+The following terms appear in this document and, when they do, the definitions in this section apply to them.
+
+==== Central Class
+
+Central Classes are the generic data classes at the centre of Data Domains with high-level relationships between them defined in this supermodel. 
+
+These classes are taken from general standards - usually well-known international stadnards - and Geoscience Australia specialises and extends them to make specific, custom, classes for their needs.
+
+==== Data Domain
+
+High-level conceptual areas within which Geosicence Australia has data. 
+
+These Data Domains are not themed scientificly - 'geology', 'hydrogeology', etc. - but instead based on parts of the _Observations & Measurement_ <<ISO19156>> standard, realised in Semantic Web form in the SOSA Ontology, part of the _Semantic Sensor Network Ontology_ <<SSN>>.
+
+The list of Data Domains is the set of top-level groupings shown in Figure X.
+
+==== Knowledge Graph
+
+A Knolwedge Graph is a dataset that uses a graph data tructure - nodes and edges - with strongly-defined elements.
+
+==== Linked Data
+
+A set of technologies and conventions defined by the link:https://www.w3.org[World Wide Web Consortium] that aim to present data in both human- and machine-readable form over the Internet. 
+
+Linked Data is strongly-defined with each element having either a local definition or a link to an available definition on the Internet.
+
+Linked Data is graph-based in nature, that is it consistes of nodes and edges that can forever be linked to further conceps with defined relationships.
+
+-- https://www.w3.org/standards/semanticweb/data
+
+==== Semantic Web
+
+The link:https://www.w3.org[World Wide Web Consortium]'s vision of an Internet-based web of Linked Data. 
+
+Semantic Web is used to refer to something more than just the technologies and conventions of Linked Data; the term also encompases a specific set of interoperable data models - often called ontologies - published by the W3C, other standards bodies and some well-known companies.
+
+The 'semantic' refers to the strongly-defined nature of the elements in the Semantic Web: the meaning of Semantic Web data is as precicely defined as any data can be.
+
+-- https://www.w3.org/standards/semanticweb/
+
+=== Conventions
+
+All code snippets in this document, used to show formal and machine-readable versions of concepts, are expressed using the Turtl RDF syntax <<TTL>>.
+
+== Introduction
+
+This model described a set of <<Data Domain, Data Domains>> with <<Central Class, Central Classes>> that are associated using <<Linked Data, Linked Data>> principles. Specialisations of the Central Classes are made to cater for particular data needs. 
+
+Altogether, these things form a <<Knowledge Graph, Knowledge Graph>> of data for Geoscience Australia that participates in the wider, international, <<Semantic Web, Semantic Web>>.
+
+This model is predicated on an assumption that GA is a data aggregation organisation and therefore data cataloguing is its major concern. At the centre of this model then is a domain of `Data Cataloguing`, the main elements of which are taken from the _Data Catalog Vocabulary_ (<<DCAT>>). The things that GA's data are mostly about are spatial things, hence a Data Domain of `Spatiality`, for which the _GeoSPARQL_ <<GEO>> is core. The way GA generates information about spatial things is via observations and various forms of sampling, hence a Data Domain of `Sampling` and for this one the _Sensor, Observation, Sample, and Actuator_ (SOSA) ontology <<SSN>> is mainly used as it which focuseses on observations and how they produce results, what the results are about and so on. GA's data is cetegorised in various ways and for this the Data Domain of `Theming` is indicated. Within it, taxonomy representation using <<SKOS>> is paramount. Finally, all organisations relate their data and processes to thus who are responsible for them, thus the final Data Domain is indeed `Organisations and People` which is modelled using a number of models such as <<DCTERMS>>, <<PROV>> and <<SDO>>. 
+
+These models are also all Semantic Web models and they have been selected for their easy interoperability.
+
+All elements of this model are modelled using the _Web Ontology Language_ <<OWL>> and specailisations of it, such as the _Simple Knowledge Observation System_ <<SKOS>> which is used for modelling taxonomies of concepts. As well as the textual and image descriptions of the model here, in the next Section, a machine-readable version of this model is available (see <<Metadata, Metadata>>).
+
+=== Uses
+
+This model should be used to understand the broad relationships between any data elements within GA. It can also be used to inform policy that is based on GA's overall data structure, for example persistent identifier (PID) policy for which there is a dedicated Annex, <<Annex A: PID Policy, Annex A: PID Policy>>.
+
+== Model
+
+=== Level 1: Data Domains
+
+The top-level view of the GA supermodel, as shown in <<fig-top-level, Figure 1>>, shows only its Data Domains.
+
+[[fig-top-level]]
+.Top-level view of the GA Supermodel showing Data Domains
+image::img/data-domains.png[]
+
+The Data Domains are defined formally as a simple SKOS vocabulary within this model's machine-readable form. Elements at all other levels of detail in this model are classified according to these Data Domains by use of the `dcat:theme` property, for example, the class `sosa:Sample` is within the _Sampling_ Data Domain, so it is defined as follows:
+
+```turtle
+sosa:Sample
+    a owl:Class ;
+    dcat:theme super:Sampling ;
+    ...
+.
+```
+
+=== Level 2: Central Classes
+
+The next level of detail after the Data Domains introduces the Central Classes. Here the most significant, general, class per Data Domain is indeicated, along with relationships between each of them. <<fig-central-classes, Figure 2>> shows this.
+
+[[fig-central-classes]]
+.Next level view of the GA Supermodel showing Central Classes
+image::img/central-classes.png[]
+
+=== Level 3: Domain Classes
+
+==== Data Cataloguing
+
+[[fig-domain-classes-data-cataloguing]]
+.Domain Classes for Data Cataloguing
+image::img/domain-classes-data-cataloguing.png[]
+
+
+:sectnums!:
+
+== Annex A: PID Policy
+
+* sources of principles
+** previous GA practice
+** AGLDWG
+** international practice
+* own principles
+** as flat as possible
+*** reject old /def/voc/ga/...
+*** classes only
+
+== References
+
+* [[DCTERMS]] DCMI Usage Board, _DCMI Metadata Terms_, A DCMI Recommendation (2020-01-20). https://www.dublincore.org/specifications/dublin-core/dcmi-terms/
+
+* [[DCAT]] World Wide Web Consortium, _Data Catalog Vocabulary (DCAT) - Version 2_, W3C Working Group Note (04 February 2020). https://www.w3.org/TR/vocab-dcat/
+
+* [[GEO]] Open Geospatial Consortium, _OGC GeoSPARQL - A Geographic Query Language for RDF Data, Version 1.1_ (2021). OGC Implementation Specification. http://www.opengis.net/doc/IS/geosparql/1.1
+
+* [[ISO19156]] International Organization for Standardization, _ISO 19156: Geographic information — Observations and measurements_ (2011)
+
+* [[OWL]] World Wide Web Consortium, _OWL 2 Web Ontology Language Document Overview (Second Edition)_, W3C Recommendation (11 December 2012). https://www.w3.org/TR/owl2-overview/
+
+* [[PROF]] World Wide Web Consortium, _The Profiles Vocabulary_, W3C Working Group Note (18 December 2019). https://www.w3.org/TR/dx-prof/
+
+* [[SDO]] W3C Schema.org Community Group, _schema.org_. Community ontology (2015). https://schema.org
+
+* [[SSN]] World Wide Web Consortium, _Semantic Sensor Network Ontology_, W3C Recommendation (19 October 2017). https://www.w3.org/TR/vocab-ssn/
+
+* [[SKOS]] World Wide Web Consortium, _SKOS Simple Knowledge Organization System Reference_, W3C Recommendation (18 August 2009). https://www.w3.org/TR/skos-reference/
+
+* [[TTL]] World Wide Web Consortium, _RDF 1.1 Turtle Terse RDF Triple Language_, W3C Recommendation (25 February 2014). https://www.w3.org/TR/turtle/
