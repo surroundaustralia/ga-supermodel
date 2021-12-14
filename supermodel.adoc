@@ -139,6 +139,8 @@ image::img/central-classes.png[]
 
 ==== Data Cataloguing
 
+This subsection details the main elements of the Data Cataloguing Data Domain.
+
 [[fig-domain-classes-data-cataloguing]]
 .Domain Classes for Data Cataloguing
 image::img/domain-classes-data-cataloguing.png[]
