@@ -1,0 +1,30 @@
+= Geoscience Australia's Supermodel
+
+WARNING: in early development, not officially released yet
+
+This Model - the GA Supermodel - is link:https://www.ga.gov.au[Geoscience Australia]'s overarching data model that provides integration logic for data elements in many of GA's specialised domains.
+
+It is currently in early development within a project being conducted for GA by https://surrounduastralia.com[SURROUND Australia Pty Ltd].
+
+This model's document is auto-built from the source file `supermodel.adoc` and viewable online at:
+
+* https://surroundaustralia.github.io/ga-supermodel/supermodel.html
+
+The repository is at:
+
+* https://github.com/surroundaustralia/ga-supermodel
+
+The online and repostory location will certainly change once this model is taken over by Geoscience Australia itself for continued use.
+
+== License & Rights
+
+The contents of this repository is licensed under Creative Commons 4.0 International. See the LICENSE file in the repository for details.
+
+== Contacts
+
+Initial development of this work is being undertaken by the following, for Geoscience Australia:
+
+**Nicholas J. Car** +
+*Data Systems Architect* +
+SURROUND Australia Pty Ltd. +  
+<nicholas.car@surroundaustralia.com>  

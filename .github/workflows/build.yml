@@ -14,14 +14,15 @@ jobs:
     - name: Build
       working-directory: ./
       run: |
+        echo "installing asciidoctor"
+        sudo apt-get install asciidoctor ruby -y
         echo "Making deployment dir - docs/"
         mkdir docs
         echo "Add README to docs/"
-        cp README.md docs/        
-        sudo apt-get install asciidoctor ruby -y
+        asciidoctor README.adoc -o docs/index.html
         echo "Add supermodel to docs/"
-        asciidoctor supermodel.adoc -o docs/index.html
-        sed -i 's#img src="#img src="https://surroundaustralia.github.io/ga-supermodel/#' docs/index.html        
+        asciidoctor supermodel.adoc -o docs/supermodel.html
+        sed -i 's#img src="#img src="https://surroundaustralia.github.io/ga-supermodel/#' docs/supermodel.html        
         echo "Add supermodel RDF to docs/"
         cp supermodel.ttl docs/             
         echo "Add images to docs/"
