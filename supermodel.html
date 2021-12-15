@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.10">
-<title>Geoscience Australia&#8217;s Supermodel</title>
+<title>Gescience Australia Supermodel</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -438,73 +438,405 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article">
 <div id="header">
-<h1>Geoscience Australia&#8217;s Supermodel</h1>
+<h1>Gescience Australia Supermodel</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_metadata">1. Metadata</a></li>
+<li><a href="#_preamble">2. Preamble</a>
+<ul class="sectlevel2">
+<li><a href="#_abstract">2.1. Abstract</a></li>
+<li><a href="#_namespaces">2.2. Namespaces</a></li>
+<li><a href="#_terms_definitions">2.3. Terms &amp; Definitions</a></li>
+<li><a href="#_conventions">2.4. Conventions</a></li>
+</ul>
+</li>
+<li><a href="#_introduction">3. Introduction</a>
+<ul class="sectlevel2">
+<li><a href="#_uses">3.1. Uses</a></li>
+</ul>
+</li>
+<li><a href="#_model">4. Model</a>
+<ul class="sectlevel2">
+<li><a href="#_level_1_data_domains">4.1. Level 1: Data Domains</a></li>
+<li><a href="#_level_2_central_classes">4.2. Level 2: Central Classes</a></li>
+<li><a href="#_level_3_domain_classes">4.3. Level 3: Domain Classes</a></li>
+</ul>
+</li>
+<li><a href="#_annex_a_pid_policy">Annex A: PID Policy</a></li>
+<li><a href="#_references">References</a></li>
+</ul>
+</div>
 </div>
 <div id="content">
-<div id="preamble">
+<div class="sect1">
+<h2 id="_metadata">1. Metadata</h2>
 <div class="sectionbody">
-<div class="admonitionblock warning">
-<table>
+<table class="tableblock frame-none grid-none stripes-even" style="width: 75%;">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 83.3334%;">
+</colgroup>
+<tbody>
 <tr>
-<td class="icon">
-<div class="title">Warning</div>
-</td>
-<td class="content">
-in early development, not officially released yet
-</td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>IRI</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ga-supermodel" class="bare">https://linked.data.gov.au/def/ga-supermodel</a></p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Title</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">National Data Exchange Standard&#8217;s Specifciation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Description</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This Model - the GA Supermodel - is <a href="https://www.ga.gov.au">Geoscience Australia</a>'s overarching data model that provides integration logic for data elements in many of GA&#8217;s specialised domains.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Created</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2021-12-14</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Modified</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2021-12-14</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Issued</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0000-00-00</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Creator</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/org/ga">Geoscience Australia</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Publisher</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/org/ga">Geoscience Australia</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>License</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Machine-readable form</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://surroundaustralia.github.io/ga-supermodel/supermodel.ttl">supermodel.ttl</a></p></td>
+</tr>
+</tbody>
 </table>
 </div>
+</div>
+<div class="sect1">
+<h2 id="_preamble">2. Preamble</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_abstract">2.1. Abstract</h3>
 <div class="paragraph">
 <p>This Model - the GA Supermodel - is <a href="https://www.ga.gov.au">Geoscience Australia</a>'s overarching data model that provides integration logic for data elements in many of GA&#8217;s specialised domains.</p>
 </div>
+</div>
+<div class="sect2">
+<h3 id="_namespaces">2.2. Namespaces</h3>
 <div class="paragraph">
-<p>It is currently in early development within a project being conducted for GA by <a href="https://surrounduastralia.com">SURROUND Australia Pty Ltd</a>.</p>
+<p>This model is built on a "baseline" of Semantic Web models which use a variatey of namespaces. Prefixes for this namespaces, used througout this document, are listed below.</p>
+</div>
+<table class="tableblock frame-none grid-none stripes-even" style="width: 75%;">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Prefix</th>
+<th class="tableblock halign-left valign-top">Namespace</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>super</code></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code><a href="https://linked.data.gov.au/def/ga-supermodel/" class="bare">https://linked.data.gov.au/def/ga-supermodel/</a></code></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>this model</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dcterms:</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://purl.org/dc/terms/" class="bare">http://purl.org/dc/terms/</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dublin Core Terms vocabulary namespace</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ex:</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://example.com/thing" class="bare">http://example.com/thing</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Generic examples namespace</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>owl:</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://www.w3.org/2002/07/owl#" class="bare">http://www.w3.org/2002/07/owl#</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Web Ontology Language ontology namespace</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rdfs:</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://www.w3.org/2000/01/rdf-schema#" class="bare">http://www.w3.org/2000/01/rdf-schema#</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RDF Schema ontology namespace</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sosa:</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://www.w3.org/ns/sosa/" class="bare">http://www.w3.org/ns/sosa/</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sensor, Observation, Sample, and Actuator ontology namespace</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>skos:</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://www.w3.org/2004/02/skos/core#" class="bare">http://www.w3.org/2004/02/skos/core#</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Simple Knowledge Organization System (SKOS) ontology namespace</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>time:</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://www.w3.org/2006/time#" class="bare">http://www.w3.org/2006/time#</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Time Ontology in OWL namespace</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>void:</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://rdfs.org/ns/void#" class="bare">http://rdfs.org/ns/void#</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vocabulary of Interlinked Data (VoID) ontology namespace</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="http://www.w3.org/2001/XMLSchema#" class="bare">http://www.w3.org/2001/XMLSchema#</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XML Schema Definitions ontology namespace</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_terms_definitions">2.3. Terms &amp; Definitions</h3>
+<div class="paragraph">
+<p>The following terms appear in this document and, when they do, the definitions in this section apply to them.</p>
+</div>
+<div class="sect3">
+<h4 id="_central_class">2.3.1. Central Class</h4>
+<div class="paragraph">
+<p>Central Classes are the generic data classes at the centre of Data Domains with high-level relationships between them defined in this supermodel.</p>
 </div>
 <div class="paragraph">
-<p>This model&#8217;s document is auto-built from the source file <code>supermodel.adoc</code> and viewable online at:</p>
+<p>These classes are taken from general standards - usually well-known international stadnards - and Geoscience Australia specialises and extends them to make specific, custom, classes for their needs.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://surroundaustralia.github.io/ga-supermodel/supermodel.html" class="bare">https://surroundaustralia.github.io/ga-supermodel/supermodel.html</a></p>
-</li>
-</ul>
+</div>
+<div class="sect3">
+<h4 id="_data_domain">2.3.2. Data Domain</h4>
+<div class="paragraph">
+<p>High-level conceptual areas within which Geosicence Australia has data.</p>
 </div>
 <div class="paragraph">
-<p>The repository is at:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/surroundaustralia/ga-supermodel" class="bare">https://github.com/surroundaustralia/ga-supermodel</a></p>
-</li>
-</ul>
+<p>These Data Domains are not themed scientificly - 'geology', 'hydrogeology', etc. - but instead based on parts of the <em>Observations &amp; Measurement</em> <a href="#ISO19156">[ISO19156]</a> standard, realised in Semantic Web form in the SOSA Ontology, part of the <em>Semantic Sensor Network Ontology</em> <a href="#SSN">[SSN]</a>.</p>
 </div>
 <div class="paragraph">
-<p>The online and repostory location will certainly change once this model is taken over by Geoscience Australia itself for continued use.</p>
+<p>The list of Data Domains is the set of top-level groupings shown in Figure X.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_knowledge_graph">2.3.3. Knowledge Graph</h4>
+<div class="paragraph">
+<p>A Knolwedge Graph is a dataset that uses a graph data tructure - nodes and edges - with strongly-defined elements.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_linked_data">2.3.4. Linked Data</h4>
+<div class="paragraph">
+<p>A set of technologies and conventions defined by the <a href="https://www.w3.org">World Wide Web Consortium</a> that aim to present data in both human- and machine-readable form over the Internet.</p>
+</div>
+<div class="paragraph">
+<p>Linked Data is strongly-defined with each element having either a local definition or a link to an available definition on the Internet.</p>
+</div>
+<div class="paragraph">
+<p>Linked Data is graph-based in nature, that is it consistes of nodes and edges that can forever be linked to further conceps with defined relationships.</p>
+</div>
+<div class="paragraph">
+<p>&#8201;&#8212;&#8201;<a href="https://www.w3.org/standards/semanticweb/data" class="bare">https://www.w3.org/standards/semanticweb/data</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_semantic_web">2.3.5. Semantic Web</h4>
+<div class="paragraph">
+<p>The <a href="https://www.w3.org">World Wide Web Consortium</a>'s vision of an Internet-based web of Linked Data.</p>
+</div>
+<div class="paragraph">
+<p>Semantic Web is used to refer to something more than just the technologies and conventions of Linked Data; the term also encompases a specific set of interoperable data models - often called ontologies - published by the W3C, other standards bodies and some well-known companies.</p>
+</div>
+<div class="paragraph">
+<p>The 'semantic' refers to the strongly-defined nature of the elements in the Semantic Web: the meaning of Semantic Web data is as precicely defined as any data can be.</p>
+</div>
+<div class="paragraph">
+<p>&#8201;&#8212;&#8201;<a href="https://www.w3.org/standards/semanticweb/" class="bare">https://www.w3.org/standards/semanticweb/</a></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_conventions">2.4. Conventions</h3>
+<div class="paragraph">
+<p>All code snippets in this document, used to show formal and machine-readable versions of concepts, are expressed using the Turtl RDF syntax <a href="#TTL">[TTL]</a>.</p>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_license_rights">License &amp; Rights</h2>
+<h2 id="_introduction">3. Introduction</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The contents of this repository is licensed under Creative Commons 4.0 International. See the LICENSE file in the repository for details.</p>
+<p>This model described a set of <a href="#_data_domain">Data Domains</a> with <a href="#_central_class">Central Classes</a> that are associated using <a href="#_linked_data">Linked Data</a> principles. Specialisations of the Central Classes are made to cater for particular data needs.</p>
+</div>
+<div class="paragraph">
+<p>Altogether, these things form a <a href="#_knowledge_graph">Knowledge Graph</a> of data for Geoscience Australia that participates in the wider, international, <a href="#_semantic_web">Semantic Web</a>.</p>
+</div>
+<div class="paragraph">
+<p>This model is predicated on an assumption that GA is a data aggregation organisation and therefore data cataloguing is its major concern. At the centre of this model then is a domain of <code>Data Cataloguing</code>, the main elements of which are taken from the <em>Data Catalog Vocabulary</em> (<a href="#DCAT">[DCAT]</a>). The things that GA&#8217;s data are mostly about are spatial things, hence a Data Domain of <code>Spatiality</code>, for which the <em>GeoSPARQL</em> <a href="#GEO">[GEO]</a> is core. The way GA generates information about spatial things is via observations and various forms of sampling, hence a Data Domain of <code>Sampling</code> and for this one the <em>Sensor, Observation, Sample, and Actuator</em> (SOSA) ontology <a href="#SSN">[SSN]</a> is mainly used as it which focuseses on observations and how they produce results, what the results are about and so on. GA&#8217;s data is cetegorised in various ways and for this the Data Domain of <code>Theming</code> is indicated. Within it, taxonomy representation using <a href="#SKOS">[SKOS]</a> is paramount. Finally, all organisations relate their data and processes to thus who are responsible for them, thus the final Data Domain is indeed <code>Organisations and People</code> which is modelled using a number of models such as <a href="#DCTERMS">[DCTERMS]</a>, <a href="#PROV">[PROV]</a> and <a href="#SDO">[SDO]</a>.</p>
+</div>
+<div class="paragraph">
+<p>These models are also all Semantic Web models and they have been selected for their easy interoperability.</p>
+</div>
+<div class="paragraph">
+<p>All elements of this model are modelled using the <em>Web Ontology Language</em> <a href="#OWL">[OWL]</a> and specailisations of it, such as the <em>Simple Knowledge Observation System</em> <a href="#SKOS">[SKOS]</a> which is used for modelling taxonomies of concepts. As well as the textual and image descriptions of the model here, in the next Section, a machine-readable version of this model is available (see <a href="#_metadata">Metadata</a>).</p>
+</div>
+<div class="sect2">
+<h3 id="_uses">3.1. Uses</h3>
+<div class="paragraph">
+<p>This model should be used to understand the broad relationships between any data elements within GA. It can also be used to inform policy that is based on GA&#8217;s overall data structure, for example persistent identifier (PID) policy for which there is a dedicated Annex, <a href="#_annex_a_pid_policy">Annex A: PID Policy</a>.</p>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_contacts">Contacts</h2>
+<h2 id="_model">4. Model</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_level_1_data_domains">4.1. Level 1: Data Domains</h3>
 <div class="paragraph">
-<p>Initial development of this work is being undertaken by the following, for Geoscience Australia:</p>
+<p>The top-level view of the GA supermodel, as shown in <a href="#fig-top-level">Figure 1</a>, shows only its Data Domains.</p>
+</div>
+<div id="fig-top-level" class="imageblock">
+<div class="content">
+<img src="https://surroundaustralia.github.io/ga-supermodel/img/data-domains.png" alt="data domains">
+</div>
+<div class="title">Figure 1. Top-level view of the GA Supermodel showing Data Domains</div>
 </div>
 <div class="paragraph">
-<p><strong>Nicholas J. Car</strong><br>
-<strong>Data Systems Architect</strong><br>
-SURROUND Australia Pty Ltd.<br>
-&lt;<a href="mailto:nicholas.car@surroundaustralia.com">nicholas.car@surroundaustralia.com</a>&gt;</p>
+<p>The Data Domains are defined formally as a simple SKOS vocabulary within this model&#8217;s machine-readable form. Elements at all other levels of detail in this model are classified according to these Data Domains by use of the <code>dcat:theme</code> property, for example, the class <code>sosa:Sample</code> is within the <em>Sampling</em> Data Domain, so it is defined as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle">sosa:Sample
+    a owl:Class ;
+    dcat:theme super:Sampling ;
+    ...
+.</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_level_2_central_classes">4.2. Level 2: Central Classes</h3>
+<div class="paragraph">
+<p>The next level of detail after the Data Domains introduces the Central Classes. Here the most significant, general, class per Data Domain is indeicated, along with relationships between each of them. <a href="#fig-central-classes">Figure 2</a> shows this.</p>
+</div>
+<div id="fig-central-classes" class="imageblock">
+<div class="content">
+<img src="https://surroundaustralia.github.io/ga-supermodel/img/central-classes.png" alt="central classes">
+</div>
+<div class="title">Figure 2. Next level view of the GA Supermodel showing Central Classes</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_level_3_domain_classes">4.3. Level 3: Domain Classes</h3>
+<div class="sect3">
+<h4 id="_data_cataloguing">4.3.1. Data Cataloguing</h4>
+<div class="paragraph">
+<p>This subsection details the main elements of the Data Cataloguing Data Domain.</p>
+</div>
+<div id="fig-domain-classes-data-cataloguing" class="imageblock">
+<div class="content">
+<img src="https://surroundaustralia.github.io/ga-supermodel/img/domain-classes-data-cataloguing.png" alt="domain classes data cataloguing">
+</div>
+<div class="title">Figure 3. Domain Classes for Data Cataloguing</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_annex_a_pid_policy">Annex A: PID Policy</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>sources of principles</p>
+<div class="ulist">
+<ul>
+<li>
+<p>previous GA practice</p>
+</li>
+<li>
+<p>AGLDWG</p>
+</li>
+<li>
+<p>international practice</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>own principles</p>
+<div class="ulist">
+<ul>
+<li>
+<p>as flat as possible</p>
+<div class="ulist">
+<ul>
+<li>
+<p>reject old /def/voc/ga/&#8230;&#8203;</p>
+</li>
+<li>
+<p>classes only</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_references">References</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a id="DCTERMS"></a> DCMI Usage Board, <em>DCMI Metadata Terms</em>, A DCMI Recommendation (2020-01-20). <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/" class="bare">https://www.dublincore.org/specifications/dublin-core/dcmi-terms/</a></p>
+</li>
+<li>
+<p><a id="DCAT"></a> World Wide Web Consortium, <em>Data Catalog Vocabulary (DCAT) - Version 2</em>, W3C Working Group Note (04 February 2020). <a href="https://www.w3.org/TR/vocab-dcat/" class="bare">https://www.w3.org/TR/vocab-dcat/</a></p>
+</li>
+<li>
+<p><a id="GEO"></a> Open Geospatial Consortium, <em>OGC GeoSPARQL - A Geographic Query Language for RDF Data, Version 1.1</em> (2021). OGC Implementation Specification. <a href="http://www.opengis.net/doc/IS/geosparql/1.1" class="bare">http://www.opengis.net/doc/IS/geosparql/1.1</a></p>
+</li>
+<li>
+<p><a id="ISO19156"></a> International Organization for Standardization, <em>ISO 19156: Geographic information — Observations and measurements</em> (2011)</p>
+</li>
+<li>
+<p><a id="OWL"></a> World Wide Web Consortium, <em>OWL 2 Web Ontology Language Document Overview (Second Edition)</em>, W3C Recommendation (11 December 2012). <a href="https://www.w3.org/TR/owl2-overview/" class="bare">https://www.w3.org/TR/owl2-overview/</a></p>
+</li>
+<li>
+<p><a id="PROF"></a> World Wide Web Consortium, <em>The Profiles Vocabulary</em>, W3C Working Group Note (18 December 2019). <a href="https://www.w3.org/TR/dx-prof/" class="bare">https://www.w3.org/TR/dx-prof/</a></p>
+</li>
+<li>
+<p><a id="SDO"></a> W3C Schema.org Community Group, <em>schema.org</em>. Community ontology (2015). <a href="https://schema.org" class="bare">https://schema.org</a></p>
+</li>
+<li>
+<p><a id="SSN"></a> World Wide Web Consortium, <em>Semantic Sensor Network Ontology</em>, W3C Recommendation (19 October 2017). <a href="https://www.w3.org/TR/vocab-ssn/" class="bare">https://www.w3.org/TR/vocab-ssn/</a></p>
+</li>
+<li>
+<p><a id="SKOS"></a> World Wide Web Consortium, <em>SKOS Simple Knowledge Organization System Reference</em>, W3C Recommendation (18 August 2009). <a href="https://www.w3.org/TR/skos-reference/" class="bare">https://www.w3.org/TR/skos-reference/</a></p>
+</li>
+<li>
+<p><a id="TTL"></a> World Wide Web Consortium, <em>RDF 1.1 Turtle Terse RDF Triple Language</em>, W3C Recommendation (25 February 2014). <a href="https://www.w3.org/TR/turtle/" class="bare">https://www.w3.org/TR/turtle/</a></p>
+</li>
+</ul>
 </div>
 </div>
 </div>
