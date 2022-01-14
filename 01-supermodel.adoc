@@ -105,7 +105,9 @@ The 'semantic' refers to the strongly-defined nature of the elements in the Sema
 
 === Conventions
 
-All code snippets in this document, used to show formal and machine-readable versions of concepts, are expressed using the Turtl RDF syntax <<TTL>>.
+All model diagrams use elements introduced in <<#fig-level0-key, Figure 1>>. These elements are defined in the RDF, RDFS and OWL ontologies, see <<OWL>> for mode details.
+
+All code snippets in this document, used to show formal and machine-readable versions of concepts, are expressed using the Turtle RDF syntax <<TTL>>.
 
 == Introduction
 
@@ -129,19 +131,50 @@ This model, the actual GA Supermodel itself, is a profiling - specialised reusin
 
 === Level 0: Model Background
 
-This view of the model is a backgrounding one which describes the underpinning model mecahnics that it uses. The object modelling used is based on the _Web Ontology Language_ <<OWL>> and its own underlying use of RDF & RDFS footnote:[RDF: https://www.w3.org/RDF/, RDFS: https://www.w3.org/TR/rdf-schema/. These references generally need not be followed as descriptions of the use of OWL will cover their relevant concepts.]. The _Provenance Ontology_ <<PROV>> is used to model relations between things as a result of real-world processes.
+This view of the model is a backgrounding one which describes the underpinning model mecahnics that it uses. The object modelling used is based on the _Web Ontology Language_ <<OWL>> and its own underlying use of RDF & RDFS footnote:[RDF: https://www.w3.org/RDF/, RDFS: https://www.w3.org/TR/rdf-schema/. These references generally need not be followed as descriptions of the use of OWL will cover their relevant concepts.]. The _Provenance Ontology_ <<PROV>> is used to model real-world causal dependencies - provenance.
 
-==== Objects
+==== Diagram Key
+
+The figure below is a key for the elements in all of the model diagrams in this document.
+
+[id=fig-level0-key]
+.Diagram elements key
+image::img/key.png[]
+
+==== Object Modelling
+
+The elements from the above subsection are shown in relation to one another in the figure below.
 
 [id=fig-level0-owl]
 .OWL objects and their relations
 image::img/level0-owl.png[]
 
-==== Processes
+The elements shown above are identified with prefixed IRIs that correspond to entries in the <<#tbl-prefixes, Namespace Table>>. A short explanation of the diagram key elements is:
+
+* `owl:Class` - represents any conceptual class of objects. Classes are expected to contain individuals - instances of the class - and the class, as a whole, may have realtions to other classes
+* `owl:NamedIndividual` - an individual of an `owl:class`. For example, for the class _ships_, an individual might be _Titanic_
+* `rdf:property` - a relationship between classes, individuals, or any objects and Literals
+* `rdfs:subClassOf` -  an `rdf:property` indicating that the domain (from object) is a subclass of the range (to objects). An example is the class _student_ which is a subclass of _person_: all _students_ are clearly _persons_ but not _vice versa_
+* `rdf:type` - the property that related an `owl:NamedIndividual` to the `owl:Class` that it's a member of
+* `Literal` - a simple literal data property, e.g. the string "Nicholas", or the number 42. Specific literal types are usually indicated when used
+
+The remaining diagrams in this document use extensions to this basic model, for example <<#fig-level0-prov, Figure 3>> uses colour-coded specialised forms of `owl:Class` (subclasses of it) and the relations in <<#fig-central-classes, Figure 5>> are specialised forms of `rdf:property`.
+
+==== Provenance
+
+General provenance/lineage information about anything - a rock sample, a dataset, a term in a vocabulary etc. - is described using the _Provenance Ontology_ <<PROV>> which views _everything_ in the world as being of one or more types in <<#fig-level0-prov, Figure 3>>.
 
 [id=fig-level0-prov]
-.PROV classes and thier main relations
+.PROV main classes and main relations
 image::img/level0-prov.png[]
+
+According to PROV, all things are either a:
+
+* `prov:Entity` - a physical, digital, conceptual, or other kind of thing with some fixed aspects
+* `prov:Agent` - something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity
+* `prov:Activity` - something that occurs over a period of time and acts upon or with entities
+
+Entities are commonly created by Agents through Activities and all of the people and organisations related to objects in the model are Agents, e.g. the creators of a dataset.
 
 === Level 1: Data Domains
 
