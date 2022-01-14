@@ -821,7 +821,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </div>
 <div class="paragraph">
-<p>Entities are commonly created by Agents through Activities and all of the people and organisations related to objects in the model are Agents, e.g. the creators of a dataset.</p>
+<p>While not often in front of mind for objects in any Data Domain, provenance relations always apply, for example: a <code>sosa:Sample</code> within the <em>Sampling</em> domain is a <code>prov:Entity</code> and will necissarily have been created via a <code>sosa:Sampling</code> which is a <code>prov:Activity</code>. Another example: an <code>sdo:Person</code> related to a <code>dcat:Dataset</code> via the property <code>dcterms:creator</code> in the <em>DataCataloging</em> domain is a specialised form of a <code>prov:Agent</code> related to a <code>prov:Entity</code> via <code>prov:wasAttributedTo</code>.</p>
 </div>
 </div>
 </div>
@@ -1230,7 +1230,7 @@ This supermodel&#8217;s origins are in GA&#8217;s geology and spatial data work 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-01-14 10:23:31 UTC
+Last updated 2022-01-14 10:39:15 UTC
 </div>
 </div>
 </body>
