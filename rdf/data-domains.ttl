@@ -1,0 +1,102 @@
+@prefix cs: <http://pid.geoscience.gov.au/def/sm/data-domains> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix sdo: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix reg:  <http://purl.org/linked-data/registry#> .
+@prefix dcterms:  <http://purl.org/dc/terms/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix : <http://pid.geoscience.gov.au/def/sm/data-domains/> .
+
+
+<http://pid.geoscience.gov.au/def/sm/data-domains> 
+    a owl:Ontology , skos:ConceptScheme;
+    skos:prefLabel "GA Data Domains"@en ;
+    skos:definition """This vocabulary lists the top-level elements of the Geoscience Australia 'supermodel', that is the model which provides an overarching framework for detailed domain models.
+    
+The elements in this vocabulary are Data Domains which are defined in the supermodel as 'High-level conceptual areas within which Geosicence Australia has data.' See the supermodel itself, http://pid.geoscience.gov.au/def/sm, for more details."""@en ;
+    dcterms:creator <http://orcid.org/0000-0002-8742-7730> ;    
+    dcterms:publisher <https://linked.data.gov.au/org/ga> ;
+    dcterms:issued "0000-00-00"^^xsd:date ;
+    dcterms:created "2021-12-15"^^xsd:date ;
+    dcterms:modified "2022-01-14"^^xsd:date ;
+    dcterms:rights "(c) Commonwealth of Australia (Geoscience Australia), 2022"@en ;    
+    dcterms:source "http://pid.geoscience.gov.au/def/sm"^^xsd:anyURI ;
+    owl:versionIRI <http://pid.geoscience.gov.au/def/sm/data-domains/1.0> ;
+    owl:versionInfo "1.0"@en ;
+    vann:preferredNamespaceUri "http://pid.geoscience.gov.au/def/sm/data-domains/"^^xsd:string ;
+    vann:preferredNamespacePrefix "prof-roles"@en ;    
+    skos:hasTopConcept 
+        :data-cataloguing ,
+        :organisations-and-people ,
+        :sampling ,
+        :spatiality ,
+        :theming ;
+.
+
+<https://orcid.org/0000-0002-8742-7730>
+    a sdo:Person ;
+    sdo:honorificPrefix "Dr" ;
+    sdo:name "Nicholas J. Car" ;
+    sdo:email "nicholas.car@surroundaustralia.com"^^xsd:anyURI ;
+    sdo:affiliation <https://linked.data.gov.au/org/surround> ;
+.
+
+<https://linked.data.gov.au/def/surround>
+    a sdo:Organization ;
+    sdo:name "SURROUND Australia Pty Ltd" ;
+    sdo:url "https://surroundaustralia.com"^^xsd:anyURI ;
+.
+
+<https://linked.data.gov.au/def/ga>
+    a sdo:Organization ;
+    sdo:name "Geoscience Australia" ;
+    sdo:url "https://www.ga.gov.au"^^xsd:anyURI ;
+.
+
+:data-cataloguing
+    a skos:Concept ;
+    skos:prefLabel "Data Cataloguing"@en ;
+    skos:definition ""@en ;
+    rdfs:isDefinedBy cs: ;
+    skos:inScheme cs: ;
+    skos:topConceptOf cs: ;
+.
+
+:organisations-people
+    a skos:Concept ;
+    skos:prefLabel "Organisations & People"@en ;
+    skos:definition ""@en ;
+    rdfs:isDefinedBy cs: ;
+    skos:inScheme cs: ;
+    skos:topConceptOf cs: ;
+.
+
+:sampling
+    a skos:Concept ;
+    skos:prefLabel "Sampling"@en ;
+    skos:definition ""@en ;
+    rdfs:isDefinedBy cs: ;
+    skos:inScheme cs: ;
+    skos:topConceptOf cs: ;
+.
+
+:spatiality
+    a skos:Concept ;
+    skos:prefLabel "Spatiality"@en ;
+    skos:definition ""@en ;
+    rdfs:isDefinedBy cs: ;
+    skos:inScheme cs: ;
+    skos:topConceptOf cs: ;
+.
+
+:theming
+    a skos:Concept ;
+    skos:prefLabel "Theming"@en ;
+    skos:definition ""@en ;
+    rdfs:isDefinedBy cs: ;
+    skos:inScheme cs: ;
+    skos:topConceptOf cs: ;
+.

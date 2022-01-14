@@ -1,0 +1,114 @@
+@prefix cs: <http://pid.geoscience.gov.au/def/sm/terms-definitions> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix sdo: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix reg:  <http://purl.org/linked-data/registry#> .
+@prefix dcterms:  <http://purl.org/dc/terms/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix : <http://pid.geoscience.gov.au/def/sm/terms-definitions/> .
+
+
+<http://pid.geoscience.gov.au/def/sm/terms-definitions> 
+    a owl:Ontology , skos:ConceptScheme;
+    skos:prefLabel "GA Supermodel Terms & Definitions"@en ;
+    skos:definition """This vocabulary lists the Terms & Definitions given in the Geoscience Australia Supermodel. See the supermodel itself, http://pid.geoscience.gov.au/def/sm, for more details."""@en ;
+    dcterms:creator <http://orcid.org/0000-0002-8742-7730> ;    
+    dcterms:publisher <https://linked.data.gov.au/org/ga> ;
+    dcterms:issued "0000-00-00"^^xsd:date ;
+    dcterms:created "2021-12-15"^^xsd:date ;
+    dcterms:modified "2022-01-14"^^xsd:date ;
+    dcterms:rights "(c) Commonwealth of Australia (Geoscience Australia), 2022"@en ;    
+    dcterms:source "http://pid.geoscience.gov.au/def/sm"^^xsd:anyURI ;
+    owl:versionIRI <http://pid.geoscience.gov.au/def/sm/terms-definitions/1.0> ;
+    owl:versionInfo "1.0"@en ;
+    vann:preferredNamespaceUri "http://pid.geoscience.gov.au/def/sm/terms-definitions/"^^xsd:string ;
+    vann:preferredNamespacePrefix "prof-roles"@en ;    
+    skos:hasTopConcept 
+        :central-class ,
+        :data-domain ,
+        :knowledge-graph ,
+        :linked-data ,
+        :semantic-web ;
+.
+
+<https://orcid.org/0000-0002-8742-7730>
+    a sdo:Person ;
+    sdo:honorificPrefix "Dr" ;
+    sdo:name "Nicholas J. Car" ;
+    sdo:email "nicholas.car@surroundaustralia.com"^^xsd:anyURI ;
+    sdo:affiliation <https://linked.data.gov.au/org/surround> ;
+.
+
+<https://linked.data.gov.au/def/surround>
+    a sdo:Organization ;
+    sdo:name "SURROUND Australia Pty Ltd" ;
+    sdo:url "https://surroundaustralia.com"^^xsd:anyURI ;
+.
+
+<https://linked.data.gov.au/def/ga>
+    a sdo:Organization ;
+    sdo:name "Geoscience Australia" ;
+    sdo:url "https://www.ga.gov.au"^^xsd:anyURI ;
+.
+
+:central-class
+    a skos:Concept ;
+    skos:prefLabel "Central Class"@en ;
+    skos:definition """Central Classes are the generic data classes at the centre of Data Domains with high-level relationships between them defined in this supermodel. 
+
+These classes are taken from general standards - usually well-known international stadnards - and Geoscience Australia specialises and extends them to make specific, custom, classes for their needs."""@en ;
+    rdfs:isDefinedBy cs: ;
+    skos:inScheme cs: ;
+    skos:topConceptOf cs: ;
+.
+
+:data-domain
+    a skos:Concept ;
+    skos:prefLabel "Data Domain"@en ;
+    skos:definition """High-level conceptual areas within which Geosicence Australia has data. 
+
+These Data Domains are not themed scientificly - 'geology', 'hydrogeology', etc. - but instead based on parts of the _Observations & Measurement_ (ISO 19156: Geographic information — Observations and measurements) standard, realised in Semantic Web form in the SOSA Ontology, part of the _Semantic Sensor Network Ontology_ (https://www.w3.org/TR/vocab-ssn/)."""@en ;
+    rdfs:isDefinedBy cs: ;
+    skos:inScheme cs: ;
+    skos:topConceptOf cs: ;
+.
+
+:knowledge-graph
+    a skos:Concept ;
+    skos:prefLabel "Knowledge Graph"@en ;
+    skos:definition "A Knowledge Graph is a dataset that uses a graph data tructure - nodes and edges - with strongly-defined elements."@en ;
+    rdfs:isDefinedBy cs: ;
+    skos:inScheme cs: ;
+    skos:topConceptOf cs: ;
+.
+
+:linked-data
+    a skos:Concept ;
+    skos:prefLabel "Linked Data"@en ;
+    skos:definition """A set of technologies and conventions defined by the [World Wide Web Consortium](https://www.w3.org) that aim to present data in both human- and machine-readable form over the Internet. 
+
+Linked Data is strongly-defined with each element having either a local definition or a link to an available definition on the Internet.
+
+Linked Data is graph-based in nature, that is it consistes of nodes and edges that can forever be linked to further conceps with defined relationships."""@en ;
+    dcterms:source "https://www.w3.org/standards/semanticweb/data"^^xsd:anyURI ;
+    rdfs:isDefinedBy cs: ;
+    skos:inScheme cs: ;
+    skos:topConceptOf cs: ;
+.
+
+:semantic-web
+    a skos:Concept ;
+    skos:prefLabel "Semantic Web"@en ;
+    skos:definition """The [World Wide Web Consortium](https://www.w3.org)'s vision of an Internet-based web of Linked Data. 
+
+Semantic Web is used to refer to something more than just the technologies and conventions of Linked Data; the term also encompases a specific set of interoperable data models - often called ontologies - published by the W3C, other standards bodies and some well-known companies.
+
+The 'semantic' refers to the strongly-defined nature of the elements in the Semantic Web: the meaning of Semantic Web data is as precicely defined as any data can be."""@en ;
+    dcterms:source "https://www.w3.org/standards/semanticweb"^^xsd:anyURI ;
+    rdfs:isDefinedBy cs: ;
+    skos:inScheme cs: ;
+    skos:topConceptOf cs: ;
+.
