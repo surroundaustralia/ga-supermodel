@@ -174,7 +174,7 @@ According to PROV, all things are either a:
 * `prov:Agent` - something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity
 * `prov:Activity` - something that occurs over a period of time and acts upon or with entities
 
-Entities are commonly created by Agents through Activities and all of the people and organisations related to objects in the model are Agents, e.g. the creators of a dataset.
+While not often in front of mind for objects in any Data Domain, provenance relations always apply, for example: a `sosa:Sample` within the _Sampling_ domain is a `prov:Entity` and will necissarily have been created via a `sosa:Sampling` which is a `prov:Activity`. Another example: an `sdo:Person` related to a `dcat:Dataset` via the property `dcterms:creator` in the _DataCataloging_ domain is a specialised form of a `prov:Agent` related to a `prov:Entity` via `prov:wasAttributedTo`.
 
 === Level 1: Data Domains
 
