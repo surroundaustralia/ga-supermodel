@@ -696,7 +696,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="_conventions">2.4. Conventions</h3>
 <div class="paragraph">
-<p>All code snippets in this document, used to show formal and machine-readable versions of concepts, are expressed using the Turtl RDF syntax <a href="#TTL">[TTL]</a>.</p>
+<p>All model diagrams use elements introduced in <a href="#fig-level0-key">Figure 1</a>. These elements are defined in the RDF, RDFS and OWL ontologies, see <a href="#OWL">[OWL]</a> for mode details.</p>
+</div>
+<div class="paragraph">
+<p>All code snippets in this document, used to show formal and machine-readable versions of concepts, are expressed using the Turtle RDF syntax <a href="#TTL">[TTL]</a>.</p>
 </div>
 </div>
 </div>
@@ -736,24 +739,89 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="_level_0_model_background">4.1. Level 0: Model Background</h3>
 <div class="paragraph">
-<p>This view of the model is a backgrounding one which describes the underpinning model mecahnics that it uses. The object modelling used is based on the <em>Web Ontology Language</em> <a href="#OWL">[OWL]</a> and its own underlying use of RDF &amp; RDFS <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>. The <em>Provenance Ontology</em> <a href="#PROV">[PROV]</a> is used to model relations between things as a result of real-world processes.</p>
+<p>This view of the model is a backgrounding one which describes the underpinning model mecahnics that it uses. The object modelling used is based on the <em>Web Ontology Language</em> <a href="#OWL">[OWL]</a> and its own underlying use of RDF &amp; RDFS <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>. The <em>Provenance Ontology</em> <a href="#PROV">[PROV]</a> is used to model real-world causal dependencies - provenance.</p>
 </div>
 <div class="sect3">
-<h4 id="_objects">4.1.1. Objects</h4>
+<h4 id="_diagram_key">4.1.1. Diagram Key</h4>
+<div class="paragraph">
+<p>The figure below is a key for the elements in all of the model diagrams in this document.</p>
+</div>
+<div id="fig-level0-key" class="imageblock">
+<div class="content">
+<img src="https://surroundaustralia.github.io/ga-supermodel/img/key.png" alt="key">
+</div>
+<div class="title">Figure 1. Diagram elements key</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_object_modelling">4.1.2. Object Modelling</h4>
+<div class="paragraph">
+<p>The elements from the above subsection are shown in relation to one another in the figure below.</p>
+</div>
 <div id="fig-level0-owl" class="imageblock">
 <div class="content">
 <img src="https://surroundaustralia.github.io/ga-supermodel/img/level0-owl.png" alt="level0 owl">
 </div>
-<div class="title">Figure 1. OWL objects and their relations</div>
+<div class="title">Figure 2. OWL objects and their relations</div>
+</div>
+<div class="paragraph">
+<p>The elements shown above are identified with prefixed IRIs that correspond to entries in the <a href="#tbl-prefixes">Namespace Table</a>. A short explanation of the diagram key elements is:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>owl:Class</code> - represents any conceptual class of objects. Classes are expected to contain individuals - instances of the class - and the class, as a whole, may have realtions to other classes</p>
+</li>
+<li>
+<p><code>owl:NamedIndividual</code> - an individual of an <code>owl:class</code>. For example, for the class <em>ships</em>, an individual might be <em>Titanic</em></p>
+</li>
+<li>
+<p><code>rdf:property</code> - a relationship between classes, individuals, or any objects and Literals</p>
+</li>
+<li>
+<p><code>rdfs:subClassOf</code> -  an <code>rdf:property</code> indicating that the domain (from object) is a subclass of the range (to objects). An example is the class <em>student</em> which is a subclass of <em>person</em>: all <em>students</em> are clearly <em>persons</em> but not <em>vice versa</em></p>
+</li>
+<li>
+<p><code>rdf:type</code> - the property that related an <code>owl:NamedIndividual</code> to the <code>owl:Class</code> that it&#8217;s a member of</p>
+</li>
+<li>
+<p><code>Literal</code> - a simple literal data property, e.g. the string "Nicholas", or the number 42. Specific literal types are usually indicated when used</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The remaining diagrams in this document use extensions to this basic model, for example <a href="#fig-level0-prov">Figure 3</a> uses colour-coded specialised forms of <code>owl:Class</code> (subclasses of it) and the relations in <a href="#fig-central-classes">Figure 5</a> are specialised forms of <code>rdf:property</code>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_processes">4.1.2. Processes</h4>
+<h4 id="_provenance">4.1.3. Provenance</h4>
+<div class="paragraph">
+<p>General provenance/lineage information about anything - a rock sample, a dataset, a term in a vocabulary etc. - is described using the <em>Provenance Ontology</em> <a href="#PROV">[PROV]</a> which views <em>everything</em> in the world as being of one or more types in <a href="#fig-level0-prov">Figure 3</a>.</p>
+</div>
 <div id="fig-level0-prov" class="imageblock">
 <div class="content">
 <img src="https://surroundaustralia.github.io/ga-supermodel/img/level0-prov.png" alt="level0 prov">
 </div>
-<div class="title">Figure 2. PROV classes and thier main relations</div>
+<div class="title">Figure 3. PROV main classes and main relations</div>
+</div>
+<div class="paragraph">
+<p>According to PROV, all things are either a:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>prov:Entity</code> - a physical, digital, conceptual, or other kind of thing with some fixed aspects</p>
+</li>
+<li>
+<p><code>prov:Agent</code> - something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent&#8217;s activity</p>
+</li>
+<li>
+<p><code>prov:Activity</code> - something that occurs over a period of time and acts upon or with entities</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Entities are commonly created by Agents through Activities and all of the people and organisations related to objects in the model are Agents, e.g. the creators of a dataset.</p>
 </div>
 </div>
 </div>
@@ -788,7 +856,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="content">
 <img src="https://surroundaustralia.github.io/ga-supermodel/img/data-domains.png" alt="data domains">
 </div>
-<div class="title">Figure 3. Top-level view of the GA Supermodel showing Data Domains</div>
+<div class="title">Figure 4. Top-level view of the GA Supermodel showing Data Domains</div>
 </div>
 <div class="paragraph">
 <p>These Data Domains are defined formally in a simple SKOS vocabulary within this model&#8217;s set of machine-readable resources. The vocabulary may be access ddirectly at <a href="http://pid.geoscience.gov.au/def/sm/data-domains" class="bare">http://pid.geoscience.gov.au/def/sm/data-domains</a>.</p>
@@ -827,7 +895,7 @@ This supermodel&#8217;s origins are in GA&#8217;s geology and spatial data work 
 <div class="content">
 <img src="https://surroundaustralia.github.io/ga-supermodel/img/central-classes.png" alt="central classes">
 </div>
-<div class="title">Figure 4. Next level view of the GA Supermodel showing Central Classes</div>
+<div class="title">Figure 5. Next level view of the GA Supermodel showing Central Classes</div>
 </div>
 <div class="paragraph">
 <p>The Central Classes of each of the Data Domains are well-used classes from well-known models. For example, the Central Class of <em>Organisation &amp; People</em> is <a href="#PROV">[PROV]</a>'s <code>Agent</code> class which is one of the three main classes of thing in PROV and used every time PROV is used to represent causal agents. PROV is used extensively to indicate how things - data, resources, systems - come to be.</p>
@@ -948,7 +1016,7 @@ This supermodel&#8217;s origins are in GA&#8217;s geology and spatial data work 
 <div class="content">
 <img src="https://surroundaustralia.github.io/ga-supermodel/img/domain-classes-data-cataloguing.png" alt="domain classes data cataloguing">
 </div>
-<div class="title">Figure 5. Domain Main Classes for Data Cataloguing</div>
+<div class="title">Figure 6. Domain Main Classes for Data Cataloguing</div>
 </div>
 <div class="paragraph">
 <p>This Data Domain&#8217;s main classes are essentially the DCAT2 data model <a href="#DCAT">[DCAT]</a> with a slight profiling: <code>dcterms:hasPart</code> should be used to indicate elements within catalogues (e.g. <code>dcat:Dataset</code> and other things within a <code>dcat:Catalog</code>) rather than the specialised properties of <code>dcat:dataset</code> because GA expects to catalogue many types of things and the type of the thing should be given by the thing, not the catalogue property used to indicate it.</p>
@@ -963,7 +1031,7 @@ This supermodel&#8217;s origins are in GA&#8217;s geology and spatial data work 
 <div class="content">
 <img src="https://surroundaustralia.github.io/ga-supermodel/img/domain-classes-organisations-people.png" alt="domain classes organisations people">
 </div>
-<div class="title">Figure 6. Domain Main Classes for Organisations &amp; People</div>
+<div class="title">Figure 7. Domain Main Classes for Organisations &amp; People</div>
 </div>
 <div class="paragraph">
 <p>This Data Domain&#8217;s main classes are centered on <a href="#PROV">[PROV]</a>'s <code>prof:Agent</code> class but specific types of agent - <em>person</em> &amp; <em>organisation</em> are defined using schema.org <a href="#SDO">[SDO]</a>, the general-purpose ontology provisioned by Google, Microsoft &amp; Yahoo for the description of web page data.</p>
@@ -981,7 +1049,7 @@ This supermodel&#8217;s origins are in GA&#8217;s geology and spatial data work 
 <div class="content">
 <img src="https://surroundaustralia.github.io/ga-supermodel/img/domain-classes-sampling.png" alt="domain classes sampling">
 </div>
-<div class="title">Figure 7. Domain Main Classes for Sampling</div>
+<div class="title">Figure 8. Domain Main Classes for Sampling</div>
 </div>
 <div class="paragraph">
 <p>This Data Domain&#8217;s main classes are taken directly from the <em>Sensor, Observation, Sample, and Actuator Ontology</em> (SOSA) which is part of the <em>Semanic Sensor Networks Ontology</em> <a href="#SSN">[SSN]</a>.</p>
@@ -1018,7 +1086,7 @@ This supermodel&#8217;s origins are in GA&#8217;s geology and spatial data work 
 <div class="content">
 <img src="https://surroundaustralia.github.io/ga-supermodel/img/domain-classes-spatiality.png" alt="domain classes spatiality">
 </div>
-<div class="title">Figure 8. Domain Main Classes for Spatiality</div>
+<div class="title">Figure 9. Domain Main Classes for Spatiality</div>
 </div>
 <div class="paragraph">
 <p>This Data Domain&#8217;s main classes are taken directly from GeoSPARQL 1.1 <a href="#GEO">[GEO]</a> which is used extensively in GA already. GeoSPARQL&#8217;s main purposes are to relate things (<code>geo:Feature</code>) to their spatial projections - their geometries - and to relate things to one another - topological relations between features, such as <em>within</em>, <em>touches</em>, <em>disjoint</em> etc.</p>
@@ -1036,7 +1104,7 @@ This supermodel&#8217;s origins are in GA&#8217;s geology and spatial data work 
 <div class="content">
 <img src="https://surroundaustralia.github.io/ga-supermodel/img/domain-classes-theming.png" alt="domain classes theming">
 </div>
-<div class="title">Figure 9. Domain Main Classes for Theming</div>
+<div class="title">Figure 10. Domain Main Classes for Theming</div>
 </div>
 <div class="paragraph">
 <p>This Data Domain&#8217;s main classes are taken from <a href="#SKOS">[SKOS]</a> and their expected/required properties and relations are formally defined in <em>VocPub</em>, a "vocabulary publication profile of SKOS" <a href="#VOCPUB">[VOCPUB]</a>. VocPub just mandates certain vocabulary metadata and relations between elements in vocabularies. Conformance of vocabularies to VocPub is also easily testable using the profile&#8217;s validator abd online tooling that support it <sup class="footnote">[<a id="_footnoteref_4" class="footnote" href="#_footnotedef_4" title="View footnote.">4</a>]</sup>.</p>
@@ -1162,7 +1230,7 @@ This supermodel&#8217;s origins are in GA&#8217;s geology and spatial data work 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-01-14 07:34:06 UTC
+Last updated 2022-01-14 10:23:31 UTC
 </div>
 </div>
 </body>
