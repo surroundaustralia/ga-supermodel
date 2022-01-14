@@ -318,7 +318,7 @@ This subsection details the main elements of the Theming Data Domain.
 .Domain Main Classes for Theming
 image::img/domain-classes-theming.png[]
 
-This Data Domain's main classes are taken from <<SKOS>> and their expected/required properties and relations are formally defined in _VocPub_, a "vocabulary publication profile of SKOS" <<VOCPUB>>. VocPub just mandates certain vocabulary metadata and relations between elements in vocabularies. Conformance of vocabularies to VocPub is also easily testable using the profile's validator abd online tooling that support it footnote:[The validator itself is online at https://w3id.org/profile/vocpub/validator and is pre-loaded into GA's vocabulary servers e.g. https://vocabs.ga.gov.au. It can also be selected for online validation use at https://rdftools.surroundaustralia.com].
+This Data Domain's main classes are taken from <<SKOS>> and their expected/required properties and relations are formally defined in _VocPub_, a "vocabulary publication profile of SKOS" <<VOCPUB>>. VocPub just mandates certain vocabulary metadata and relations between elements in vocabularies. Conformance of vocabularies to VocPub is also easily testable using the profile's validator and online tooling that support it footnote:[The validator itself is online at https://w3id.org/profile/vocpub/validator and is pre-loaded into GA's vocabulary servers e.g. https://vocabs.ga.gov.au. It can also be selected for online validation use at https://rdftools.surroundaustralia.com].
 
 :sectnums!:
 

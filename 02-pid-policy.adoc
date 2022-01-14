@@ -8,5 +8,3 @@
 ** as flat as possible
 *** reject old /def/voc/ga/...
 *** classes only
-* x
-* y
