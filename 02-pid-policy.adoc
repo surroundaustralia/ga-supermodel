@@ -1,0 +1,12 @@
+== Annex A: PID Policy
+
+* sources of principles
+** previous GA practice
+** AGLDWG
+** international practice
+* own principles
+** as flat as possible
+*** reject old /def/voc/ga/...
+*** classes only
+* x
+* y

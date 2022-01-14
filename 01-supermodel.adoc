@@ -1,4 +1,4 @@
-= Gescience Australia Supermodel
+= Geoscience Australia Supermodel
 :toc:
 :table-stripes: even
 :sectnums:
@@ -9,27 +9,28 @@
 |===
 |**IRI** | https://linked.data.gov.au/def/ga-supermodel
 |**Title** | National Data Exchange Standard's Specifciation
-|**Description** | This Model - the GA Supermodel - is link:https://www.ga.gov.au[Geoscience Australia]'s overarching data model that provides integration logic for data elements in many of GA's specialised domains.
+|**Description** | This Model - the GA Supermodel - is https://www.ga.gov.au[Geoscience Australia]'s overarching data model that provides integration logic for data elements in many of GA's specialised domains. It also provides logic for Persistent Identifier (PID) patterning.
 |**Created** | 2021-12-14
 |**Modified** | 2021-12-14
 |**Issued** | 0000-00-00
-|**Creator** | link:https://linked.data.gov.au/org/ga[Geoscience Australia]
-|**Publisher** | link:https://linked.data.gov.au/org/ga[Geoscience Australia]
-|**License** | link:https://creativecommons.org/licenses/by/4.0/[Creative Commons Attribution 4.0 International (CC BY 4.0)]
-|**Machine-readable form** | link:https://surroundaustralia.github.io/ga-supermodel/supermodel.ttl[supermodel.ttl]
+|**Creator** | https://linked.data.gov.au/org/ga[Geoscience Australia]
+|**Publisher** | https://linked.data.gov.au/org/ga[Geoscience Australia]
+|**License** | https://creativecommons.org/licenses/by/4.0/[Creative Commons Attribution 4.0 International (CC BY 4.0)]
+|**Machine-readable form** | https://surroundaustralia.github.io/ga-supermodel/supermodel.ttl[supermodel.ttl]
 |===
 
 == Preamble
 
 === Abstract
 
-This Model - the GA Supermodel - is link:https://www.ga.gov.au[Geoscience Australia]'s overarching data model that provides integration logic for data elements in many of GA's specialised domains.
+This Model - the GA Supermodel - is https://www.ga.gov.au[Geoscience Australia]'s overarching data model that provides integration logic for data elements in many of GA's specialised domains. It also provides logic for Persistent Identifier (PID) patterning.
 
 === Namespaces
 
-This model is built on a "baseline" of Semantic Web models which use a variatey of namespaces. Prefixes for this namespaces, used througout this document, are listed below.
+This model is built on a "baseline" of Semantic Web models which use a variatey of namespaces. Prefixes for thess namespaces, used througout this document, are listed below.
 
-[width=75%, frame=none, grid=none]
+[id=tbl-prefixes, width=75%, frame=none, grid=none]
+.Namespaces
 |===
 |Prefix | Namespace | Description
 
@@ -49,42 +50,42 @@ This model is built on a "baseline" of Semantic Web models which use a variatey 
 
 The following terms appear in this document and, when they do, the definitions in this section apply to them.
 
-==== Central Class
+Central Class::
 
 Central Classes are the generic data classes at the centre of Data Domains with high-level relationships between them defined in this supermodel. 
-
++
 These classes are taken from general standards - usually well-known international stadnards - and Geoscience Australia specialises and extends them to make specific, custom, classes for their needs.
 
-==== Data Domain
+Data Domain::
 
 High-level conceptual areas within which Geosicence Australia has data. 
-
++
 These Data Domains are not themed scientificly - 'geology', 'hydrogeology', etc. - but instead based on parts of the _Observations & Measurement_ <<ISO19156>> standard, realised in Semantic Web form in the SOSA Ontology, part of the _Semantic Sensor Network Ontology_ <<SSN>>.
-
++
 The list of Data Domains is the set of top-level groupings shown in Figure X.
 
-==== Knowledge Graph
+Knowledge Graph::
 
 A Knolwedge Graph is a dataset that uses a graph data tructure - nodes and edges - with strongly-defined elements.
 
-==== Linked Data
+Linked Data::
 
-A set of technologies and conventions defined by the link:https://www.w3.org[World Wide Web Consortium] that aim to present data in both human- and machine-readable form over the Internet. 
-
+A set of technologies and conventions defined by the https://www.w3.org[World Wide Web Consortium] that aim to present data in both human- and machine-readable form over the Internet. 
++
 Linked Data is strongly-defined with each element having either a local definition or a link to an available definition on the Internet.
-
++
 Linked Data is graph-based in nature, that is it consistes of nodes and edges that can forever be linked to further conceps with defined relationships.
-
++
 -- https://www.w3.org/standards/semanticweb/data
 
-==== Semantic Web
+Semantic Web::
 
-The link:https://www.w3.org[World Wide Web Consortium]'s vision of an Internet-based web of Linked Data. 
-
+The https://www.w3.org[World Wide Web Consortium]'s vision of an Internet-based web of Linked Data. 
++
 Semantic Web is used to refer to something more than just the technologies and conventions of Linked Data; the term also encompases a specific set of interoperable data models - often called ontologies - published by the W3C, other standards bodies and some well-known companies.
-
++
 The 'semantic' refers to the strongly-defined nature of the elements in the Semantic Web: the meaning of Semantic Web data is as precicely defined as any data can be.
-
++
 -- https://www.w3.org/standards/semanticweb/
 
 === Conventions
@@ -135,6 +136,44 @@ The next level of detail after the Data Domains introduces the Central Classes. 
 .Next level view of the GA Supermodel showing Central Classes
 image::img/central-classes.png[]
 
+The Central Classes of each of the Data Domains are well-used classes from well-known models. For example, the Central Class of _Organisation & People_ is <<PROV>>'s `Agent` class which is one of the three main classes of thing in PROV and used every time PROV is used to represent causal agents. PROV is used extensively to indicate how things - data, resources, systems - come to be.
+
+A list of the Data Domains' Central Classes, their definitions, as given by their defining systems, and their defining system are given in <<tbl-central-classes, Table 2>> below.
+
+[#tbl-central-classes, width=75%, frame=none, grid=none]
+.Data Domains their Central Classes and those Classes' definitions and origins
+|===
+| Data Domain | Central Class | Definition | Defined By
+
+| Data Cataloguing | `dcat:Dataset` | A collection of data that is listed in the catalog. | Data Catalog Vocabulary <<DCAT>>
+| Sampling | `sosa:Sample` | A Sample is the result from an act of Sampling.
+
+Feature which is intended to be representative of a FeatureOfInterest on which Observations may be made.
+
+Physical samples are sometimes known as 'specimens'. | Sensor, Observation, Sample, and Actuator Ontology, within <<SSN>>
+| Spatiality | `geo:Feature` | A discrete spatial phenomenon in a universe of discourse | GeoSPARQL Ontology <<GEO>>
+| Theming | `skos:Concept` | An idea or notion; a unit of thought | Simple Knowledge Organization System ontology <<SKOS>>
+| Organisations & People | `prov:Agent` | An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity | PROV-O: The PROV Ontology <<PROV>>
+|===
+
+The definitions of the main relations between Central Classes are given in 
+
+[#tbl-cc-relations, width=75%, frame=none, grid=none]
+.Central Class main relations their definitions and origins
+|===
+| Central Class | Definition | Defined By
+
+| `dcat:Dataset` | A collection of data that is listed in the catalog. | Data Catalog Vocabulary <<DCAT>>
+| Sampling | `sosa:Sample` | A Sample is the result from an act of Sampling.
+
+Feature which is intended to be representative of a FeatureOfInterest on which Observations may be made.
+
+Physical samples are sometimes known as 'specimens'. | Sensor, Observation, Sample, and Actuator Ontology, within <<SSN>>
+| `geo:Feature` | A discrete spatial phenomenon in a universe of discourse | GeoSPARQL Ontology <<GEO>>
+| `skos:Concept` | An idea or notion; a unit of thought | Simple Knowledge Organization System ontology <<SKOS>>
+| `prov:Agent` | An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity | PROV-O: The PROV Ontology <<PROV>>
+|===
+
 === Level 3: Domain Classes
 
 ==== Data Cataloguing
@@ -148,16 +187,7 @@ image::img/domain-classes-data-cataloguing.png[]
 
 :sectnums!:
 
-== Annex A: PID Policy
-
-* sources of principles
-** previous GA practice
-** AGLDWG
-** international practice
-* own principles
-** as flat as possible
-*** reject old /def/voc/ga/...
-*** classes only
+include::02-pid-policy.adoc[]
 
 == References
 
@@ -172,6 +202,8 @@ image::img/domain-classes-data-cataloguing.png[]
 * [[OWL]] World Wide Web Consortium, _OWL 2 Web Ontology Language Document Overview (Second Edition)_, W3C Recommendation (11 December 2012). https://www.w3.org/TR/owl2-overview/
 
 * [[PROF]] World Wide Web Consortium, _The Profiles Vocabulary_, W3C Working Group Note (18 December 2019). https://www.w3.org/TR/dx-prof/
+
+* [[PROV]] World Wide Web Consortium, _PROV-O: The PROV Ontology_, W3C Working Group Note (18 December 2019). https://www.w3.org/TR/prov-o/
 
 * [[SDO]] W3C Schema.org Community Group, _schema.org_. Community ontology (2015). https://schema.org
 
