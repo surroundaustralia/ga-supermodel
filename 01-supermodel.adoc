@@ -125,9 +125,27 @@ This model should be used to understand the broad relationships between any data
 
 == Model
 
+This model, the actual GA Supermodel itself, is a profiling - specialised reusing - of multiple, well-known Semantic Web models. It is organised into a series of _Levels_ which serve different purposed. All elements of the model are only defined once and the various _Levels_ simply present views of the model at differnt levels of abstraction to serve their viarous intended purposes.
+
+=== Level 0: Model Background
+
+This view of the model is a backgrounding one which describes the underpinning model mecahnics that it uses. The object modelling used is based on the _Web Ontology Language_ <<OWL>> and its own underlying use of RDF & RDFS footnote:[RDF: https://www.w3.org/RDF/, RDFS: https://www.w3.org/TR/rdf-schema/. These references generally need not be followed as descriptions of the use of OWL will cover their relevant concepts.]. The _Provenance Ontology_ <<PROV>> is used to model relations between things as a result of real-world processes.
+
+==== Objects
+
+[id=fig-level0-owl]
+.OWL objects and their relations
+image::img/level0-owl.png[]
+
+==== Processes
+
+[id=fig-level0-prov]
+.PROV classes and thier main relations
+image::img/level0-prov.png[]
+
 === Level 1: Data Domains
 
-The top-level view of the GA supermodel shows a set of 5 <<#data-domain, Data Domains>> which are:
+The top-level view of the GA supermodel that assumes Level 0 background mechanics shows a set of 5 <<#data-domain, Data Domains>> which are:
 
 1. http://pid.geoscience.gov.au/def/sm/data-domains/data-cataloguing:[Data Cataloguing]
 2. http://pid.geoscience.gov.au/def/sm/data-domains/organisations-people:[Organisations & People]

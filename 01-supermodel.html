@@ -459,9 +459,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#_model">4. Model</a>
 <ul class="sectlevel2">
-<li><a href="#_level_1_data_domains">4.1. Level 1: Data Domains</a></li>
-<li><a href="#_level_2_central_classes">4.2. Level 2: Central Classes</a></li>
-<li><a href="#_level_3_domain_classes">4.3. Level 3: Domain Classes</a></li>
+<li><a href="#_level_0_model_background">4.1. Level 0: Model Background</a></li>
+<li><a href="#_level_1_data_domains">4.2. Level 1: Data Domains</a></li>
+<li><a href="#_level_2_central_classes">4.3. Level 2: Central Classes</a></li>
+<li><a href="#_level_3_domain_main_classes">4.4. Level 3: Domain Main Classes</a></li>
 </ul>
 </li>
 <li><a href="#_annex_a_pid_policy">Annex A: PID Policy</a></li>
@@ -730,46 +731,73 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect1 data-line-126">
 <h2 id="_model">4. Model</h2>
 <div class="sectionbody">
-<div class="sect2 data-line-128">
-<h3 id="_level_1_data_domains">4.1. Level 1: Data Domains</h3>
-<div class="paragraph data-line-130">
-<p>The top-level view of the GA supermodel shows a set of 5 <a href="#data-domain">Data Domains</a> which are:</p>
+<div class="paragraph data-line-128">
+<p>This model, the actual GA Supermodel itself, is a profiling - specialised reusing - of multiple, well-known Semantic Web models. It is organised into a series of <em>Levels</em> which serve different purposed. All elements of the model are only defined once and the various <em>Levels</em> simply present views of the model at differnt levels of abstraction to serve their viarous intended purposes.</p>
 </div>
-<div class="olist arabic data-line-132">
+<div class="sect2 data-line-130">
+<h3 id="_level_0_model_background">4.1. Level 0: Model Background</h3>
+<div class="paragraph data-line-132">
+<p>This view of the model is a backgrounding one which describes the underpinning model mecahnics that it uses. The object modelling used is based on the <em>Web Ontology Language</em> <a href="#OWL">[OWL]</a> and its own underlying use of RDF &amp; RDFS <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>. The _Provenance Ontology <a href="#PROV">[PROV]</a> is used to model relations between things as a result of real-world processes.</p>
+</div>
+<div class="sect3 data-line-134">
+<h4 id="_objects">4.1.1. Objects</h4>
+<div id="fig-level0-owl" class="imageblock data-line-138">
+<div class="content">
+<img src="img/level0-owl.png" alt="level0 owl">
+</div>
+<div class="title">Figure 1. OWL objects and their relations</div>
+</div>
+</div>
+<div class="sect3 data-line-140">
+<h4 id="_processes">4.1.2. Processes</h4>
+<div id="fig-level0-prov" class="imageblock data-line-144">
+<div class="content">
+<img src="img/level0-prov.png" alt="level0 prov">
+</div>
+<div class="title">Figure 2. PROV classes and thier main relations</div>
+</div>
+</div>
+</div>
+<div class="sect2 data-line-146">
+<h3 id="_level_1_data_domains">4.2. Level 1: Data Domains</h3>
+<div class="paragraph data-line-148">
+<p>The top-level view of the GA supermodel that assumes Level 0 background mechanics shows a set of 5 <a href="#data-domain">Data Domains</a> which are:</p>
+</div>
+<div class="olist arabic data-line-150">
 <ol class="arabic">
-<li class="data-line-132">
+<li class="data-line-150">
 <p><a href="http://pid.geoscience.gov.au/def/sm/data-domains/data-cataloguing:" data-href="http://pid.geoscience.gov.au/def/sm/data-domains/data-cataloguing:">Data Cataloguing</a></p>
 </li>
-<li class="data-line-133">
+<li class="data-line-151">
 <p><a href="http://pid.geoscience.gov.au/def/sm/data-domains/organisations-people:" data-href="http://pid.geoscience.gov.au/def/sm/data-domains/organisations-people:">Organisations &amp; People</a></p>
 </li>
-<li class="data-line-134">
+<li class="data-line-152">
 <p><a href="http://pid.geoscience.gov.au/def/sm/data-domains/sampling:" data-href="http://pid.geoscience.gov.au/def/sm/data-domains/sampling:">Sampling</a></p>
 </li>
-<li class="data-line-135">
+<li class="data-line-153">
 <p><a href="http://pid.geoscience.gov.au/def/sm/data-domains/spatiality:" data-href="http://pid.geoscience.gov.au/def/sm/data-domains/spatiality:">Spatiality</a></p>
 </li>
-<li class="data-line-136">
+<li class="data-line-154">
 <p><a href="http://pid.geoscience.gov.au/def/sm/data-domains/theming:" data-href="http://pid.geoscience.gov.au/def/sm/data-domains/theming:">Theming</a></p>
 </li>
 </ol>
 </div>
-<div class="paragraph data-line-138">
+<div class="paragraph data-line-156">
 <p>These are shown in <a href="#fig-top-level">Figure 1</a> below.</p>
 </div>
-<div id="fig-top-level" class="imageblock data-line-142">
+<div id="fig-top-level" class="imageblock data-line-160">
 <div class="content">
 <img src="img/data-domains.png" alt="data domains">
 </div>
-<div class="title">Figure 1. Top-level view of the GA Supermodel showing Data Domains</div>
+<div class="title">Figure 3. Top-level view of the GA Supermodel showing Data Domains</div>
 </div>
-<div class="paragraph data-line-144">
+<div class="paragraph data-line-162">
 <p>These Data Domains are defined formally in a simple SKOS vocabulary within this model&#8217;s set of machine-readable resources. The vocabulary may be access ddirectly at <a href="http://pid.geoscience.gov.au/def/sm/data-domains" class="undefined" data-href="http://pid.geoscience.gov.au/def/sm/data-domains">http://pid.geoscience.gov.au/def/sm/data-domains</a>.</p>
 </div>
-<div class="paragraph data-line-146">
+<div class="paragraph data-line-164">
 <p>Elements at all other levels of detail in this model are classified according to these Data Domains by use of the <code>dcat:theme</code> property, for example, the class <code>sosa:Sample</code> is within the <em>Sampling</em> Data Domain, so it is defined as follows:</p>
 </div>
-<div class="listingblock data-line-148">
+<div class="listingblock data-line-166">
 <div class="content">
 <pre class="highlight"><code class="language-turtle" data-lang="turtle">sosa:Sample
     a owl:Class ;
@@ -778,7 +806,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 .</code></pre>
 </div>
 </div>
-<div class="admonitionblock note data-line-156">
+<div class="admonitionblock note data-line-174">
 <table>
 <tr>
 <td class="icon">
@@ -791,24 +819,24 @@ This supermodel&#8217;s origins are in GA&#8217;s geology and spatial data work 
 </table>
 </div>
 </div>
-<div class="sect2 data-line-158">
-<h3 id="_level_2_central_classes">4.2. Level 2: Central Classes</h3>
-<div class="paragraph data-line-160">
+<div class="sect2 data-line-176">
+<h3 id="_level_2_central_classes">4.3. Level 2: Central Classes</h3>
+<div class="paragraph data-line-178">
 <p>The next level of detail after the Data Domains introduces the Central Classes. Here the most significant, general, class per Data Domain is indicated, along with the main relationships between each of them. <a href="#fig-central-classes">Figure 2</a> shows this.</p>
 </div>
-<div id="fig-central-classes" class="imageblock data-line-164">
+<div id="fig-central-classes" class="imageblock data-line-182">
 <div class="content">
 <img src="img/central-classes.png" alt="central classes">
 </div>
-<div class="title">Figure 2. Next level view of the GA Supermodel showing Central Classes</div>
+<div class="title">Figure 4. Next level view of the GA Supermodel showing Central Classes</div>
 </div>
-<div class="paragraph data-line-166">
+<div class="paragraph data-line-184">
 <p>The Central Classes of each of the Data Domains are well-used classes from well-known models. For example, the Central Class of <em>Organisation &amp; People</em> is <a href="#PROV">[PROV]</a>'s <code>Agent</code> class which is one of the three main classes of thing in PROV and used every time PROV is used to represent causal agents. PROV is used extensively to indicate how things - data, resources, systems - come to be.</p>
 </div>
-<div class="paragraph data-line-168">
+<div class="paragraph data-line-186">
 <p>A list of the Data Domains' Central Classes, their definitions, as given by their defining systems, and their defining system are given in <a href="#tbl-central-classes">Table 2</a> below.</p>
 </div>
-<table id="tbl-central-classes" class="tableblock frame-none grid-none stripes-even data-line-172" style="width: 75%;">
+<table id="tbl-central-classes" class="tableblock frame-none grid-none stripes-even data-line-190" style="width: 75%;">
 <caption class="title">Table 2. Data Domains their Central Classes and those Classes' definitions and origins</caption>
 <colgroup>
 <col style="width: 25%;">
@@ -859,10 +887,10 @@ This supermodel&#8217;s origins are in GA&#8217;s geology and spatial data work 
 </tr>
 </tbody>
 </table>
-<div class="paragraph data-line-186">
+<div class="paragraph data-line-204">
 <p>The definitions of the main relations between Central Classes are given in</p>
 </div>
-<table id="tbl-cc-relations" class="tableblock frame-none grid-none stripes-even data-line-190" style="width: 75%;">
+<table id="tbl-cc-relations" class="tableblock frame-none grid-none stripes-even data-line-208" style="width: 75%;">
 <caption class="title">Table 3. Central Class main relations their definitions and origins</caption>
 <colgroup>
 <col style="width: 33.3333%;">
@@ -907,66 +935,112 @@ This supermodel&#8217;s origins are in GA&#8217;s geology and spatial data work 
 </tbody>
 </table>
 </div>
-<div class="sect2 data-line-204">
-<h3 id="_level_3_domain_classes">4.3. Level 3: Domain Classes</h3>
-<div class="sect3 data-line-206">
-<h4 id="_data_cataloguing">4.3.1. Data Cataloguing</h4>
-<div class="paragraph data-line-208">
+<div class="sect2 data-line-222">
+<h3 id="_level_3_domain_main_classes">4.4. Level 3: Domain Main Classes</h3>
+<div class="paragraph data-line-224">
+<p>At this level, the main classes within each Data Domain are identified and related to one another. In each Data Domain there is a well-known model used for the majority of the classes and relations. These well-known models are indicated to ensure that they can be followed if extensions to this level&#8217;s modelling need to be made.</p>
+</div>
+<div class="sect3 data-line-226">
+<h4 id="_data_cataloguing">4.4.1. Data Cataloguing</h4>
+<div class="paragraph data-line-228">
 <p>This subsection details the main elements of the Data Cataloguing Data Domain.</p>
 </div>
-<div id="fig-domain-classes-data-cataloguing" class="imageblock data-line-212">
+<div id="fig-domain-classes-data-cataloguing" class="imageblock data-line-232">
 <div class="content">
 <img src="img/domain-classes-data-cataloguing.png" alt="domain classes data cataloguing">
 </div>
-<div class="title">Figure 3. Domain Classes for Data Cataloguing</div>
+<div class="title">Figure 5. Domain Main Classes for Data Cataloguing</div>
+</div>
+<div class="paragraph data-line-234">
+<p>This Data Domain&#8217;s main classes are essentially the DCAT2 data model <a href="#DCAT">[DCAT]</a> with a slight profiling: <code>dcterms:hasPart</code> should be used to indicate elements within catalogues (e.g. <code>dcat:Dataset</code> and other things within a <code>dcat:Catalog</code>) rather than the specialised properties of <code>dcat:dataset</code> because GA expects to catalogue many types of things and the type of the thing should be given by the thing, not the catalogue property used to indicate it.</p>
 </div>
 </div>
-<div class="sect3 data-line-214">
-<h4 id="_organisations_people">4.3.2. Organisations &amp; People</h4>
-<div class="paragraph data-line-216">
+<div class="sect3 data-line-236">
+<h4 id="_organisations_people">4.4.2. Organisations &amp; People</h4>
+<div class="paragraph data-line-238">
 <p>This subsection details the main elements of the Organisations &amp; People Data Domain.</p>
 </div>
-<div id="fig-domain-classes-organisations-people" class="imageblock data-line-220">
+<div id="fig-domain-classes-organisations-people" class="imageblock data-line-242">
 <div class="content">
 <img src="img/domain-classes-organisations-people.png" alt="domain classes organisations people">
 </div>
-<div class="title">Figure 4. Domain Classes for Organisations &amp; People</div>
+<div class="title">Figure 6. Domain Main Classes for Organisations &amp; People</div>
+</div>
+<div class="paragraph data-line-244">
+<p>This Data Domain&#8217;s main classes are centered on <a href="#PROV">[PROV]</a>'s <code>prof:Agent</code> class but specific types of agent - <em>person</em> &amp; <em>organisation</em> are defined using schema.org <a href="#SDO">[SDO]</a>, the general-purpose ontology provisioned by Google, Microsoft &amp; Yahoo for the description of web page data.</p>
+</div>
+<div class="paragraph data-line-246">
+<p>schema.org objects and properties are also used to define agents in the VocPub profile <a href="#VOCPUB">[VOCPUB]</a> and are understood by ontology documentation tools such as pyLODE <sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup> which is used by GA.</p>
 </div>
 </div>
-<div class="sect3 data-line-222">
-<h4 id="_sampling">4.3.3. Sampling</h4>
-<div class="paragraph data-line-224">
+<div class="sect3 data-line-248">
+<h4 id="_sampling">4.4.3. Sampling</h4>
+<div class="paragraph data-line-250">
 <p>This subsection details the main elements of the Sampling Data Domain.</p>
 </div>
-<div id="fig-domain-classes-sampling" class="imageblock data-line-228">
+<div id="fig-domain-classes-sampling" class="imageblock data-line-254">
 <div class="content">
 <img src="img/domain-classes-sampling.png" alt="domain classes sampling">
 </div>
-<div class="title">Figure 5. Domain Classes for Sampling</div>
+<div class="title">Figure 7. Domain Main Classes for Sampling</div>
+</div>
+<div class="paragraph data-line-256">
+<p>This Data Domain&#8217;s main classes are taken directly from the <em>Sensor, Observation, Sample, and Actuator Ontology</em> (SOSA) which is part of the <em>Semanic Sensor Networks Ontology</em> <a href="#SSN">[SSN]</a>.</p>
+</div>
+<div class="paragraph data-line-258">
+<p>The specialised form of SOSA use seen here - SOSA is general-purpose and has many patterns of use - is informed by the TERN Ontolology <sup class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnotedef_3" title="View footnote.">3</a>]</sup> which is used as the doamin model of the <em>Australian Biodiversity Information Standard</em> (ABIS) <a href="#ABIS">[ABIS]</a> with which GA sampling data is intended to be compatible.</p>
+</div>
+<div class="paragraph data-line-260">
+<p>In addition to samples &amp; sampling, this domain can cater for general <em>observations</em> of things, e.g., observations of:</p>
+</div>
+<div class="ulist data-line-262">
+<ul>
+<li class="data-line-262">
+<p>chemicals in rock samples, determined in a lab</p>
+</li>
+<li class="data-line-263">
+<p>images of the earth</p>
+</li>
+<li class="data-line-264">
+<p>classification of statigraphic unit</p>
+</li>
+</ul>
+</div>
+<div class="paragraph data-line-266">
+<p>Where <code>sosa:Sampling</code> activities result in <code>sosa:Sample</code> objects, <code>sosa:Observation</code> activities result in <code>sosa:Result</code> objects. The observation/result pair is a more generic form of the samplling/sample pair.</p>
 </div>
 </div>
-<div class="sect3 data-line-230">
-<h4 id="_spatiality">4.3.4. Spatiality</h4>
-<div class="paragraph data-line-232">
+<div class="sect3 data-line-268">
+<h4 id="_spatiality">4.4.4. Spatiality</h4>
+<div class="paragraph data-line-270">
 <p>This subsection details the main elements of the Spatiality Data Domain.</p>
 </div>
-<div id="fig-domain-classes-spatiality" class="imageblock data-line-236">
+<div id="fig-domain-classes-spatiality" class="imageblock data-line-274">
 <div class="content">
 <img src="img/domain-classes-spatiality.png" alt="domain classes spatiality">
 </div>
-<div class="title">Figure 6. Domain Classes for Spatiality</div>
+<div class="title">Figure 8. Domain Main Classes for Spatiality</div>
+</div>
+<div class="paragraph data-line-276">
+<p>This Data Domain&#8217;s main classes are taken directly from GeoSPARQL 1.1 <a href="#GEO">[GEO]</a> which is used extensively in GA already. GeoSPARQL&#8217;s main purposes are to relate things (<code>geo:Feature</code>) to their spatial projections - their geometries - and to relate things to one another - topological relations between features, such as <em>within</em>, <em>touches</em>, <em>disjoint</em> etc.</p>
+</div>
+<div class="paragraph data-line-278">
+<p>Particular datasets tend to implement specialised types of things (usually referred to as <em>Feature Types</em>) and sometimes specialised relations between things, e.g. special <em>hydrological catchment</em> feature type might relate to another by being <em>upstream</em> of it. This is as per modelling in the Geofabric footnot:[<a href="https://linked.data.gov.au/dataset/geofabric" class="undefined" data-href="https://linked.data.gov.au/dataset/geofabric">https://linked.data.gov.au/dataset/geofabric</a>].</p>
 </div>
 </div>
-<div class="sect3 data-line-238">
-<h4 id="_theming">4.3.5. Theming</h4>
-<div class="paragraph data-line-240">
+<div class="sect3 data-line-280">
+<h4 id="_theming">4.4.5. Theming</h4>
+<div class="paragraph data-line-282">
 <p>This subsection details the main elements of the Theming Data Domain.</p>
 </div>
-<div id="fig-domain-classes-theming" class="imageblock data-line-244">
+<div id="fig-domain-classes-theming" class="imageblock data-line-286">
 <div class="content">
 <img src="img/domain-classes-theming.png" alt="domain classes theming">
 </div>
-<div class="title">Figure 7. Domain Classes for Theming</div>
+<div class="title">Figure 9. Domain Main Classes for Theming</div>
+</div>
+<div class="paragraph data-line-288">
+<p>This Data Domain&#8217;s main classes are taken from <a href="#SKOS">[SKOS]</a> and their expected/required properties and relations are formally defined in <em>VocPub</em>, a "vocabulary publication profile of SKOS" <a href="#VOCPUB">[VOCPUB]</a>. VocPub just mandates certain vocabulary metadata and relations between elements in vocabularies. Conformance of vocabularies to VocPub is also easily testable using the profile&#8217;s validator abd online tooling that support it <sup class="footnote">[<a id="_footnoteref_4" class="footnote" href="#_footnotedef_4" title="View footnote.">4</a>]</sup>.</p>
 </div>
 </div>
 </div>
@@ -1023,52 +1097,73 @@ This supermodel&#8217;s origins are in GA&#8217;s geology and spatial data work 
 </div>
 </div>
 </div>
-<div class="sect1 data-line-250">
+<div class="sect1 data-line-294">
 <h2 id="_references">References</h2>
 <div class="sectionbody">
-<div class="ulist data-line-252">
+<div class="ulist data-line-296">
 <ul>
-<li class="data-line-252">
+<li class="data-line-296">
+<p><a id="ABIS"></a> Department of Agriculture, Water and the Enviroment, <em>Australia Biodiversity Information Standard (ABIS)</em>, Australian government Semantic Web Standard (2022-01-14). <a href="https://linked.data.gov.au/def/abis" class="undefined" data-href="https://linked.data.gov.au/def/abis">https://linked.data.gov.au/def/abis</a></p>
+</li>
+<li class="data-line-298">
 <p><a id="DCTERMS"></a> DCMI Usage Board, <em>DCMI Metadata Terms</em>, A DCMI Recommendation (2020-01-20). <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/" class="undefined" data-href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/">https://www.dublincore.org/specifications/dublin-core/dcmi-terms/</a></p>
 </li>
-<li class="data-line-254">
+<li class="data-line-300">
 <p><a id="DCAT"></a> World Wide Web Consortium, <em>Data Catalog Vocabulary (DCAT) - Version 2</em>, W3C Working Group Note (04 February 2020). <a href="https://www.w3.org/TR/vocab-dcat/" class="undefined" data-href="https://www.w3.org/TR/vocab-dcat/">https://www.w3.org/TR/vocab-dcat/</a></p>
 </li>
-<li class="data-line-256">
+<li class="data-line-302">
 <p><a id="GEO"></a> Open Geospatial Consortium, <em>OGC GeoSPARQL - A Geographic Query Language for RDF Data, Version 1.1</em> (2021). OGC Implementation Specification. <a href="http://www.opengis.net/doc/IS/geosparql/1.1" class="undefined" data-href="http://www.opengis.net/doc/IS/geosparql/1.1">http://www.opengis.net/doc/IS/geosparql/1.1</a></p>
 </li>
-<li class="data-line-258">
+<li class="data-line-304">
 <p><a id="ISO19156"></a> International Organization for Standardization, <em>ISO 19156: Geographic information — Observations and measurements</em> (2011)</p>
 </li>
-<li class="data-line-260">
+<li class="data-line-306">
 <p><a id="OWL"></a> World Wide Web Consortium, <em>OWL 2 Web Ontology Language Document Overview (Second Edition)</em>, W3C Recommendation (11 December 2012). <a href="https://www.w3.org/TR/owl2-overview/" class="undefined" data-href="https://www.w3.org/TR/owl2-overview/">https://www.w3.org/TR/owl2-overview/</a></p>
 </li>
-<li class="data-line-262">
+<li class="data-line-308">
 <p><a id="PROF"></a> World Wide Web Consortium, <em>The Profiles Vocabulary</em>, W3C Working Group Note (18 December 2019). <a href="https://www.w3.org/TR/dx-prof/" class="undefined" data-href="https://www.w3.org/TR/dx-prof/">https://www.w3.org/TR/dx-prof/</a></p>
 </li>
-<li class="data-line-264">
+<li class="data-line-310">
 <p><a id="PROV"></a> World Wide Web Consortium, <em>PROV-O: The PROV Ontology</em>, W3C Working Group Note (18 December 2019). <a href="https://www.w3.org/TR/prov-o/" class="undefined" data-href="https://www.w3.org/TR/prov-o/">https://www.w3.org/TR/prov-o/</a></p>
 </li>
-<li class="data-line-266">
+<li class="data-line-312">
 <p><a id="SDO"></a> W3C Schema.org Community Group, <em>schema.org</em>. Community ontology (2015). <a href="https://schema.org" class="undefined" data-href="https://schema.org">https://schema.org</a></p>
 </li>
-<li class="data-line-268">
+<li class="data-line-314">
 <p><a id="SSN"></a> World Wide Web Consortium, <em>Semantic Sensor Network Ontology</em>, W3C Recommendation (19 October 2017). <a href="https://www.w3.org/TR/vocab-ssn/" class="undefined" data-href="https://www.w3.org/TR/vocab-ssn/">https://www.w3.org/TR/vocab-ssn/</a></p>
 </li>
-<li class="data-line-270">
+<li class="data-line-316">
 <p><a id="SKOS"></a> World Wide Web Consortium, <em>SKOS Simple Knowledge Organization System Reference</em>, W3C Recommendation (18 August 2009). <a href="https://www.w3.org/TR/skos-reference/" class="undefined" data-href="https://www.w3.org/TR/skos-reference/">https://www.w3.org/TR/skos-reference/</a></p>
 </li>
-<li class="data-line-272">
+<li class="data-line-318">
 <p><a id="TTL"></a> World Wide Web Consortium, <em>RDF 1.1 Turtle Terse RDF Triple Language</em>, W3C Recommendation (25 February 2014). <a href="https://www.w3.org/TR/turtle/" class="undefined" data-href="https://www.w3.org/TR/turtle/">https://www.w3.org/TR/turtle/</a></p>
+</li>
+<li class="data-line-320">
+<p><a id="VOCPUB"></a> SURROUND Australia Pty Ltd, <em>VocPub</em>, Profile of SKOS (14 June 2020). <a href="https://w3id.org/profile/vocpub" class="undefined" data-href="https://w3id.org/profile/vocpub">https://w3id.org/profile/vocpub</a></p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 </div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. RDF: <a href="https://www.w3.org/RDF/" class="undefined" data-href="https://www.w3.org/RDF/">https://www.w3.org/RDF/</a>, RDFS: <a href="https://www.w3.org/TR/rdf-schema/" class="undefined" data-href="https://www.w3.org/TR/rdf-schema/">https://www.w3.org/TR/rdf-schema/</a>. These references generally need not be followed as descriptions of the use of OWL will cover their relevant concepts.
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. <a href="https://pypi.org/project/pyLODE/" class="undefined" data-href="https://pypi.org/project/pyLODE/">https://pypi.org/project/pyLODE/</a>
+</div>
+<div class="footnote" id="_footnotedef_3">
+<a href="#_footnoteref_3">3</a>. <a href="https://linkeddata.tern.org.au/tern-ontology" class="undefined" data-href="https://linkeddata.tern.org.au/tern-ontology">https://linkeddata.tern.org.au/tern-ontology</a>
+</div>
+<div class="footnote" id="_footnotedef_4">
+<a href="#_footnoteref_4">4</a>. The validator itself is online at <a href="https://w3id.org/profile/vocpub/validator" class="undefined" data-href="https://w3id.org/profile/vocpub/validator">https://w3id.org/profile/vocpub/validator</a> and is pre-loaded into GA&#8217;s vocabulary servers e.g. <a href="https://vocabs.ga.gov.au" class="undefined" data-href="https://vocabs.ga.gov.au">https://vocabs.ga.gov.au</a>. It can also be selected for online validation use at <a href="https://rdftools.surroundaustralia.com" class="undefined" data-href="https://rdftools.surroundaustralia.com">https://rdftools.surroundaustralia.com</a>
+</div>
+</div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-01-14 16:13:31 01000
+Last updated 2022-01-14 17:32:34 01000
 </div>
 </div>
 </body>

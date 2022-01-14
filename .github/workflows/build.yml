@@ -24,7 +24,7 @@ jobs:
         asciidoctor 01-supermodel.adoc -o docs/supermodel.html
         sed -i 's#img src="#img src="https://surroundaustralia.github.io/ga-supermodel/#' docs/supermodel.html        
         echo "Add supermodel RDF to docs/"
-        cp supermodel.ttl docs/             
+        cp rdf/*.ttl docs/
         echo "Add images to docs/"
         cp -r img docs/
     - name: Deploy 🚀
