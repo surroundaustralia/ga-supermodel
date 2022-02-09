@@ -1,0 +1,22 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix sdo: <https://schema.org/> .
+
+<http://pid.geoscience.gov.au/sample/AU128>     
+    a prov:Entity ;
+    prov:qualifiedAttribution [ 
+        prov:agent [ 
+            a prov:Person ;
+            sdo:name "Raymond, O.L." ;
+        ] ;
+        prov:hadRole <http://linked.data.gov.au/def/iso19115-1/RoleCode/principalInvestigator> ;
+    ],
+    [ 
+        prov:agent <https://linked.data.gov.au/org/ga> ;
+        prov:hadRole <http://linked.data.gov.au/def/iso19115-1/RoleCode/custodian> ;
+    ] ;
+.
+
+# roles from:
+# https://linked.data.gov.au/def/dataciteroles
+# https://linked.data.gov.au/def/gsq-roles
+# http://linked.data.gov.au/def/iso19115-1/RoleCode
