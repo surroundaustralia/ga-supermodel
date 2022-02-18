@@ -1,0 +1,45 @@
+# baseURI: http://example.org/W3ssn-OMlite-alignment
+# imports: http://def.seegrid.csiro.au/ontology/om/om-lite
+# imports: http://purl.oclc.org/NET/ssnx/ssn
+
+@prefix ISO-OMlite: <http://example.org/ISO-OMlite#> .
+@prefix oml: <http://def.seegrid.csiro.au/ontology/om/om-lite#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ssn: <http://purl.oclc.org/NET/ssnx/ssn#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/W3ssn-OMlite-alignment>
+  rdf:type owl:Ontology ;
+  owl:imports <http://def.seegrid.csiro.au/ontology/om/om-lite> ;
+  owl:imports <http://purl.oclc.org/NET/ssnx/ssn> ;
+.
+ssn:Observation
+  rdfs:subClassOf oml:Observation ;
+.
+ssn:Sensing
+  rdfs:subClassOf oml:Process ;
+.
+ssn:Sensor
+  rdfs:subClassOf oml:Process ;
+.
+ssn:featureOfInterest
+  rdfs:subPropertyOf oml:featureOfInterest ;
+.
+ssn:observationResult
+  rdfs:subPropertyOf oml:result ;
+.
+ssn:observationResultTime
+  rdfs:subPropertyOf oml:resultTime ;
+.
+ssn:observedBy
+  rdfs:subPropertyOf oml:procedure ;
+.
+ssn:observedProperty
+  rdfs:subPropertyOf oml:observedProperty ;
+.
+ssn:sensingMethodUsed
+  rdfs:subPropertyOf oml:procedure ;
+.

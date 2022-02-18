@@ -1,0 +1,52 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix aurole: <http://communications.data.gov.au/def/role/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix geosp: <http://www.opengis.net/ont/geosparql#> .
+@prefix igsn: <http://pid.geoscience.gov.au/def/ont/igsn#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix samfl: <http://def.seegrid.csiro.au/ontology/om/sam-lite#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://pid.geoscience.gov.au/org/ga/geoscienceaustralia> a org:Organization ;
+    foaf:name "Geoscience Australia"^^xsd:string .
+
+<http://pid.geoscience.gov.au/sample/AU128> a samfl:Specimen ;
+    rdfs:label "Sample igsn:AU128"^^xsd:string ;
+    samfl:currentLocation "GA Services building"^^xsd:string ;
+    samfl:materialClass <http://vocabulary.odm2.org/medium/rock> ;
+    samfl:relatedSamplingFeature <http://pid.geoscience.gov.au/site/17594> ;
+    samfl:samplingElevation [ a samfl:Elevation ;
+            samfl:elevation "NaN"^^xsd:float ;
+            samfl:verticalDatum <http://spatialreference.org/ref/epsg/4283/> ] ;
+    samfl:samplingLocation [ a samfl:Point ;
+            geosp:asGML "<gml:Point srsDimension=\"2\" srsName=\"https://epsg.io/GDA94\"><gml:pos>137.6250691792 -34.0411726571</gml:pos></gml:Point>"^^geosp:gmlLiteral ;
+            geosp:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4283> POINT(137.6250691792 -34.0411726571)"^^geosp:wktLiteral ] ;
+    samfl:samplingMethod <http://pid.geoscience.gov.au/def/voc/ga/igsncode/Rock> ;
+    dct:accessRights <http://pid.geoscience.gov.au/def/voc/ga/igsncode/Public> ;
+    dct:identifier [ a adms:Identifier ;
+            skos:notation "AU128"^^xsd:string ;
+            adms:schemeAgency <http://igsn.org> ] ;
+    prov:pingback <http://pid.geoscience.gov.au/sample/AU128/pingback> ;
+    prov:qualifiedAttribution [ a prov:Attribution ;
+            prov:agent [ a prov:Person ;
+                    foaf:name "Raymond, O.L."^^xsd:string ] ;
+            prov:hadRole aurole:principalInvestigator ],
+        [ a prov:Attribution ;
+            prov:agent <http://pid.geoscience.gov.au/org/ga/geoscienceaustralia> ;
+            prov:hadRole aurole:custodian ] .
+
+<http://pid.geoscience.gov.au/site/17594> a <http://pid.geoscience.gov.au/def/voc/featureofinteresttype/borehole> ;
+    samfl:sampledFeature <http://pid.geoscience.gov.au/sample/AU128> ;
+    samfl:samplingElevation [ a samfl:Elevation ;
+            samfl:elevation "NaN"^^xsd:float ;
+            samfl:verticalDatum <http://spatialreference.org/ref/epsg/4283/> ] ;
+    geosp:hasGeometry [ a samfl:Point ;
+            geosp:asGML "<ogc:BBOX><ogc:PropertyName>ows:BoundingBox</ogc:PropertyName><gml:Envelope srsName=\"https://epsg.io/GDA94\"><gml:upperCorner>137.6250691792 </gml:upperCorner><gml:lowerCorner> -34.0411726571</gml:lowerCorner></gml:Envelope></ogc:BBOX>"^^geosp:wktLiteral ;
+            geosp:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4283> POLYGON((137.6250691792 ,  ,  -34.0411726571,  -34.0411726571, 137.6250691792 ))"^^geosp:wktLiteral ] .
+

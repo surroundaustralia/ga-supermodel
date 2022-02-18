@@ -1,0 +1,2426 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OWL representation of ISO 19156 Sampling Features model</title>
+    <style>
+        #pylode {
+            position: fixed;
+            top: 130px;
+            left: -80px;
+            font-size: small;
+            transform: rotate(-90deg);
+            color: grey;
+        }
+        #pylode a {
+            font-size: 2em;
+            font-weight: bold;
+            text-decoration: none;
+            color: #005A9C;
+        }
+        #pylode a:hover {
+            color: #333;
+        }
+        #pylode #p {
+            color: #329545;
+        }
+        #pylode #y {
+            color: #f9cb33;
+        }
+        #pylode #version {
+            font-size: 1.0em;
+        }
+
+        .cardinality {
+            font-style: italic;
+            color: #aa00aa;
+        }
+
+        dl {
+            /*border: 1px solid navy;*/
+            /*padding:5px;*/
+        }
+
+        dt {
+            font-weight: bold;
+            padding: 0;
+        }
+
+        dd {
+            margin-bottom: 10px;
+            padding-top: 7px;
+        }
+
+        #metadata ul,
+        #classes ul {
+            list-style-type: none;
+        }
+
+        #metadata ul li,
+        #classes ul li {
+            margin-left: -40px;
+        }
+
+        ul.hlist {
+            list-style-type: none;
+            border: 1px solid navy;
+            padding:5px;
+            background-color: #F4FFFF;
+        }
+
+        ul.hierarchy {
+            border: 1px solid navy;
+            padding: 5px 25px 5px 25px;
+            background-color: #F4FFFF;
+        }
+
+
+        ul.hlist li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .entity {
+            border: 1px solid navy;
+            margin:5px 0 5px 0;
+            padding: 5px;
+        }
+
+        .entity th {
+            width: 150px;
+            vertical-align: top;
+        }
+
+        .entity th,
+        .entity td {
+            padding-bottom: 20px;
+        }
+
+        .entity table th {
+            text-align: left;
+        }
+
+        section#overview img {
+            max-width: 1000px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            text-align: left
+        }
+        h1, h2, h3 {
+            color: #005A9C; background: white
+        }
+        h1 {
+            font: 170% sans-serif;
+            line-height: 110%;
+        }
+        h2 {
+            font: 140% sans-serif;
+            margin-top:40px;
+        }
+        h3 {
+            font: 120% sans-serif;
+            margin-top: 20px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid navy;
+        }
+        h4 { font: bold 100% sans-serif }
+        h5 { font: italic 100% sans-serif }
+        h6 { font: small-caps 100% sans-serif }
+
+        body {
+            padding: 2em 70px 2em 70px;
+            margin: 0;
+            font-family: sans-serif;
+            color: black;
+            background: white;
+            background-position: top left;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            text-align: justify;
+        }
+
+        section {
+            max-width: 1500px;
+        }
+
+        .figure {
+            margin-bottom: 20px;
+        }
+
+        :link { color: #00C; background: transparent }
+        :visited { color: #609; background: transparent }
+        a:active { color: #C00; background: transparent }
+
+        .sup-c,
+        .sup-op,
+        .sup-fp,
+        .sup-dp,
+        .sup-ap,
+        .sup-p,
+        .sup-ni,
+        .sup-con,
+        .sup-col {
+            cursor:help;
+        }
+
+        .sup-c {
+            color:orange;
+        }
+
+        .sup-op {
+            color:navy;
+        }
+
+        .sup-fp {
+            color:lightskyblue;
+        }
+
+        .sup-dp {
+            color:green;
+        }
+
+        .sup-ap {
+            color:darkred;
+        }
+
+        .sup-p {
+            color:black;
+        }
+
+        .sup-ni {
+            color:brown;
+        }
+
+        .sup-con {
+            color:orange;
+        }
+
+        .sup-col {
+            color:darkred;
+        }
+
+        sup {
+            margin-left: -3px;
+        }
+        code {
+            font-size: large;
+            color: darkred;
+        }
+
+        /* less prominent links for properties */
+        .proplink {
+            color: #336;
+            text-decoration: none;
+        }
+
+#toc {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    height: 100%;
+    overflow-y: auto;
+    padding: 10px;
+    border: solid 1px navy;
+    font-size: small;
+    width: 180px;
+}
+#toc h3 {
+    margin-top: 5px;
+}
+
+#toc ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#toc .first > li {
+    margin-top: 5px;
+}
+
+#toc .second,
+#toc .third {
+    padding-left: 10px;
+}
+
+#content {
+    width: calc(100% - 150px);
+}
+
+.hover_property {
+    cursor: help;
+    text-decoration: none;
+    border-bottom: dashed 1px;
+}
+
+.setclass {
+    list-style-type: none;
+}
+	</style>
+    <link href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABhklEQVQ4jbWPzStEURjG3yQLirlGKUnKFO45Z+SjmXvnnmthQcpCoVhYmD/AwmJiI3OvZuZc2U3UlKU0/gAslMw9JgvhHxAr2fko7r0jHSsl+TgbTz2Lt5731/MASEiJW9ONml2QyX6rsGalmnT74v8BDf12hxJfpV8d1uwNKUBYszabdFv84L8B9X0rESVmmUup2fme0cVhJWaZHw4NWL1SewEAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ9Hn31OgoATL+CkLDGB5H1OKj4nFd/FBxUXJ0UZNb4edw/6nLyJXaj5FeCVyPLNIVmYK8TG1IwWb16L1gEACAFV90ftoT8bdOX0EeyY99gxBXZMgRz6qGb1KantAACI0UvE6F5XJqEjpsdURouI0Vt5gGOUkUNnPu7ObGIIMfNaGqDmjDRi9FZldF1lRgYzeqUyeoiY4ag5Iy3RgOYRM8+/M2bG8efsO4hGrpmJseyMAAAAAElFTkSuQmCC" rel="icon" sizes="16x16" type="image/png">
+    <link href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAC40lEQVRYhe2UT0hUQRzHp6Iss1B3VZKIDbbdfW9mnoi4f3zzjkJQeOgS0SEIb1EWBGGlLLu460zQPQM1unUIIjA6rfpm6ZAhHjoIRVQUFUlEbG+euTsdXG1d3VL3bVD4g+9h+L35fT/8fvN7ADgY9aHY5fpIvK82HO9ysu66wxWOzbkjcekKx0a2ALYA/n2AGi3a6ArFezcidziecQygNhhrcUficjP6PwBqtGijKxy/thnVBePHywYoDsFhl53GV8SEcsTx4usCMLUewTVpc23BNvEzm6Neyf1+KcG2vwqwUjgrOJq2JmHftwmkVBRGTvncFodnbI7vChO/FRznCmHsNM7aHM9Yk7Df5iqsLMw9sMNOK2g+jS4IEz0UJv4iuJZb2RltWnB4UZqH6ioGAgAAGe5vtiZhtzDx7OoRadLmeM7m6IRjhnLMW2Vx1bA5GhAmnhIcz6/xNj4Ujsky8UspwfayjDPjsF2Y6L7N8Vzx/BfP+KPg6LbgSqd8DnfJW2CnbaLhfH5ephpqygJYvQU4Z3P82TLRsDDhUTnmrSq+Y3N0Mg+Xldy/zwEAnLMWZ3pHpNExmfLs/t0dOdVcbT0JeKxUwFP2VljjqiE47Jp53LTXNxhsUZjerTByXWX6VZWRs/4bIQ2ACv+UAomgDzLCISNZxAxZKMhIDjLy1JfsaK+I+eGBUBNk5E2x8RogX/PdcDZUqieWTSh5D6nOVKqfhoycUmlHFFIyu5RXqf7AcQDISCpv/tqbMBqK883RtmpISRoxQyJKPgGn3wNk5NEigDFa6hslqV/Kj+FdBQD0bshIDlKSLlVcoWQo36UhR80BAMB73lulMn0EMpJTqD6qJiOt3mho/8GbkT2BZNgDB/V+RI0fkOrT3kRIVQbaDizJm2hdNbINBxwk5xAj3yEjuV9rZ1iIkgxixkLBA83mz8uCjLwoGwAx0vOnFSy5mtR4VTaAQvVORMnwZgSpzkrV/QmdE2tKe46+MQAAAABJRU5ErkJggg==" rel="icon" sizes="32x32" type="image/png">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <script id="schema.org" type="application/ld+json">
+[
+  {
+    "@id": "http://def.seegrid.csiro.au/ontology/om/sam-lite",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/creator": [
+      {
+        "@id": "http://orcid.org/0000-0002-3884-3420"
+      },
+      {
+        "@id": "http://registry.it.csiro.au/people/SimonJDCox"
+      },
+      {
+        "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral",
+        "@value": "Simon Jonathan David COX\nCSIRO"
+      }
+    ],
+    "https://schema.org/dateCreated": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2014-10-07"
+      }
+    ],
+    "https://schema.org/dateModified": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2015-07-17"
+      }
+    ],
+    "https://schema.org/description": [
+      {
+        "@value": "A simple OWL representation of the Sampling Features Schema described in clauses 9-11 of ISO 19156:2011 Geographic Information - Observations and Measurements"
+      },
+      {
+        "@value": "An OWL representation of the Sampling Features Schema described in clauses 9-11 of ISO 19156:2011 Geographic Information - Observations and Measurements. \nIn contrast to previous versions developed through SSN and in conjunction with ISO 19150-2, this ontology has minimal dependencies on existing ontologies, particularly those that trigger extended chains of imports. \r\nThis allows use of this ontology without committing to an entire family of ontologies. "
+      }
+    ],
+    "https://schema.org/license": [
+      {
+        "@id": "http://creativecommons.org/licenses/by/3.0/au/"
+      }
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "OWL representation of ISO 19156 Sampling Features model"
+      }
+    ]
+  }
+]
+	</script>
+  </head>
+  <body>
+    <div id="content">
+      <div class="section" id="metadata">
+        <h1>OWL representation of ISO 19156 Sampling Features model</h1>
+        <div style="font-size:large; font-weight:bold; font-style:italic; border:solid 2px red; padding: 10px; background-color: #eee;">
+          <p><span style="color:red;">NOTE</span></p>
+          <p>This ontology is not maintained and is deprecated in favour of other ontologies that are, listed in the <a href="">Geoscience Australia</a> Supermodel's <em><a href="https://surroundaustralia.github.io/ga-supermodel/supermodel.html#_sampling_resources">Sampling Domain</a></em> set of models.</p>
+          <p>This ontology is preserved here for reference. Not all hyperlinks, such as those to external models, work as some of those items are no longer available.</p>
+        </div>
+        <h2>Metadata</h2>
+        <dl>
+          <div>
+            <dt>
+              <strong>IRI</strong>
+            </dt>
+            <dd>
+              <code>http://def.seegrid.csiro.au/ontology/om/sam-lite</code>
+            </dd>
+          </div>
+          <div>
+            <dt>
+              <a class="hover_property" href="http://purl.org/dc/terms/title" title="A name given to the resource. Defined in DCMI Metadata Terms">Title</a>
+            </dt>
+            <dd><p>OWL representation of ISO 19156 Sampling Features model</p></dd>
+          </div>
+          <div>
+            <dt>
+              <a class="hover_property" href="http://purl.org/dc/terms/creator" title="An entity responsible for making the resource. Defined in DCMI Metadata Terms">Creator</a>
+            </dt>
+            <dd>
+              <ul>
+                <li>
+                  <a href="http://orcid.org/0000-0002-3884-3420">orcid:0000-0002-3884-3420</a>
+                </li>
+                <li>
+                  <a href="http://registry.it.csiro.au/people/SimonJDCox">people::SimonJDCox</a>
+                </li>
+                <li><p>Simon Jonathan David COX
+CSIRO</p></li>
+              </ul>
+            </dd>
+          </div>
+          <div>
+            <dt>
+              <a class="hover_property" href="http://purl.org/dc/terms/created" title="Date of creation of the resource. Defined in DCMI Metadata Terms">Date Created</a>
+            </dt>
+            <dd><p>2014-10-07</p></dd>
+          </div>
+          <div>
+            <dt>
+              <a class="hover_property" href="http://purl.org/dc/terms/modified" title="Date on which the resource was changed. Defined in DCMI Metadata Terms">Date Modified</a>
+            </dt>
+            <dd><p>2015-07-17</p></dd>
+          </div>
+          <div>
+            <dt>
+              <a class="hover_property" href="http://purl.org/dc/terms/license" title="A legal document giving official permission to do something with the resource. Defined in DCMI Metadata Terms">License</a>
+            </dt>
+            <dd>
+              <a href="http://creativecommons.org/licenses/by/3.0/au/">http://creativecommons.org/licenses/by/3.0/au/</a>
+            </dd>
+          </div>
+          <div>
+            <dt>
+              <a class="hover_property" href="http://www.w3.org/2002/07/owl#priorVersion" title="The annotation property that indicates the predecessor ontology of a given ontology. Defined in The OWL 2 Schema vocabulary (OWL 2)">Prior Version</a>
+            </dt>
+            <dd>
+              <a href="http://def.seegrid.csiro.au/isotc211/iso19156/2011/sampling">19156-2011:sampling</a>
+            </dd>
+          </div>
+          <div>
+            <dt>
+              <a class="hover_property" href="http://purl.org/vocab/vann/preferredNamespacePrefix" title="None. Defined in None">Preferred Namespace Prefix</a>
+            </dt>
+            <dd><p>saml:</p></dd>
+          </div>
+          <div>
+            <dt>
+              <a class="hover_property" href="http://purl.org/vocab/vann/preferredNamespaceUri" title="None. Defined in None">Preferred Namespace Uri</a>
+            </dt>
+            <dd>
+              <a href="http://def.seegrid.csiro.au/ontology/om/sam-lite#">samfl:</a>
+            </dd>
+          </div>
+          <div>
+            <dt>
+              <a class="hover_property" href="http://purl.org/dc/terms/source" title="A related resource from which the described resource is derived. Defined in DCMI Metadata Terms">Source</a>
+            </dt>
+            <dd><p>ISO 19156:2011</p></dd>
+          </div>
+          <div>
+            <dt>
+              <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+            </dt>
+            <dd>
+              <ul>
+                <li><p>A simple OWL representation of the Sampling Features Schema described in clauses 9-11 of ISO 19156:2011 Geographic Information - Observations and Measurements</p></li>
+                <li><p>An OWL representation of the Sampling Features Schema described in clauses 9-11 of ISO 19156:2011 Geographic Information - Observations and Measurements. 
+In contrast to previous versions developed through SSN and in conjunction with ISO 19150-2, this ontology has minimal dependencies on existing ontologies, particularly those that trigger extended chains of imports. 
+This allows use of this ontology without committing to an entire family of ontologies. </p></li>
+              </ul>
+            </dd>
+          </div>
+          <div>
+            <dt>
+              Ontology RDF (Turtle)
+            </dt>
+            <dd>
+              <a href="https://surroundaustralia.github.io/ga-supermodel/sam-lite.ttl">sam-lite.ttl</a>
+            </dd>
+          </div>          
+        </dl>
+      </div>
+      <div>
+        <h2>Overview Diagrams</h2>
+        <figure style="border:solid 1px black; padding:10px;">
+          <img style="width:70%" src="data:image/png;base64,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" />
+          <p><strong>Figure 1</strong>: This ontology's class hierarchies</p>
+        </figure>
+      <figure style="border:solid 1px black; padding:10px;">
+        <img style="width:50%" src="data:image/png;base64,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" />
+        <p><strong>Figure 2</strong>: The <code>Specimen</code> class and its properties</p>
+      </figure>
+      <figure style="border:solid 1px black; padding:10px;">
+        <img style="width:50%" src="data:image/png;base64,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" />
+        <p><strong>Figure 3</strong>: The <code>SamplingFeature</code> class and its properties</p>
+      </figure>
+      </div>
+      <div class="section" id="classes">
+        <h2>Classes</h2>
+        <div class="property entity" id="Spatialcurve">
+          <h3>Spatial curve
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://def.seegrid.csiro.au/ontology/om/sam-lite#Curve</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td>
+                <ul>
+                  <li><p>1-D geometric object</p></li>
+                  <li><p>This stub is included in the sam: ontology to support constraints on the sam:shape property of a sam:SamplingCurve.  An existing OWL class that represents the notion of a Curve may be asserted to be a sub-class of this stub, but without requiring use of any particular representation of Curve in the context of a sam:SamplingCurve instance.</p></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#GeometryObject">samfl:GeometryObject</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="GeometryObject">
+          <h3>Geometry object
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://def.seegrid.csiro.au/ontology/om/sam-lite#GeometryObject</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td>
+                <ul>
+                  <li><p>Geometry object has properties relating to geometry, incuding positional and topological attributes, reference system, accuracy and precision. Might be geolocated. </p></li>
+                  <li><p>This stub is included in the sam: ontology to support references to geometry in various places.  An existing concrete OWL class that represents the notion of a geometry may be asserted to be a sub-class of this stub, without requiring use of a specific representation of Geometry in the context of sampling.</p></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <span>
+                      <a href="#Location">samfl:Location</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2002/07/owl#equivalentClass" title="The property that determines that two given classes are equivalent, and that is used to specify datatype definitions. Defined in The OWL 2 Schema vocabulary (OWL 2)">Equivalentclass</a>
+              </th>
+              <td>
+                <a href="http://def.seegrid.csiro.au/ontology/om/om-lite#GeometryObject">om-lite:GeometryObject</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="Inverse of rdfs:range. Defined in Ontology Documentation Profile">In Range Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#shape">samfl:shape</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="Inverse of RDFS' subClassOf. Defined in Ontology Documentation Profile">Super Class Of</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <span>
+                      <a href="#Spatialcurve">samfl:Curve</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#Point">samfl:Point</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#Solid">samfl:Solid</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#Surface">samfl:Surface</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="Location">
+          <h3>Location
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://def.seegrid.csiro.au/ontology/om/sam-lite#Location</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="http://def.seegrid.csiro.au/ontology/om/sam-lite">om:sam-lite</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td>
+                <ul>
+                  <li><p>Location, expressed as either a geometry object or feature</p></li>
+                  <li><p>samfl:GeometryObject is subclass</p></li>
+                  <li><p>w3geo:SpatialThing, geosparql:SpatialObject are subclasses</p></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="Inverse of rdfs:range. Defined in Ontology Documentation Profile">In Range Of</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <span>
+                      <a href="#currentLocation">samfl:currentLocation</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#samplingLocation">samfl:samplingLocation</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="Inverse of RDFS' subClassOf. Defined in Ontology Documentation Profile">Super Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#GeometryObject">samfl:GeometryObject</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="Measureorquantity">
+          <h3>Measure or quantity
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://def.seegrid.csiro.au/ontology/om/sam-lite#Measure</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td>
+                <ul>
+                  <li><p>Scaled number. </p></li>
+                  <li><p>This is an abstract class, which should be substituted by a suitable concrete representation of a measure or quantity at run-tme. </p>
+<p>oml:SimpleMeasure <a href="http://def.seegrid.csiro.au/ontology/om/om-lite#SimpleMeasure">http://def.seegrid.csiro.au/ontology/om/om-lite#SimpleMeasure</a>
+qudt:QuantityValue <a href="http://qudt.org/schema/qudt#QuantityValue">http://qudt.org/schema/qudt#QuantityValue</a> 
+DUL:Region <a href="http://www.loa-cnr.it/ontologies/DUL.owl#Region">http://www.loa-cnr.it/ontologies/DUL.owl#Region</a> </p>
+<p>are candidates. </p></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2002/07/owl#equivalentClass" title="The property that determines that two given classes are equivalent, and that is used to specify datatype definitions. Defined in The OWL 2 Schema vocabulary (OWL 2)">Equivalentclass</a>
+              </th>
+              <td>
+                <a href="http://def.seegrid.csiro.au/ontology/om/om-lite#Measure">om-lite:Measure</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="Inverse of rdfs:range. Defined in Ontology Documentation Profile">In Range Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#size">samfl:size</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="Observationprocess">
+          <h3>Observation process
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://def.seegrid.csiro.au/ontology/om/sam-lite#ObservationProcess</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="http://def.seegrid.csiro.au/ontology/om/sam-lite">om:sam-lite</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td>
+                <ul>
+                  <li><p>Process used in an observation, including sensors, algorithms, computation methods</p></li>
+                  <li><p>The result of application of an observation process is an observation result - i.e. an estimate of a property value.</p></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2002/07/owl#equivalentClass" title="The property that determines that two given classes are equivalent, and that is used to specify datatype definitions. Defined in The OWL 2 Schema vocabulary (OWL 2)">Equivalentclass</a>
+              </th>
+              <td>
+                <a href="http://def.seegrid.csiro.au/ontology/om/om-lite#Process">om-lite:Process</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="Inverse of rdfs:range. Defined in Ontology Documentation Profile">In Range Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#hostedProcedure">samfl:hostedProcedure</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="Point">
+          <h3>Spatial point
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://def.seegrid.csiro.au/ontology/om/sam-lite#Point</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td>
+                <ul>
+                  <li><p>0-D geometric object</p></li>
+                  <li><p>This stub is included in the sam: ontology to support constraints on the sam:shape property of a sam:SamplingPoint.  An existing OWL class that represents the notion of a Point may be asserted to be a sub-class of this stub, but without requiring use of any particular representation of Point in the context of a sam:SamplingPoint instance.</p></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#GeometryObject">samfl:GeometryObject</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="Samplingprocess">
+          <h3>Sampling process
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://def.seegrid.csiro.au/ontology/om/sam-lite#Process</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="http://def.seegrid.csiro.au/isotc211/iso19156/2011/sampling">19156-2011:sampling</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td>
+                <ul>
+                  <li><p>Process involved in sampling. This may include specimen retrieval or processing, surveying a spatial sampling feature, excavation to provide access to a sampling feature, or any other process whose outcome is a new sampling feature.</p></li>
+                  <li><p>The result of a application of a sampling process is a - new or - transformed sample. </p></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="Inverse of rdfs:range. Defined in Ontology Documentation Profile">In Range Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#samplingMethod">samfl:samplingMethod</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="Samplingcurve">
+          <h3>Sampling curve
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://def.seegrid.csiro.au/ontology/om/sam-lite#SamplingCurve</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="http://def.seegrid.csiro.au/ontology/om/sam-lite">om:sam-lite</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td>
+                <ul>
+                  <li><p>Spatial sampling feature whose shape is a 1-D manifold (Curve)</p></li>
+                  <li><p>Transect, traverse, flightline, cruise, trajectory, borehole, etc</p></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#SpatialSamplingFeature">samfl:SpatialSamplingFeature</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/restriction" title="Convenience property for things that subclass owl:Restriction. Defined in Ontology Documentation Profile">Restriction</a>
+              </th>
+              <td>
+                <span>
+                  <span>
+                    <span>
+                      <a href="#shape">samfl:shape</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>only<br>
+                  </span>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="SamplingFeature">
+          <h3>Sampling Feature
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://def.seegrid.csiro.au/ontology/om/sam-lite#SamplingFeature</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="http://def.seegrid.csiro.au/ontology/om/sam-lite">om:sam-lite</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td>
+                <ul>
+                  <li><p>Feature on which observations may be made, which is intended to be representative of a different (usually larger) feature that is not fully accessible for some reason. </p></li>
+                  <li><p>Sampling features are artefacts of an observational strategy, and have no significant function outside of their role in the observation process. The physical characteristics of the features themselves are of little interest, except perhaps to the manager of a sampling campaign.</p>
+<p>EXAMPLE A “station” is essentially an identifiable locality where a sensor system or procedure may be deployed and an observation made. In the context of the observation model, it connotes the “world in the vicinity of the station”, so the observed properties relate to the physical medium at the station, and not to any physical artefact such as a mooring, buoy, benchmark, monument, well, etc.</p>
+<p>NOTE A transient sampling feature, such as a ships-track or flight-line, might be identified and described, but is unlikely to be revisited exactly.</p>
+<p>A sampling feature is intended to sample some feature-of-interest in an application domain, so there is an expectation of at least one sampledFeature property. However, in some cases the identity, and even the exact type, of the sampled feature may not be known when observations are made using the sampling features.</p></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="Inverse of rdfs:domain. Defined in Ontology Documentation Profile">In Domain Of</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <span>
+                      <a href="#complex">samfl:complex</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#sampledFeature">samfl:sampledFeature</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="Inverse of rdfs:range. Defined in Ontology Documentation Profile">In Range Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#relatedSamplingFeature">samfl:relatedSamplingFeature</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/restriction" title="Convenience property for things that subclass owl:Restriction. Defined in Ontology Documentation Profile">Restriction</a>
+              </th>
+              <td>
+                <span>
+                  <span>
+                    <span>
+                      <a href="#sampledFeature">samfl:sampledFeature</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                    <span>
+                      <span class="cardinality">min</span>
+                      <span>1</span>
+                    </span><br>
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="Inverse of RDFS' subClassOf. Defined in Ontology Documentation Profile">Super Class Of</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <span>
+                      <a href="#SpatialSamplingFeature">samfl:SpatialSamplingFeature</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#Specimen">samfl:Specimen</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="Samplingfeaturecomplex">
+          <h3>Sampling feature complex
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://def.seegrid.csiro.au/ontology/om/sam-lite#SamplingFeatureComplex</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="http://def.seegrid.csiro.au/ontology/om/sam-lite">om:sam-lite</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td>
+                <ul>
+                  <li><p>Resource that relates a sampling feature to another sampling feature with a role indicating the nature of the relationship. </p></li>
+                  <li><p>Sampling features are frequently related to each other, as parts of complexes, through sub-sampling, and in other ways. If present, the association class SamplingFeatureComplex (Figure 9) shall link an SF_SamplingFeature to another SF_SamplingFeature.</p></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="Inverse of rdfs:domain. Defined in Ontology Documentation Profile">In Domain Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#role">samfl:role</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="Inverse of rdfs:range. Defined in Ontology Documentation Profile">In Range Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#complex">samfl:complex</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/restriction" title="Convenience property for things that subclass owl:Restriction. Defined in Ontology Documentation Profile">Restriction</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="#role">samfl:role</a>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">exactly</span>
+                          <span>1</span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="#relatedSamplingFeature">samfl:relatedSamplingFeature</a>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">min</span>
+                          <span>0</span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="Samplingpoint">
+          <h3>Sampling point
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://def.seegrid.csiro.au/ontology/om/sam-lite#SamplingPoint</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="http://def.seegrid.csiro.au/ontology/om/sam-lite">om:sam-lite</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td>
+                <ul>
+                  <li><p>Spatial sampling feature whose shape is a 0-D manifold (Point)</p></li>
+                  <li><p>Often referred to as a 'station', 'pixel', 'probe-spot' etc.</p></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#SpatialSamplingFeature">samfl:SpatialSamplingFeature</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/restriction" title="Convenience property for things that subclass owl:Restriction. Defined in Ontology Documentation Profile">Restriction</a>
+              </th>
+              <td>
+                <span>
+                  <span>
+                    <span>
+                      <a href="#shape">samfl:shape</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>only<br>
+                  </span>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="Samplingsolid">
+          <h3>Sampling solid
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://def.seegrid.csiro.au/ontology/om/sam-lite#SamplingSolid</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="http://def.seegrid.csiro.au/ontology/om/sam-lite">om:sam-lite</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>Spatial sampling feature whose shape is a 3-D manifold (Solid)</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#SpatialSamplingFeature">samfl:SpatialSamplingFeature</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/restriction" title="Convenience property for things that subclass owl:Restriction. Defined in Ontology Documentation Profile">Restriction</a>
+              </th>
+              <td>
+                <span>
+                  <span>
+                    <span>
+                      <a href="#shape">samfl:shape</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>only<br>
+                  </span>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="Samplingsurface">
+          <h3>Sampling surface
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://def.seegrid.csiro.au/ontology/om/sam-lite#SamplingSurface</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="http://def.seegrid.csiro.au/ontology/om/sam-lite">om:sam-lite</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td>
+                <ul>
+                  <li><p>Spatial sampling feature whose shape is a 2-D manifold (Surface)</p></li>
+                  <li><p>Scene, swath, cross-section, level, quadrat, area-of-interest, fence, etc.</p></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#SpatialSamplingFeature">samfl:SpatialSamplingFeature</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/restriction" title="Convenience property for things that subclass owl:Restriction. Defined in Ontology Documentation Profile">Restriction</a>
+              </th>
+              <td>
+                <span>
+                  <span>
+                    <span>
+                      <a href="#shape">samfl:shape</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>only<br>
+                  </span>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="Solid">
+          <h3>Spatial solid
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://def.seegrid.csiro.au/ontology/om/sam-lite#Solid</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td>
+                <ul>
+                  <li><p>3-D geometric object, whose exterior is a shell</p></li>
+                  <li><p>This stub is included in the sam: ontology to support constraints on the sam:shape property of a sam:SamplingSolid.  An existing OWL class that represents the notion of a Solid may be asserted to be a sub-class of this stub, but without requiring use of any particular representation of Solid in the context of a sam:SamplingSolid instance.</p></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#GeometryObject">samfl:GeometryObject</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="SpatialSamplingFeature">
+          <h3>Spatial sampling feature
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://def.seegrid.csiro.au/ontology/om/sam-lite#SpatialSamplingFeature</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="http://def.seegrid.csiro.au/ontology/om/sam-lite">om:sam-lite</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td>
+                <ul>
+                  <li><p>Sampling feature whose defining characteristic is that it samples the intended feature by geometric subsetting.</p></li>
+                  <li><p>When observations are made to estimate properties of a geospatial feature, in particular where the value of a property varies within the scope of the feature, a spatial sampling feature is used. Depending on accessibility and on the nature of the expected property variation, the sampling feature may be extensive in one, two or three spatial dimensions. Processing and visualization methods are often dependent on the topological dimension of the sampling manifold, so this provides a natural classification system for sampling features.</p>
+<p>This classification follows common practice in focussing on conventional spatial dimensions. Properties observed on sampling features may be time-dependent, but the temporal axis does not generally contribute to the classification of sampling feature classes. Sampling feature identity is usually less time-dependent than the property value.</p></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#SamplingFeature">samfl:SamplingFeature</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="Inverse of rdfs:domain. Defined in Ontology Documentation Profile">In Domain Of</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <span>
+                      <a href="#hostedProcedure">samfl:hostedProcedure</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#shape">samfl:shape</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/restriction" title="Convenience property for things that subclass owl:Restriction. Defined in Ontology Documentation Profile">Restriction</a>
+              </th>
+              <td>
+                <span>
+                  <span>
+                    <span>
+                      <a href="#shape">samfl:shape</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                    <span>
+                      <span class="cardinality">exactly</span>
+                      <span>1</span>
+                    </span><br>
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="Inverse of RDFS' subClassOf. Defined in Ontology Documentation Profile">Super Class Of</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <span>
+                      <a href="#Samplingcurve">samfl:SamplingCurve</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#Samplingpoint">samfl:SamplingPoint</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#Samplingsolid">samfl:SamplingSolid</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#Samplingsurface">samfl:SamplingSurface</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="Specimen">
+          <h3>Specimen
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://def.seegrid.csiro.au/ontology/om/sam-lite#Specimen</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="http://def.seegrid.csiro.au/ontology/om/sam-lite">om:sam-lite</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>A Specimen is a physical sample, obtained for observation(s) normally carried out ex-situ, sometimes in a laboratory.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <span>
+                      <a href="#SamplingFeature">samfl:SamplingFeature</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <a href="http://www.w3.org/ns/prov#Entity">prov:Entity</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="Inverse of rdfs:domain. Defined in Ontology Documentation Profile">In Domain Of</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <span>
+                      <a href="#currentLocation">samfl:currentLocation</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#samplingLocation">samfl:samplingLocation</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#samplingMethod">samfl:samplingMethod</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#samplingTime">samfl:samplingTime</a>
+                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#size">samfl:size</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/restriction" title="Convenience property for things that subclass owl:Restriction. Defined in Ontology Documentation Profile">Restriction</a>
+              </th>
+              <td>
+                <span>
+                  <span>
+                    <span>
+                      <a href="#samplingTime">samfl:samplingTime</a>
+                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                    </span>
+                    <span>
+                      <span class="cardinality">exactly</span>
+                      <span>1</span>
+                    </span><br>
+                  </span>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="Surface">
+          <h3>Spatial surface
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://def.seegrid.csiro.au/ontology/om/sam-lite#Surface</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td>
+                <ul>
+                  <li><p>2-D geometric object, whose exterior is a ring or polygon</p></li>
+                  <li><p>This stub is included in the sam: ontology to support constraints on the sam:shape property of a sam:SamplingSurface.  An existing OWL class that represents the notion of a Surface may be asserted to be a sub-class of this stub, but without requiring use of any particular representation of Surface in the context of a sam:SamplingSurface instance.</p></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#GeometryObject">samfl:GeometryObject</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="section" id="objectproperties">
+        <h2>Object Properties</h2>
+        <div class="property entity" id="complex">
+          <h3>sampling feature complex
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://def.seegrid.csiro.au/ontology/om/sam-lite#complex</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="http://def.seegrid.csiro.au/ontology/om/sam-lite">om:sam-lite</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#SamplingFeature">samfl:SamplingFeature</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#Samplingfeaturecomplex">samfl:SamplingFeatureComplex</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="currentLocation">
+          <h3>current location
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://def.seegrid.csiro.au/ontology/om/sam-lite#currentLocation</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="http://def.seegrid.csiro.au/ontology/om/sam-lite">om:sam-lite</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>If present, the attribute currentLocation:Location shall describe the location of a physical specimen. This may be a storage location, such as a shelf in a warehouse or a drawer in a museum.</p>
+<p>NOTE If a specimen no longer exists, for example, it was destroyed in connection with an observation act, then the currentLocation should be omitted or carry a suitable null indicator.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#Specimen">samfl:Specimen</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#Location">samfl:Location</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="hostedProcedure">
+          <h3>hosted procedure or instrument
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://def.seegrid.csiro.au/ontology/om/sam-lite#hostedProcedure</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="http://def.seegrid.csiro.au/ontology/om/sam-lite">om:sam-lite</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>A common role for a spatial sampling feature is to host instruments or procedures deployed repetitively or permanently. If present, the association Platform shall link the SF_SpatialSamplingFeature to an OM_Process deployed at it. The OM_Process has the role hostedProcedure with respect to the sampling feature.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#SpatialSamplingFeature">samfl:SpatialSamplingFeature</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#Observationprocess">samfl:ObservationProcess</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="relatedSamplingFeature">
+          <h3>related sampling feature
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://def.seegrid.csiro.au/ontology/om/sam-lite#relatedSamplingFeature</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="http://def.seegrid.csiro.au/ontology/om/sam-lite">om:sam-lite</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#SamplingFeature">samfl:SamplingFeature</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="role">
+          <h3>role
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://def.seegrid.csiro.au/ontology/om/sam-lite#role</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="http://def.seegrid.csiro.au/ontology/om/sam-lite">om:sam-lite</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#Samplingfeaturecomplex">samfl:SamplingFeatureComplex</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="sampledFeature">
+          <h3>sampled feature
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://def.seegrid.csiro.au/ontology/om/sam-lite#sampledFeature</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="http://def.seegrid.csiro.au/ontology/om/sam-lite">om:sam-lite</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>A sampling feature is established in order to make observations concerning some domain feature. The association Intention shall link the SF_SamplingFeature to the feature which the sampling feature was designed to sample. The target of this association has the role sampledFeature with respect to the sampling feature, and shall not be a sampling feature or observation. It is usually a real-world feature from an application domain (Figures 5 and 10).</p>
+<p>EXAMPLE A profile typically samples a water- or atmospheric-column; a well samples the water in an aquifer; a tissue specimen samples a part of an organism.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#SamplingFeature">samfl:SamplingFeature</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="samplingLocation">
+          <h3>sampling location
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://def.seegrid.csiro.au/ontology/om/sam-lite#samplingLocation</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="http://def.seegrid.csiro.au/ontology/om/sam-lite">om:sam-lite</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>If present, the attribute samplingLocation:GM_Object shall describe the location from where the specimen was obtained.</p>
+<p>NOTE Where a specimen has a relatedSamplingFeature whose location provides an unambiguous location then this attribute is not required. However, if the specific sampling location within the sampledFeature is important, then this attribute supports its description.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#Specimen">samfl:Specimen</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#Location">samfl:Location</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="samplingMethod">
+          <h3>sampling method
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://def.seegrid.csiro.au/ontology/om/sam-lite#samplingMethod</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="http://def.seegrid.csiro.au/ontology/om/sam-lite">om:sam-lite</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>Process used to obtain the Specimen from its sampledFeature</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#Specimen">samfl:Specimen</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#Samplingprocess">samfl:Process</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="shape">
+          <h3>spatial sampling feature shape
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://def.seegrid.csiro.au/ontology/om/sam-lite#shape</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="http://def.seegrid.csiro.au/ontology/om/sam-lite">om:sam-lite</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>The association Geometry shall link an SF_SpatialSamplingFeature to a GM_Object that describes its shape.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#SpatialSamplingFeature">samfl:SpatialSamplingFeature</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#GeometryObject">samfl:GeometryObject</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="size">
+          <h3>specimen size
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://def.seegrid.csiro.au/ontology/om/sam-lite#size</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="http://def.seegrid.csiro.au/ontology/om/sam-lite">om:sam-lite</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>the attribute size:Measure shall describe a physical extent of the specimen. This may be length, mass, volume, etc., as appropriate for the specimen instance and its material class.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#Specimen">samfl:Specimen</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#Measureorquantity">samfl:Measure</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="section" id="datatypeproperties">
+        <h2>Datatype Properties</h2>
+        <div class="property entity" id="samplingTime">
+          <h3>sampling time
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://def.seegrid.csiro.au/ontology/om/sam-lite#samplingTime</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="http://def.seegrid.csiro.au/ontology/om/sam-lite">om:sam-lite</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>samplingTime records when the specimen was retrieved from the sampled feature.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#Specimen">samfl:Specimen</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/2001/XMLSchema#dateTime">xsd:dateTime</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="section" id="functionalproperties">
+        <h2>Functional Properties</h2>
+        <div class="property entity" id="samplingTime">
+          <h3>sampling time
+            <sup class="sup-fp" title="OWL Functional Property">fp</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://def.seegrid.csiro.au/ontology/om/sam-lite#samplingTime</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="http://def.seegrid.csiro.au/ontology/om/sam-lite">om:sam-lite</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>samplingTime records when the specimen was retrieved from the sampled feature.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#Specimen">samfl:Specimen</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/2001/XMLSchema#dateTime">xsd:dateTime</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="shape">
+          <h3>spatial sampling feature shape
+            <sup class="sup-fp" title="OWL Functional Property">fp</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://def.seegrid.csiro.au/ontology/om/sam-lite#shape</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="http://def.seegrid.csiro.au/ontology/om/sam-lite">om:sam-lite</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>The association Geometry shall link an SF_SpatialSamplingFeature to a GM_Object that describes its shape.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#SpatialSamplingFeature">samfl:SpatialSamplingFeature</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#GeometryObject">samfl:GeometryObject</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div id="namespaces">
+        <h2>Namespaces</h2>
+        <dl>
+          <dt id="dc">dc</dt>
+          <dd>
+            <code>http://purl.org/dc/elements/1.1/</code>
+          </dd>
+          <dt id="dct">dct</dt>
+          <dd>
+            <code>http://purl.org/dc/terms/</code>
+          </dd>
+          <dt id="dcterms">dcterms</dt>
+          <dd>
+            <code>http://purl.org/dc/terms/</code>
+          </dd>
+          <dt id="orcid">orcid</dt>
+          <dd>
+            <code>http://orcid.org/</code>
+          </dd>
+          <dt id="people:">people:</dt>
+          <dd>
+            <code>http://registry.it.csiro.au/people/</code>
+          </dd>
+          <dt id="19156-2011">19156-2011</dt>
+          <dd>
+            <code>http://def.seegrid.csiro.au/isotc211/iso19156/2011/</code>
+          </dd>
+          <dt id="om-lite">om-lite</dt>
+          <dd>
+            <code>http://def.seegrid.csiro.au/ontology/om/om-lite#</code>
+          </dd>
+          <dt id="om">om</dt>
+          <dd>
+            <code>http://def.seegrid.csiro.au/ontology/om/</code>
+          </dd>
+          <dt id="owl">owl</dt>
+          <dd>
+            <code>http://www.w3.org/2002/07/owl#</code>
+          </dd>
+          <dt id="prov">prov</dt>
+          <dd>
+            <code>http://www.w3.org/ns/prov#</code>
+          </dd>
+          <dt id="rdf">rdf</dt>
+          <dd>
+            <code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code>
+          </dd>
+          <dt id="rdfs">rdfs</dt>
+          <dd>
+            <code>http://www.w3.org/2000/01/rdf-schema#</code>
+          </dd>
+          <dt id="samfl">samfl</dt>
+          <dd>
+            <code>http://def.seegrid.csiro.au/ontology/om/sam-lite#</code>
+          </dd>
+          <dt id="skos">skos</dt>
+          <dd>
+            <code>http://www.w3.org/2004/02/skos/core#</code>
+          </dd>
+          <dt id="vann">vann</dt>
+          <dd>
+            <code>http://purl.org/vocab/vann/</code>
+          </dd>
+          <dt id="xsd">xsd</dt>
+          <dd>
+            <code>http://www.w3.org/2001/XMLSchema#</code>
+          </dd>
+        </dl>
+      </div>
+      <div id="legend">
+        <h2>Legend</h2>
+        <table class="entity">
+          <tr>
+            <td>
+              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+            </td>
+            <td>Classes</td>
+          </tr>
+          <tr>
+            <td>
+              <sup class="sup-op" title="OWL Object Property">op</sup>
+            </td>
+            <td>Object Properties</td>
+          </tr>
+          <tr>
+            <td>
+              <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+            </td>
+            <td>Datatype Properties</td>
+          </tr>
+          <tr>
+            <td>
+              <sup class="sup-fp" title="OWL Functional Property">fp</sup>
+            </td>
+            <td>Functional Properties</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div id="pylode">
+      <p>made by 
+        <a href="https://github.com/rdflib/pyLODE">
+          <span id="p">p</span>
+          <span id="y">y</span>
+          <span>LODE</span>
+        </a>
+        <a href="https://github.com/rdflib/pyLODE/release/3.0.2a" id="version">3.0.2a</a>
+      </p>
+    </div>
+    <div id="toc">
+      <h3>Table of Contents</h3>
+      <ul class="first">
+        <li>
+          <h4>
+            <a href="#metadata">Metadata</a>
+          </h4>
+        </li>
+        <li>
+          <h4>
+            <a href="#classes">Classes</a>
+          </h4>
+          <ul class="second">
+            <li>
+              <a href="#Spatialcurve">Spatial curve</a>
+            </li>
+            <li>
+              <a href="#GeometryObject">Geometry object</a>
+            </li>
+            <li>
+              <a href="#Location">Location</a>
+            </li>
+            <li>
+              <a href="#Measureorquantity">Measure or quantity</a>
+            </li>
+            <li>
+              <a href="#Observationprocess">Observation process</a>
+            </li>
+            <li>
+              <a href="#Point">Spatial point</a>
+            </li>
+            <li>
+              <a href="#Samplingprocess">Sampling process</a>
+            </li>
+            <li>
+              <a href="#Samplingcurve">Sampling curve</a>
+            </li>
+            <li>
+              <a href="#SamplingFeature">Sampling Feature</a>
+            </li>
+            <li>
+              <a href="#Samplingfeaturecomplex">Sampling feature complex</a>
+            </li>
+            <li>
+              <a href="#Samplingpoint">Sampling point</a>
+            </li>
+            <li>
+              <a href="#Samplingsolid">Sampling solid</a>
+            </li>
+            <li>
+              <a href="#Samplingsurface">Sampling surface</a>
+            </li>
+            <li>
+              <a href="#Solid">Spatial solid</a>
+            </li>
+            <li>
+              <a href="#SpatialSamplingFeature">Spatial sampling feature</a>
+            </li>
+            <li>
+              <a href="#Specimen">Specimen</a>
+            </li>
+            <li>
+              <a href="#Surface">Spatial surface</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h4>
+            <a href="#objectproperties">Object Properties</a>
+          </h4>
+          <ul class="second">
+            <li>
+              <a href="#complex">sampling feature complex</a>
+            </li>
+            <li>
+              <a href="#currentLocation">current location</a>
+            </li>
+            <li>
+              <a href="#hostedProcedure">hosted procedure or instrument</a>
+            </li>
+            <li>
+              <a href="#relatedSamplingFeature">related sampling feature</a>
+            </li>
+            <li>
+              <a href="#role">role</a>
+            </li>
+            <li>
+              <a href="#sampledFeature">sampled feature</a>
+            </li>
+            <li>
+              <a href="#samplingLocation">sampling location</a>
+            </li>
+            <li>
+              <a href="#samplingMethod">sampling method</a>
+            </li>
+            <li>
+              <a href="#shape">spatial sampling feature shape</a>
+            </li>
+            <li>
+              <a href="#size">specimen size</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h4>
+            <a href="#datatypeproperties">Datatype Properties</a>
+          </h4>
+          <ul class="second">
+            <li>
+              <a href="#samplingTime">sampling time</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h4>
+            <a href="#functionalproperties">Functional Properties</a>
+          </h4>
+          <ul class="second">
+            <li>
+              <a href="#samplingTime">sampling time</a>
+            </li>
+            <li>
+              <a href="#shape">spatial sampling feature shape</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h4>
+            <a href="#namespaces">Namespaces</a>
+          </h4>
+          <ul class="second">
+            <li>
+              <a href="#dc">dc</a>
+            </li>
+            <li>
+              <a href="#dct">dct</a>
+            </li>
+            <li>
+              <a href="#dcterms">dcterms</a>
+            </li>
+            <li>
+              <a href="#orcid">orcid</a>
+            </li>
+            <li>
+              <a href="#people:">people:</a>
+            </li>
+            <li>
+              <a href="#19156-2011">19156-2011</a>
+            </li>
+            <li>
+              <a href="#om-lite">om-lite</a>
+            </li>
+            <li>
+              <a href="#om">om</a>
+            </li>
+            <li>
+              <a href="#owl">owl</a>
+            </li>
+            <li>
+              <a href="#prov">prov</a>
+            </li>
+            <li>
+              <a href="#rdf">rdf</a>
+            </li>
+            <li>
+              <a href="#rdfs">rdfs</a>
+            </li>
+            <li>
+              <a href="#samfl">samfl</a>
+            </li>
+            <li>
+              <a href="#skos">skos</a>
+            </li>
+            <li>
+              <a href="#vann">vann</a>
+            </li>
+            <li>
+              <a href="#xsd">xsd</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h4>
+            <a href="#legend">Legend</a>
+          </h4>
+          <ul class="second"></ul>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
