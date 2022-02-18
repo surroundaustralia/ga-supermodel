@@ -338,16 +338,22 @@ The Data Domains described above are implemented using a number of resources. Th
 * **GA Samples ontology**
 ** https://surroundaustralia.github.io/ga-supermodel/ga-samples.html
 ** A Semantic Web implementation of the Sampling Features Schema described in clauses 9-11 of <<ISO19156>>
-** this ontology is no longer in direct use but is the foundation for the _GA Samples Ontology_
+** This ontology directly inherits from the _SAM Lite ontology_ but uses lots of _SOSA_ too
+** It is concerned only with characterising physical samples
 
 * **SAM Lite ontology**
 ** https://surroundaustralia.github.io/ga-supermodel/sam-lite.html
 ** A Semantic Web implementation of the Sampling Features Schema described in clauses 9-11 of <<ISO19156>>
-** this ontology is no longer in direct use but is the foundation for the _GA Samples Ontology_
+** This ontology is no longer in direct use but is the foundation for the _GA Samples Ontology_
 
 * **GA's _Samples_ API online**
 ** http://pid.geoscience.gov.au/sample/
 ** This API provides access to multiple model representations of the metadata of Geosceicne Australia's samples dataset
+
+* **Example sample data: AU128**
+** https://github.com/surroundaustralia/ga-supermodel/blob/main/domain-models/samples/AU128.sosa.ttl[SOSA Modelling]
+** https://github.com/surroundaustralia/ga-supermodel/blob/main/domain-models/samples/AU128.sam.ttl[SAM Modelling]
+** https://github.com/surroundaustralia/ga-supermodel/blob/main/domain-models/samples/AU128.prov.ttl[PROV Modelling]
 
 === Spatiality Resources
 
