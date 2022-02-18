@@ -1,0 +1,172 @@
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX gas: <http://pid.geoscience.gov.au/def/ga-samples/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX samfl: <http://def.seegrid.csiro.au/ontology/om/sam-lite#>
+PREFIX sdo: <http://schema.org/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX vann: <http://purl.org/vocab/vann/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+<http://pid.geoscience.gov.au/def/ga-samples>
+    a owl:Ontology ;
+    dcterms:contributor <http://orcid.org/0000-0002-3884-3420> ;
+    dcterms:created "2022-02-18"^^xsd:date ;
+    dcterms:creator <http://orcid.org/0000-0002-8742-7730> ;
+    dcterms:description """A simple OWL representation of parts of the Sampling Features Schema described in clauses 9-11 of ISO 19156:2011 Geographic Information - Observations and Measurements and elements from other, related, ontologies.
+
+This ontology is centred on the main elements of the now unsuported SAM-Lite (https://surroundaustralia.github.io/ga-supermodel/sam-lite.html) ontology which is a simple OWL representation of parts of the Sampling Features Schema """@en ;
+    dcterms:modified "2022-02-18" ;
+    dcterms:publisher <https://linked.data.gov.au/org/ga> ;
+    dcterms:title "Geoscience Australia Samples Ontology"@en ;
+    vann:preferredNamespacePrefix "gas" ;
+    owl:versionIRI gas:0.1 ;
+    owl:versionInfo "0.1"@en ;
+.
+
+gas:currentLocation
+    a owl:ObjectProperty ;
+    rdfs:domain gas:Specimen ;
+    rdfs:isDefinedBy <http://pid.geoscience.gov.au/def/ga-samples> ;
+    rdfs:range dcterms:Location ;
+    owl:equivalentProperty samfl:currentLocation ;
+    skos:definition """The location of a physical specimen. This may be a storage location, such as a shelf in a warehouse or a drawer in a museum.
+
+NOTE If a specimen no longer exists, for example, it was destroyed in connection with an observation act, then the currentLocation should be omitted or carry a suitable null indicator."""@en ;
+    skos:prefLabel "current location"@en ;
+.
+
+gas:samplingLocation
+    a owl:ObjectProperty ;
+    gas:samplingLocation owl:propertyChainAxiom ;
+    rdfs:domain gas:Specimen ;
+    rdfs:isDefinedBy <http://pid.geoscience.gov.au/def/ga-samples> ;
+    rdfs:range dcterms:Location ;
+    owl:equivalentProperty samfl:samplingLocation ;
+    skos:definition """The location from where the specimen was obtained.
+
+NOTE Where a specimen has a relatedSamplingFeature whose location provides an unambiguous location then this attribute is not required. However, if the specific sampling location within the sampledFeature is important, then this attribute supports its description."""@en ;
+    skos:prefLabel "sampling location"@en ;
+    skos:scopeNote "This property is related to SOSA via the property chain axiom gas:samplingLocation owl:propertyChainAxiom ( sosa:isResultOf geo:hasGeometry ) which essentially links a sosa:Sample to the location of the sosa:Sampling used to obtain it"@en ;
+.
+
+gas:samplingMethod
+    a owl:ObjectProperty ;
+    rdfs:domain gas:Specimen ;
+    rdfs:isDefinedBy <http://pid.geoscience.gov.au/def/ga-samples> ;
+    rdfs:range sosa:Procedure ;
+    owl:equivalentProperty samfl:samplingMethod ;
+    skos:definition "Process used to obtain the Specimen from its sampledFeature"@en ;
+    skos:prefLabel "sampling method"@en ;
+.
+
+gas:samplingTime
+    a owl:DatatypeProperty ;
+    rdfs:domain gas:Specimen ;
+    rdfs:isDefinedBy <http://pid.geoscience.gov.au/def/ga-samples> ;
+    rdfs:range [
+            owl:unionOf (
+                    xsd:date
+                    xsd:dateTime
+                    xsd:dateTimeStamp
+                )
+        ] ;
+    owl:equivalentProperty samfl:samplingTime ;
+    owl:propertyChainAxiom (
+        sosa:isResultOf
+        sosa:resultTime
+    ) ;
+    skos:definition "When the specimen was retrieved from the sampled feature."@en ;
+    skos:prefLabel "sampling time"@en ;
+    skos:scopeNote "This property is related to SOSA via the property chain axiom gas:samplingLocation owl:propertyChainAxiom ( sosa:isResultOf sosa:resultTime ) which essentially links a sosa:Sample to the time of the sosa:Sampling used to obtain it"@en ;
+.
+
+sosa:hasSampledFeature
+    a owl:ObjectProperty ;
+    rdfs:domain sosa:Sample ;
+    rdfs:isDefinedBy sosa: ;
+    rdfs:range sosa:FeatureOfInterest ;
+    owl:equivalentProperty samfl:sampledFeature ;
+    skos:definition "Link to the ultimate feature of interest of the context sample - i.e. the end of a chain of isSampleOf relations"@en ;
+    skos:prefLabel "has sampled feature"@en ;
+    skos:scopeNote "See not in sosa:isSampleOf"@en ;
+.
+
+sosa:isSampleOf
+    a owl:FunctionalProperty ;
+    rdfs:domain sosa:Sample ;
+    rdfs:isDefinedBy sosa: ;
+    rdfs:range sosa:Sample ;
+    owl:equivalentProperty samfl:sampledFeature ;
+    skos:definition "Relation from a Sample to the FeatureOfInterest that it is intended to be representative of."@en ;
+    skos:prefLabel "is sample of"@en ;
+    skos:scopeNote """The definition for samfl:sampledFeature is: A sampling feature is established in order to make observations concerning some domain feature. The association Intention shall link the SF_SamplingFeature to the feature which the sampling feature was designed to sample. The target of this association has the role sampledFeature with respect to the sampling feature, and shall not be a sampling feature or observation. It is usually a real-world feature from an application domain (Figures 5 and 10).
+
+EXAMPLE A profile typically samples a water- or atmospheric-column; a well samples the water in an aquifer; a tissue specimen samples a part of an organism.
+
+NOTE: In this ontology sosa:isSampleOf is expecte to link Samples to other Samples which, relative to the domain are Features of Interested but may be defined only as Samples themselves. For direct links from a Sample to an onject only declared as a Feature of Interest, sosa:hasSampledFeature should be used."""@en ;
+.
+
+<http://orcid.org/0000-0002-3884-3420>
+    a sdo:Person ;
+    sdo:affiliation <https://linked.data.gov.au/org/csiro> ;
+    sdo:email "simon.cox@csiro.au"^^xsd:anyURI ;
+    sdo:name "Simon J.D. Cox" ;
+.
+
+<http://orcid.org/0000-0002-8742-7730>
+    a sdo:Person ;
+    sdo:affiliation <https://linked.data.gov.au/org/surround> ;
+    sdo:email "nicholas.car@surroundaustralia.com"^^xsd:anyURI ;
+    sdo:name "Nicholas J. Car" ;
+.
+
+sosa:FeatureOfInterest
+    a owl:Class ;
+    rdfs:isDefinedBy sosa: ;
+    skos:definition "The thing whose property is being estimated or calculated in the course of an Observation to arrive at a Result, or whose property is being manipulated by an Actuator, or which is being sampled or transformed in an act of Sampling."@en ;
+    skos:prefLabel "Specimen"@en ;
+    skos:scopeNote "There is no direct equivalent to this in SAM Lite with the property equivalent to sosa:hasSampledFeature, samfl:sampledFeature, does not specify a range restriction."@en ;
+.
+
+sosa:Procedure
+    a owl:Class ;
+    rdfs:isDefinedBy sosa: ;
+    owl:equivalentClass samfl:Process ;
+    skos:definition "A workflow, protocol, plan, algorithm, or computational method specifying how to make an Observation, create a Sample, or make a change to the state of the world (via an Actuator). A Procedure is re-usable, and might be involved in many Observations, Samplings, or Actuations. It explains the steps to be carried out to arrive at reproducible Results."@en ;
+    skos:prefLabel "Procedure"@en ;
+    skos:scopeNote """The definition for samfl:Process is: Process involved in sampling. This may include specimen retrieval or processing, surveying a spatial sampling feature, excavation to provide access to a sampling feature, or any other process whose outcome is a new sampling feature.
+
+The result of a application of a sampling process is a - new or - transformed sample."""@en ;
+.
+
+dcterms:Location
+    a owl:Class ;
+    rdfs:isDefinedBy dcterms: ;
+    owl:equivalentClass samfl:Location ;
+    skos:definition "A spatial region or named place."@en ;
+    skos:prefLabel "Location"@en ;
+    skos:scopeNote """The definition for samfl:Location is:Location, expressed as either a geometry object or feature
+
+samfl:GeometryObject is subclass
+
+w3geo:SpatialThing, geosparql:SpatialObject are subclasses"""@en ;
+.
+
+<https://linked.data.gov.au/org/surround>
+    a sdo:Organization ;
+    sdo:name "SURROUND Australia Pty Ltd" ;
+    sdo:url "https://surroundaustralia.com"^^xsd:anyURI ;
+.
+
+gas:Specimen
+    a owl:Class ;
+    rdfs:isDefinedBy <http://pid.geoscience.gov.au/def/ga-samples> ;
+    rdfs:subClassOf sosa:Sample ;
+    owl:equivalentProperty samfl:Specimen ;
+    skos:definition "A Specimen is a physical sample, obtained for observation(s) normally carried out ex-situ, sometimes in a laboratory."@en ;
+    skos:prefLabel "Specimen"@en ;
+    skos:scopeNote "The different between a Specimen and a sosa:Sample is that the Specimen has a physical presense and is likely to be retained somewhere other than where it was obtained, e.g. on a shelf, in a building. It may not be retained but was, at least at some point, a physical thing."@en ;
+.
