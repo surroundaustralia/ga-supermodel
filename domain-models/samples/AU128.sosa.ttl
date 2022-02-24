@@ -1,5 +1,5 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix foiType: <http://pid.geoscience.gov.au/def/voc/featureofinteresttype/> ;
+@prefix foiType: <http://pid.geoscience.gov.au/def/voc/featureofinteresttype/> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
@@ -7,22 +7,25 @@
 @prefix wiki: <https://www.wikidata.org/wiki/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://pid.geoscience.gov.au/sample/AU128> 
+<http://pid.geoscience.gov.au/sample/AU128>
     a sosa:Sample ;
     rdfs:label "Sample AU128" ;
     sosa:isSampleOf <http://pid.geoscience.gov.au/site/17594> ;
     sosa:hasSampledFeature <http://sweetontology.net/realmGeol/Lithosphere> ;
+    sosa:isResultOf [
+        a sosa:Sampling ;
+        sosa:hasSamplingMethod <http://pid.geoscience.gov.au/def/voc/ga/igsncode/Rock> ;
+#        sosa:resultTime "TODO: Unclear in data which datetime is relevant" ;
+    ]
 .
 
 <http://pid.geoscience.gov.au/site/17594>
-    a tern:Site ;
-    # tidy up the FoI types vocab, ref https://github.com/GeoscienceAustralia/sss-api/blob/409d921a2f8da44d21ab721c4abd783107fede96/model/lookups.py#L827
-    dcterms:type foiType:borehole ; 
+    a sosa:Sample ;
     wiki:Q2633778 "NaN" ; # elevation. keep only when value is not None
-    geo:hasGeometry [ 
+    geo:hasGeometry [
         a geo:Geometry ;
-        geo:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4283> POLYGON((137.6250691792 ,  ,  -34.0411726571,  -34.0411726571, 137.6250691792 ))"^^geo:wktLiteral 
-    ] ;     
+        geo:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4283> POLYGON((137.6250691792 ,  ,  -34.0411726571,  -34.0411726571, 137.6250691792 ))"^^geo:wktLiteral
+    ] ;
 .
 
 <http://sweetontology.net/realmGeol/Lithosphere>

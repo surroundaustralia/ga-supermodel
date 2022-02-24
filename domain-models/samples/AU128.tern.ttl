@@ -1,0 +1,43 @@
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
+PREFIX void: <http://rdfs.org/ns/void#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+<http://pid.geoscience.gov.au/sample/AU128>
+    a
+        tern:Sample ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/d738a3f9-9b00-4adf-9dc8-0577269b691d> ;
+    dcterms:identifier "2000362065B" ;
+    sosa:isResultOf [
+            a tern:Sampling ;
+            sosa:hasFeatureOfInterest <http://sweetontology.net/realmGeol/Lithosphere> ;
+            sosa:hasResult <http://pid.geoscience.gov.au/sample/AU128> ;
+            sosa:resultTime "0000-00-00T00:00:00"^^xsd:dateTime ;
+            sosa:usedProcedure <http://pid.geoscience.gov.au/def/voc/ga/igsncode/Rock> ;
+            tern:hasSite <http://pid.geoscience.gov.au/site/17594>
+        ] ;
+    sosa:isSampleOf <http://pid.geoscience.gov.au/site/17594> ;
+    void:inDataset <http://pid.geoscience.gov.au/sample> ;
+.
+
+<http://pid.geoscience.gov.au/site/17594>
+    a tern:Site ;
+    dcterms:title "TODO: get from GA DB" ;
+.
+
+<http://sweetontology.net/realmGeol/Lithosphere>
+    a tern:FeatureOfInterest ;
+    rdfs:label "Lithosphere" ;
+    void:inDataset <http://pid.geoscience.gov.au/sample> ;
+    rdfs:comment "The outermost shell of a terrestrial-type planet or natural satellite. On Earth, it is composed of the crust and the portion of the upper mantle that behaves elastically on time scales of up to thousands of years or more." ;
+    tern:featureType <http://linked.data.gov.au/def/tern-cv/2cf3ed29-440e-4a50-9bbc-5aab30df9fcd> ;
+.
+
+<http://pid.geoscience.gov.au/sample>
+    a tern:RDFDataset ;
+    dcterms:description "The collection of approximately 2.5 million geological material samples' metadata, held by Geoscience Australia" ;
+    dcterms:issued "0000-00-00"^^xsd:date ;
+    dcterms:title "Geoscience Australia's Material Samples" ;
+.
