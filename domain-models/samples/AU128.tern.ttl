@@ -1,2 +1,13 @@
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+
+
+<http://pid.geoscience.gov.au/sample/AU128>
+    a tern:Sample ;
+    sosa:isResultOf [
+            a tern:Sampling ;
+            tern:hasSite <http://pid.geoscience.gov.au/site/17594> ;
+                    ] .
+
 <http://pid.geoscience.gov.au/site/17594>
     a tern:Site .
