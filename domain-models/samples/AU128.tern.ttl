@@ -1,0 +1,2 @@
+<http://pid.geoscience.gov.au/site/17594>
+    a tern:Site .
