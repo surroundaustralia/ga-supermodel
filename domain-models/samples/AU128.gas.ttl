@@ -1,42 +1,34 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix foiType: <http://pid.geoscience.gov.au/def/voc/featureofinteresttype/> .
+@prefix gas: <http://pid.geoscience.gov.au/def/ga-samples> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix samfl: <http://def.seegrid.csiro.au/ontology/om/sam-lite#> .
 
 <http://pid.geoscience.gov.au/org/ga/geoscienceaustralia> a org:Organization ;
     foaf:name "Geoscience Australia" .
 
 <http://pid.geoscience.gov.au/sample/AU128> 
-    a samfl:Specimen ;
+    a gas:Specimen ;
     rdfs:label "Sample igsn:AU128" ;
-    samfl:currentLocation [ 
-        a samfl:Location ;
+    gas:currentLocation [ 
+        a dct:Location ;
         dct:description "GA Services building" ;
     ] ;
-    samfl:materialClass <http://vocabulary.odm2.org/medium/rock> ;
-    samfl:sampledFeature <http://pid.geoscience.gov.au/site/17594> ;
-    samfl:samplingLocation [ 
-        a samfl:Point ;
+    gas:hasSampledFeature <http://pid.geoscience.gov.au/site/17594> ;
+    gas:samplingLocation [
+        a geo:Geometry ;
         geo:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4283> POINT(137.6250691792 -34.0411726571)"^^geo:wktLiteral ;
     ] ;
-    samfl:samplingMethod <http://pid.geoscience.gov.au/def/voc/ga/igsncode/Rock> ;  # clearly an error
+    gas:samplingMethod <http://pid.geoscience.gov.au/def/voc/ga/igsncode/Rock> ;  # clearly an error
 .
 
-<http://pid.geoscience.gov.au/site/17594> a samfl:SamplingFeature ;
+<http://pid.geoscience.gov.au/site/17594> a gas:SamplingFeature ;
     rdfs:label "Site 17594" ;
-    samfl:sampledFeature <http://sweetontology.net/realmGeol/Lithosphere> ;
-    dct:type foiType:borehole ;
-    geo:hasGeometry [ 
-        a samfl:Surface ;
+    geo:hasGeometry [
+        a geo:Geometry ;
         geo:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4283> POLYGON((137.6250691792 ,  ,  -34.0411726571,  -34.0411726571, 137.6250691792 ))"^^geo:wktLiteral ;
     ] ;
-.
-
-<http://sweetontology.net/realmGeol/Lithosphere> a owl:Thing ;
-    rdfs:label "lithosphere" ;
-    rdfs:comment "A top-level feature that the Site samples" ;
 .
