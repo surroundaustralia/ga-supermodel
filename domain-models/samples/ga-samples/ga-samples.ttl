@@ -165,7 +165,7 @@ gas:Specimen
     a owl:Class ;
     rdfs:isDefinedBy <http://pid.geoscience.gov.au/def/ga-samples> ;
     rdfs:subClassOf sosa:Sample ;
-    owl:equivalentProperty samfl:Specimen ;
+    owl:equivalentClass samfl:Specimen ;
     skos:definition "A Specimen is a physical sample, obtained for observation(s) normally carried out ex-situ, sometimes in a laboratory."@en ;
     skos:prefLabel "Specimen"@en ;
     skos:scopeNote "The different between a Specimen and a sosa:Sample is that the Specimen has a physical presense and is likely to be retained somewhere other than where it was obtained, e.g. on a shelf, in a building. It may not be retained but was, at least at some point, a physical thing."@en ;

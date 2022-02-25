@@ -15,14 +15,12 @@
     sosa:isResultOf [
         a sosa:Sampling ;
         sosa:hasSamplingMethod <http://pid.geoscience.gov.au/def/voc/ga/igsncode/Rock> ;
-        sosa:resultTime "TODO: Unclear in data which datetime is relevant" ;
+#        sosa:resultTime "TODO: Unclear in data which datetime is relevant" ;
     ]
 .
 
 <http://pid.geoscience.gov.au/site/17594>
     a sosa:Sample ;
-    # tidy up the FoI types vocab, ref https://github.com/GeoscienceAustralia/sss-api/blob/409d921a2f8da44d21ab721c4abd783107fede96/model/lookups.py#L827
-    dcterms:type foiType:borehole ;
     wiki:Q2633778 "NaN" ; # elevation. keep only when value is not None
     geo:hasGeometry [
         a geo:Geometry ;
