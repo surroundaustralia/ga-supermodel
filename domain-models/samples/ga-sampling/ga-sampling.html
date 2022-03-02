@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Geoscience Australia Samples Ontology</title>
+    <title>Geoscience Australia Sampling Profile</title>
     <style>
         #pylode {
             position: fixed;
@@ -263,13 +263,16 @@
     <script id="schema.org" type="application/ld+json">
 [
   {
-    "@id": "http://pid.geoscience.gov.au/def/ga-samples",
+    "@id": "http://pid.geoscience.gov.au/def/ga-sampling",
     "@type": [
       "https://schema.org/DefinedTermSet"
     ],
     "https://schema.org/contributor": [
       {
         "@id": "http://orcid.org/0000-0002-3884-3420"
+      },
+      {
+        "@id": "https://orcid.org/0000-0002-3322-1868"
       }
     ],
     "https://schema.org/creator": [
@@ -285,19 +288,19 @@
     ],
     "https://schema.org/dateModified": [
       {
-        "@value": "2022-02-18"
+        "@value": "2022-03-02"
       }
     ],
     "https://schema.org/description": [
       {
         "@language": "en",
-        "@value": "A simple OWL representation of parts of the Sampling Features Schema described in clauses 9-11 of ISO 19156:2011 Geographic Information - Observations and Measurements and elements from other, related, ontologies.\n\nThis ontology is centred on the main elements of the now unsuported SAM-Lite (https://surroundaustralia.github.io/ga-supermodel/sam-lite.html) ontology which is a simple OWL representation of parts of the Sampling Features Schema "
+        "@value": "A simple profile of an OWL representation of the Sampling Features Schema described in clauses 9-11 of ISO 19156:2011 Geographic Information - Observations and Measurements for Samples information and other ontologies, such as Sensor, Observation, Sample, and Actuator (SOSA) for Sampling events and Feature relation.\n\nThis profile's Sample modelling is centred on the main elements of the now unsuported SAM-Lite (https://surroundaustralia.github.io/ga-supermodel/sam-lite.html) ontology which is a simple OWL representation of parts of the Sampling Features Schema.\n\nThe notion of a 'Site' as a special kind of Sample is present in many standards and ontologies, with the TERN Ontology being the one directly reused here."
       }
     ],
     "https://schema.org/name": [
       {
         "@language": "en",
-        "@value": "Geoscience Australia Samples Ontology"
+        "@value": "Geoscience Australia Sampling Profile"
       }
     ],
     "https://schema.org/publisher": [
@@ -311,97 +314,8 @@
   </head>
   <body>
     <div id="content">
-        <div class="section" id="metadata">
-            <h1>Geoscience Australia Samples Ontology</h1>
-            <h2>Metadata</h2>
-            <dl>
-              <div>
-                <dt>
-                  <strong>IRI</strong>
-                </dt>
-                <dd>
-                  <code>http://pid.geoscience.gov.au/def/ga-samples</code>
-                </dd>
-              </div>
-              <div>
-                <dt>
-                  <a class="hover_property" href="http://purl.org/dc/terms/title" title="A name given to the resource. Defined in DCMI Metadata Terms">Title</a>
-                </dt>
-                <dd><p>Geoscience Australia Samples Ontology</p></dd>
-              </div>
-              <div>
-                <dt>
-                  <a class="hover_property" href="http://purl.org/dc/terms/publisher" title="An entity responsible for making the resource available. Defined in DCMI Metadata Terms">Publisher</a>
-                </dt>
-                <dd>
-                  <a href="https://linked.data.gov.au/org/ga">Geoscience Australia</a>
-                </dd>
-              </div>
-              <div>
-                <dt>
-                  <a class="hover_property" href="http://purl.org/dc/terms/creator" title="An entity responsible for making the resource. Defined in DCMI Metadata Terms">Creator</a>
-                </dt>
-                <dd>
-                  <a href="http://orcid.org/0000-0002-8742-7730">Nicholas J. Car</a> (<a href="https://linked.data.gov.au/org/surround">SURROUND Australia Pty Ltd</a>)
-                </dd>
-              </div>
-              <div>
-                <dt>
-                  <a class="hover_property" href="http://purl.org/dc/terms/contributor" title="An entity responsible for making contributions to the resource. Defined in DCMI Metadata Terms">Contributor</a>
-                </dt>
-                <dd>
-                  <a href="http://orcid.org/0000-0002-3884-3420">Simon JD Cox</a> (<a href="https://linked.data.gov.au/org/csiro">CSIRO</a>)
-                </dd>
-              </div>
-              <div>
-                <dt>
-                  <a class="hover_property" href="http://purl.org/dc/terms/created" title="Date of creation of the resource. Defined in DCMI Metadata Terms">Date Created</a>
-                </dt>
-                <dd><p>2022-02-18</p></dd>
-              </div>
-              <div>
-                <dt>
-                  <a class="hover_property" href="http://purl.org/dc/terms/modified" title="Date on which the resource was changed. Defined in DCMI Metadata Terms">Date Modified</a>
-                </dt>
-                <dd><p>2022-02-18</p></dd>
-              </div>
-              <div>
-                <dt>
-                  <a class="hover_property" href="http://www.w3.org/2002/07/owl#versionIRI" title="The property that identifies the version IRI of an ontology. Defined in The OWL 2 Schema vocabulary (OWL 2)">Version Iri</a>
-                </dt>
-                <dd>
-                  <a href="#0.1">gas:0.1</a>
-                </dd>
-              </div>
-              <div>
-                <dt>
-                  <a class="hover_property" href="http://www.w3.org/2002/07/owl#versionInfo" title="The annotation property that provides version information for an ontology or another OWL construct. Defined in The OWL 2 Schema vocabulary (OWL 2)">Version Info</a>
-                </dt>
-                <dd><p>0.1</p></dd>
-              </div>
-              <div>
-                <dt>
-                  <a class="hover_property" href="http://purl.org/vocab/vann/preferredNamespacePrefix" title="None. Defined in None">Preferred Namespace Prefix</a>
-                </dt>
-                <dd><p>gas</p></dd>
-              </div>
-              <div>
-                <dt>
-                  <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
-                </dt>
-                <dd><p>A simple OWL representation of parts of the Sampling Features Schema described in clauses 9-11 of ISO 19156:2011 Geographic Information - Observations and Measurements and elements from other, related, ontologies.</p>
-        <p>This ontology is centred on the main elements of the now unsuported SAM-Lite (https://surroundaustralia.github.io/ga-supermodel/sam-lite.html) ontology which is a simple OWL representation of parts of the Sampling Features Schema </p></dd>
-              </div>
-            </dl>
-          </div>
-        <div class="section" id="overview">
-          <h2>Overview Diagrams</h2>
-          <figure style="border:solid 1px black; padding:10px;">
-              <img style="width:70%" src="material-sample.png" />
-              <p><strong>Figure 1</strong>: The central <code>MaterialSample</code> class and its properties</p>
-          </figure>
-        </div>
-        <h1>Geoscience Australia Samples Ontology</h1>
+      <div class="section" id="metadata">
+        <h1>Geoscience Australia Sampling Profile</h1>
         <h2>Metadata</h2>
         <dl>
           <div>
@@ -409,14 +323,14 @@
               <strong>IRI</strong>
             </dt>
             <dd>
-              <code>http://pid.geoscience.gov.au/def/ga-samples</code>
+              <code>http://pid.geoscience.gov.au/def/ga-sampling</code>
             </dd>
           </div>
           <div>
             <dt>
               <a class="hover_property" href="http://purl.org/dc/terms/title" title="A name given to the resource. Defined in DCMI Metadata Terms">Title</a>
             </dt>
-            <dd><p>Geoscience Australia Samples Ontology</p></dd>
+            <dd><p>Geoscience Australia Sampling Profile</p></dd>
           </div>
           <div>
             <dt>
@@ -439,7 +353,14 @@
               <a class="hover_property" href="http://purl.org/dc/terms/contributor" title="An entity responsible for making contributions to the resource. Defined in DCMI Metadata Terms">Contributor</a>
             </dt>
             <dd>
-              <a href="http://orcid.org/0000-0002-3884-3420">orcid:0000-0002-3884-3420</a>
+              <ul>
+                <li>
+                  <a href="http://orcid.org/0000-0002-3884-3420">orcid:0000-0002-3884-3420</a>
+                </li>
+                <li>
+                  <a href="https://orcid.org/0000-0002-3322-1868">orcid:0000-0002-3322-1868</a>
+                </li>
+              </ul>
             </dd>
           </div>
           <div>
@@ -452,21 +373,21 @@
             <dt>
               <a class="hover_property" href="http://purl.org/dc/terms/modified" title="Date on which the resource was changed. Defined in DCMI Metadata Terms">Date Modified</a>
             </dt>
-            <dd><p>2022-02-18</p></dd>
+            <dd><p>2022-03-02</p></dd>
           </div>
           <div>
             <dt>
               <a class="hover_property" href="http://www.w3.org/2002/07/owl#versionIRI" title="The property that identifies the version IRI of an ontology. Defined in The OWL 2 Schema vocabulary (OWL 2)">Version Iri</a>
             </dt>
             <dd>
-              <a href="#0.1">gas:0.1</a>
+              <a href="#0.2">gas:0.2</a>
             </dd>
           </div>
           <div>
             <dt>
               <a class="hover_property" href="http://www.w3.org/2002/07/owl#versionInfo" title="The annotation property that provides version information for an ontology or another OWL construct. Defined in The OWL 2 Schema vocabulary (OWL 2)">Version Info</a>
             </dt>
-            <dd><p>0.1</p></dd>
+            <dd><p>0.2</p></dd>
           </div>
           <div>
             <dt>
@@ -478,10 +399,18 @@
             <dt>
               <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
             </dt>
-            <dd><p>A simple OWL representation of parts of the Sampling Features Schema described in clauses 9-11 of ISO 19156:2011 Geographic Information - Observations and Measurements and elements from other, related, ontologies.</p>
-<p>This ontology is centred on the main elements of the now unsuported SAM-Lite (https://surroundaustralia.github.io/ga-supermodel/sam-lite.html) ontology which is a simple OWL representation of parts of the Sampling Features Schema </p></dd>
+            <dd><p>A simple profile of an OWL representation of the Sampling Features Schema described in clauses 9-11 of ISO 19156:2011 Geographic Information - Observations and Measurements for Samples information and other ontologies, such as Sensor, Observation, Sample, and Actuator (SOSA) for Sampling events and Feature relation.</p>
+<p>This profile's Sample modelling is centred on the main elements of the now unsuported SAM-Lite (https://surroundaustralia.github.io/ga-supermodel/sam-lite.html) ontology which is a simple OWL representation of parts of the Sampling Features Schema.</p>
+<p>The notion of a 'Site' as a special kind of Sample is present in many standards and ontologies, with the TERN Ontology being the one directly reused here.</p></dd>
           </div>
         </dl>
+      </div>
+      <div class="section" id="overview">
+        <h2>Overview Diagrams</h2>
+        <figure style="border:solid 1px black; padding:10px;">
+            <img style="width:50%" src="material-sample.png" />
+            <p><strong>Figure 1</strong>: The central <code>MaterialSample</code> class and its properties</p>
+        </figure>
       </div>
       <div class="section" id="classes">
         <h2>Classes</h2>
@@ -646,15 +575,15 @@
             </tr>
           </table>
         </div>
-        <div class="property entity" id="Specimen">
-          <h3>Specimen
+        <div class="property entity" id="MaterialSample">
+          <h3>Material Sample
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>http://pid.geoscience.gov.au/def/ga-samples/Specimen</code>
+                <code>https://w3id.org/tern/ontologies/tern/MaterialSample</code>
               </td>
             </tr>
             <tr>
@@ -662,20 +591,26 @@
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
               </th>
               <td>
-                <a href="#ga-samples">geodef:ga-samples</a>
+                <a href="https://linkeddata.tern.org.au/information-models/tern-ontology">terninfo:tern-ontology</a>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>A Specimen is a physical sample, obtained for observation(s) normally carried out ex-situ, sometimes in a laboratory.</p></td>
+              <td><p>A physical result of a sampling (or subsampling) event.</p></td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
               </th>
-              <td><p>The different between a Specimen and a sosa:Sample is that the Specimen has a physical presense and is likely to be retained somewhere other than where it was obtained, e.g. on a shelf, in a building. It may not be retained but was, at least at some point, a physical thing.</p></td>
+              <td><p>The different between a MaterialSample and a sosa:Sample is that the MaterialSample has a physical presense and is likely to be retained somewhere other than where it was obtained, e.g. on a shelf, in a building. It may not be retained but was, at least at some point, a physical thing.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#example" title="An example of the use of a concept. Defined in SKOS Vocabulary">Example</a>
+              </th>
+              <td><p>A whole organism preserved in a collection. A part of an organism isolated for some purpose. A soil sample. A marine microbial sample.</p></td>
             </tr>
             <tr>
               <th>
@@ -687,35 +622,65 @@
             </tr>
             <tr>
               <th>
-                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="Inverse of rdfs:domain. Defined in Ontology Documentation Profile">In Domain Of</a>
+                <a class="hover_property" href="http://www.w3.org/2002/07/owl#equivalentClass" title="The property that determines that two given classes are equivalent, and that is used to specify datatype definitions. Defined in The OWL 2 Schema vocabulary (OWL 2)">Equivalentclass</a>
               </th>
               <td>
-                <ul>
-                  <li>
-                    <span>
-                      <a href="#currentLocation">gas:currentLocation</a>
-                      <sup class="sup-op" title="OWL Object Property">op</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="#samplingLocation">gas:samplingLocation</a>
-                      <sup class="sup-op" title="OWL Object Property">op</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="#samplingMethod">gas:samplingMethod</a>
-                      <sup class="sup-op" title="OWL Object Property">op</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="#samplingTime">gas:samplingTime</a>
-                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                    </span>
-                  </li>
-                </ul>
+                <a href="http://def.seegrid.csiro.au/ontology/om/sam-lite#Specimen">samfl:Specimen</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="Site">
+          <h3>Site
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/tern/ontologies/tern/Site</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="https://linkeddata.tern.org.au/information-models/tern-ontology">terninfo:tern-ontology</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>A location where where observations and samplings occur. This Site class is a subclass of Sample since sites are designed to be representative of an system (which may be an ecosystem, bioregion, geological feature).</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#scopeNote" title="A note that helps to clarify the meaning and/or the use of a concept. Defined in SKOS Vocabulary">Scope Note</a>
+              </th>
+              <td><p>This class is taken from the TERN Ontology where it is defined as with reference to ecological monitoring, but there is nothing specifically ecological, apart from the definitional wording, in the class ontology preventing this class from being used for geological sites.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#example" title="An example of the use of a concept. Defined in SKOS Vocabulary">Example</a>
+              </th>
+              <td><p>Ausplots Rangelands Site 59858 (Site Name: WAACOO0011)</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/ns/sosa/Sample">sosa:Sample</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2002/07/owl#equivalentClass" title="The property that determines that two given classes are equivalent, and that is used to specify datatype definitions. Defined in The OWL 2 Schema vocabulary (OWL 2)">Equivalentclass</a>
+              </th>
+              <td>
+                <a href="http://def.seegrid.csiro.au/ontology/om/sam-lite#SamplingFeature">samfl:SamplingFeature</a>
               </td>
             </tr>
           </table>
@@ -731,7 +696,7 @@
             <tr>
               <th>IRI</th>
               <td>
-                <code>http://pid.geoscience.gov.au/def/ga-samples/currentLocation</code>
+                <code>http://pid.geoscience.gov.au/def/ga-sampling/currentLocation</code>
               </td>
             </tr>
             <tr>
@@ -739,7 +704,7 @@
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
               </th>
               <td>
-                <a href="#ga-samples">geodef:ga-samples</a>
+                <a href="#ga-sampling">geodef:ga-sampling</a>
               </td>
             </tr>
             <tr>
@@ -754,10 +719,7 @@
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
               </th>
               <td>
-                <span>
-                  <a href="#Specimen">gas:Specimen</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
+                <a href="#Specimen">gas:Specimen</a>
               </td>
             </tr>
             <tr>
@@ -781,7 +743,7 @@
             <tr>
               <th>IRI</th>
               <td>
-                <code>http://pid.geoscience.gov.au/def/ga-samples/samplingLocation</code>
+                <code>http://pid.geoscience.gov.au/def/ga-sampling/samplingLocation</code>
               </td>
             </tr>
             <tr>
@@ -789,7 +751,7 @@
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
               </th>
               <td>
-                <a href="#ga-samples">geodef:ga-samples</a>
+                <a href="#ga-sampling">geodef:ga-sampling</a>
               </td>
             </tr>
             <tr>
@@ -810,10 +772,7 @@
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
               </th>
               <td>
-                <span>
-                  <a href="#Specimen">gas:Specimen</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
+                <a href="#Specimen">gas:Specimen</a>
               </td>
             </tr>
             <tr>
@@ -837,7 +796,7 @@
             <tr>
               <th>IRI</th>
               <td>
-                <code>http://pid.geoscience.gov.au/def/ga-samples/samplingMethod</code>
+                <code>http://pid.geoscience.gov.au/def/ga-sampling/samplingMethod</code>
               </td>
             </tr>
             <tr>
@@ -845,7 +804,7 @@
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
               </th>
               <td>
-                <a href="#ga-samples">geodef:ga-samples</a>
+                <a href="#ga-sampling">geodef:ga-sampling</a>
               </td>
             </tr>
             <tr>
@@ -859,10 +818,7 @@
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
               </th>
               <td>
-                <span>
-                  <a href="#Specimen">gas:Specimen</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
+                <a href="#Specimen">gas:Specimen</a>
               </td>
             </tr>
             <tr>
@@ -933,7 +889,7 @@
       </div>
       <div class="section" id="datatypeproperties">
         <h2>Datatype Properties</h2>
-        <div class="property entity" id="samplingTime">
+        <div class="property entity" id="samplingtime">
           <h3>sampling time
             <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
           </h3>
@@ -941,7 +897,7 @@
             <tr>
               <th>IRI</th>
               <td>
-                <code>http://pid.geoscience.gov.au/def/ga-samples/samplingTime</code>
+                <code>http://pid.geoscience.gov.au/def/ga-sampling/samplingTime</code>
               </td>
             </tr>
             <tr>
@@ -949,7 +905,7 @@
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
               </th>
               <td>
-                <a href="#ga-samples">geodef:ga-samples</a>
+                <a href="#ga-sampling">geodef:ga-sampling</a>
               </td>
             </tr>
             <tr>
@@ -969,10 +925,7 @@
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
               </th>
               <td>
-                <span>
-                  <a href="#Specimen">gas:Specimen</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
+                <a href="#Specimen">gas:Specimen</a>
               </td>
             </tr>
             <tr>
@@ -980,13 +933,13 @@
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
               </th>
               <td><span>
+  <a href="http://www.w3.org/2001/XMLSchema#dateTimeStamp">xsd:dateTimeStamp</a>
+  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span> <span class="cardinality">or</span> <span>
   <a href="http://www.w3.org/2001/XMLSchema#date">xsd:date</a>
   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span> <span class="cardinality">or</span> <span>
   <a href="http://www.w3.org/2001/XMLSchema#dateTime">xsd:dateTime</a>
-  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span> <span class="cardinality">or</span> <span>
-  <a href="http://www.w3.org/2001/XMLSchema#dateTimeStamp">xsd:dateTimeStamp</a>
   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span></td>
             </tr>
@@ -1068,7 +1021,7 @@
           </dd>
           <dt id="gas">gas</dt>
           <dd>
-            <code>http://pid.geoscience.gov.au/def/ga-samples/</code>
+            <code>http://pid.geoscience.gov.au/def/ga-sampling/</code>
           </dd>
           <dt id="geodef">geodef</dt>
           <dd>
@@ -1081,6 +1034,10 @@
           <dt id="orcid">orcid</dt>
           <dd>
             <code>http://orcid.org/</code>
+          </dd>
+          <dt id="terninfo">terninfo</dt>
+          <dd>
+            <code>https://linkeddata.tern.org.au/information-models/</code>
           </dd>
           <dt id="owl">owl</dt>
           <dd>
@@ -1113,6 +1070,10 @@
           <dt id="sosa">sosa</dt>
           <dd>
             <code>http://www.w3.org/ns/sosa/</code>
+          </dd>
+          <dt id="tern">tern</dt>
+          <dd>
+            <code>https://w3id.org/tern/ontologies/tern/</code>
           </dd>
           <dt id="vann">vann</dt>
           <dd>
@@ -1187,7 +1148,10 @@
               <a href="#Location">Location</a>
             </li>
             <li>
-              <a href="#Specimen">Specimen</a>
+              <a href="#MaterialSample">Material Sample</a>
+            </li>
+            <li>
+              <a href="#Site">Site</a>
             </li>
           </ul>
         </li>
@@ -1216,7 +1180,7 @@
           </h4>
           <ul class="second">
             <li>
-              <a href="#samplingTime">sampling time</a>
+              <a href="#samplingtime">sampling time</a>
             </li>
           </ul>
         </li>
@@ -1251,6 +1215,12 @@
               <a href="#orcid">orcid</a>
             </li>
             <li>
+              <a href="#orcid">orcid</a>
+            </li>
+            <li>
+              <a href="#terninfo">terninfo</a>
+            </li>
+            <li>
               <a href="#owl">owl</a>
             </li>
             <li>
@@ -1273,6 +1243,9 @@
             </li>
             <li>
               <a href="#sosa">sosa</a>
+            </li>
+            <li>
+              <a href="#tern">tern</a>
             </li>
             <li>
               <a href="#vann">vann</a>

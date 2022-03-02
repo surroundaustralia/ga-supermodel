@@ -173,15 +173,16 @@ w3geo:SpatialThing, geosparql:SpatialObject are subclasses"""@en ;
     sdo:url "https://surroundaustralia.com"^^xsd:anyURI ;
 .
 
-gas:MaterialSample
+tern:MaterialSample
     a owl:Class ;
-    rdfs:isDefinedBy <http://pid.geoscience.gov.au/def/ga-sampling> ;
+    rdfs:isDefinedBy <https://linkeddata.tern.org.au/information-models/tern-ontology> ;
     rdfs:subClassOf sosa:Sample ;
     owl:equivalentClass samfl:Specimen ;
-    skos:definition "A Material Sample is a physical sample, obtained for observation(s) normally carried out ex-situ, sometimes in a laboratory."@en ;
+    skos:definition "A physical result of a sampling (or subsampling) event."@en ;
     skos:prefLabel "Material Sample"@en ;
     skos:altLabel "Specimen"@en ;
-    skos:scopeNote "The different between a MaterialSample and a sosa:Sample is that the Specimen has a physical presense and is likely to be retained somewhere other than where it was obtained, e.g. on a shelf, in a building. It may not be retained but was, at least at some point, a physical thing."@en ;
+    skos:scopeNote "The different between a MaterialSample and a sosa:Sample is that the MaterialSample has a physical presense and is likely to be retained somewhere other than where it was obtained, e.g. on a shelf, in a building. It may not be retained but was, at least at some point, a physical thing."@en ;
+    skos:example "A whole organism preserved in a collection. A part of an organism isolated for some purpose. A soil sample. A marine microbial sample."@en ;
 .
 
 tern:Site
