@@ -1,5 +1,5 @@
 PREFIX dcterms: <http://purl.org/dc/terms/>
-PREFIX gas: <http://pid.geoscience.gov.au/def/ga-samples/>
+PREFIX gas: <http://pid.geoscience.gov.au/def/ga-sampling/>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -7,29 +7,34 @@ PREFIX samfl: <http://def.seegrid.csiro.au/ontology/om/sam-lite#>
 PREFIX sdo: <http://schema.org/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
 PREFIX vann: <http://purl.org/vocab/vann/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-<http://pid.geoscience.gov.au/def/ga-samples>
+<http://pid.geoscience.gov.au/def/ga-sampling>
     a owl:Ontology ;
-    dcterms:contributor <http://orcid.org/0000-0002-3884-3420> ;
+    dcterms:contributor 
+        <http://orcid.org/0000-0002-3884-3420> ,
+        <https://orcid.org/0000-0002-3322-1868> ;
     dcterms:created "2022-02-18"^^xsd:date ;
     dcterms:creator <http://orcid.org/0000-0002-8742-7730> ;
-    dcterms:description """A simple OWL representation of parts of the Sampling Features Schema described in clauses 9-11 of ISO 19156:2011 Geographic Information - Observations and Measurements and elements from other, related, ontologies.
+    dcterms:description """A simple profile of an OWL representation of the Sampling Features Schema described in clauses 9-11 of ISO 19156:2011 Geographic Information - Observations and Measurements for Samples information and other ontologies, such as Sensor, Observation, Sample, and Actuator (SOSA) for Sampling events and Feature relation.
 
-This ontology is centred on the main elements of the now unsuported SAM-Lite (https://surroundaustralia.github.io/ga-supermodel/sam-lite.html) ontology which is a simple OWL representation of parts of the Sampling Features Schema """@en ;
-    dcterms:modified "2022-02-18" ;
+This profile's Sample modelling is centred on the main elements of the now unsuported SAM-Lite (https://surroundaustralia.github.io/ga-supermodel/sam-lite.html) ontology which is a simple OWL representation of parts of the Sampling Features Schema.
+
+The notion of a 'Site' as a special kind of Sample is present in many standards and ontologies, with the TERN Ontology being the one directly reused here."""@en ;
+    dcterms:modified "2022-03-02" ;
     dcterms:publisher <https://linked.data.gov.au/org/ga> ;
-    dcterms:title "Geoscience Australia Samples Ontology"@en ;
+    dcterms:title "Geoscience Australia Sampling Profile"@en ;
     vann:preferredNamespacePrefix "gas" ;
-    owl:versionIRI gas:0.1 ;
-    owl:versionInfo "0.1"@en ;
+    owl:versionIRI gas:0.2 ;
+    owl:versionInfo "0.2"@en ;
 .
 
 gas:currentLocation
     a owl:ObjectProperty ;
     rdfs:domain gas:Specimen ;
-    rdfs:isDefinedBy <http://pid.geoscience.gov.au/def/ga-samples> ;
+    rdfs:isDefinedBy <http://pid.geoscience.gov.au/def/ga-sampling> ;
     rdfs:range dcterms:Location ;
     owl:equivalentProperty samfl:currentLocation ;
     skos:definition """The location of a physical specimen. This may be a storage location, such as a shelf in a warehouse or a drawer in a museum.
@@ -42,7 +47,7 @@ gas:samplingLocation
     a owl:ObjectProperty ;
     gas:samplingLocation owl:propertyChainAxiom ;
     rdfs:domain gas:Specimen ;
-    rdfs:isDefinedBy <http://pid.geoscience.gov.au/def/ga-samples> ;
+    rdfs:isDefinedBy <http://pid.geoscience.gov.au/def/ga-sampling> ;
     rdfs:range dcterms:Location ;
     owl:equivalentProperty samfl:samplingLocation ;
     skos:definition """The location from where the specimen was obtained.
@@ -55,7 +60,7 @@ NOTE Where a specimen has a relatedSamplingFeature whose location provides an un
 gas:samplingMethod
     a owl:ObjectProperty ;
     rdfs:domain gas:Specimen ;
-    rdfs:isDefinedBy <http://pid.geoscience.gov.au/def/ga-samples> ;
+    rdfs:isDefinedBy <http://pid.geoscience.gov.au/def/ga-sampling> ;
     rdfs:range sosa:Procedure ;
     owl:equivalentProperty samfl:samplingMethod ;
     skos:definition "Process used to obtain the Specimen from its sampledFeature"@en ;
@@ -65,7 +70,7 @@ gas:samplingMethod
 gas:samplingTime
     a owl:DatatypeProperty ;
     rdfs:domain gas:Specimen ;
-    rdfs:isDefinedBy <http://pid.geoscience.gov.au/def/ga-samples> ;
+    rdfs:isDefinedBy <http://pid.geoscience.gov.au/def/ga-sampling> ;
     rdfs:range [
             owl:unionOf (
                     xsd:date
@@ -123,6 +128,13 @@ NOTE: In this ontology sosa:isSampleOf is expecte to link Samples to other Sampl
     sdo:name "Nicholas J. Car" ;
 .
 
+<https://orcid.org/0000-0002-3322-1868>
+    a sdo:Person ;
+    sdo:affiliation <https://linked.data.gov.au/org/surround> ;
+    sdo:email "david.habgood@surroundaustralia.com"^^xsd:anyURI ;
+    sdo:name "David Habgood" ;
+.
+
 sosa:FeatureOfInterest
     a owl:Class ;
     rdfs:isDefinedBy sosa: ;
@@ -161,12 +173,24 @@ w3geo:SpatialThing, geosparql:SpatialObject are subclasses"""@en ;
     sdo:url "https://surroundaustralia.com"^^xsd:anyURI ;
 .
 
-gas:Specimen
+gas:MaterialSample
     a owl:Class ;
-    rdfs:isDefinedBy <http://pid.geoscience.gov.au/def/ga-samples> ;
+    rdfs:isDefinedBy <http://pid.geoscience.gov.au/def/ga-sampling> ;
     rdfs:subClassOf sosa:Sample ;
-    owl:equivalentProperty samfl:Specimen ;
-    skos:definition "A Specimen is a physical sample, obtained for observation(s) normally carried out ex-situ, sometimes in a laboratory."@en ;
-    skos:prefLabel "Specimen"@en ;
-    skos:scopeNote "The different between a Specimen and a sosa:Sample is that the Specimen has a physical presense and is likely to be retained somewhere other than where it was obtained, e.g. on a shelf, in a building. It may not be retained but was, at least at some point, a physical thing."@en ;
+    owl:equivalentClass samfl:Specimen ;
+    skos:definition "A Material Sample is a physical sample, obtained for observation(s) normally carried out ex-situ, sometimes in a laboratory."@en ;
+    skos:prefLabel "Material Sample"@en ;
+    skos:altLabel "Specimen"@en ;
+    skos:scopeNote "The different between a MaterialSample and a sosa:Sample is that the Specimen has a physical presense and is likely to be retained somewhere other than where it was obtained, e.g. on a shelf, in a building. It may not be retained but was, at least at some point, a physical thing."@en ;
+.
+
+tern:Site
+    a owl:Class ;
+    rdfs:isDefinedBy <https://linkeddata.tern.org.au/information-models/tern-ontology> ;
+    rdfs:subClassOf sosa:Sample ;
+    owl:equivalentClass samfl:SamplingFeature ;
+    skos:definition "A location where where observations and samplings occur. This Site class is a subclass of Sample since sites are designed to be representative of an system (which may be an ecosystem, bioregion, geological feature)."@en ;
+    skos:prefLabel "Site"@en ;
+    skos:scopeNote "This class is taken from the TERN Ontology where it is defined as with reference to ecological monitoring, but there is nothing specifically ecological, apart from the definitional wording, in the class ontology preventing this class from being used for geological sites."@en ;
+    skos:example "Ausplots Rangelands Site 59858 (Site Name: WAACOO0011)" ;
 .

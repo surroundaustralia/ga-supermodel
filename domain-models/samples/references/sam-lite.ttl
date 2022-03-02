@@ -18,8 +18,7 @@
 
 <http://def.seegrid.csiro.au/ontology/om/sam-lite>
   rdf:type owl:Ontology ;
-  dc:creator """Simon Jonathan David COX
-CSIRO"""^^rdf:PlainLiteral ;
+  dc:creator "Simon Jonathan David Cox" ;
   dc:description "A simple OWL representation of the Sampling Features Schema described in clauses 9-11 of ISO 19156:2011 Geographic Information - Observations and Measurements"^^xsd:string ;
   dc:rights "Copyright © 2014, 2015 CSIRO"^^xsd:string ;
   dc:source "ISO 19156:2011"^^xsd:string ;
