@@ -8,10 +8,10 @@
 [width=75%, frame=none, grid=none, cols="1,5"]
 |===
 |**IRI** | https://linked.data.gov.au/def/ga-supermodel
-|**Title** | Geoscience Australia Supermodel Specifciation
+|**Title** | Geoscience Australia Supermodel Specification
 |**Description** | This Model - the GA Supermodel - is https://www.ga.gov.au[Geoscience Australia]'s overarching data model that provides integration logic for data elements in many of GA's specialised domains. It also provides logic for Persistent Identifier (PID) patterning.
 |**Created** | 2021-12-14
-|**Modified** | 2021-12-14
+|**Modified** | 2022-03-02
 |**Issued** | 0000-00-00
 |**Creator** | https://linked.data.gov.au/org/ga[Geoscience Australia]
 |**Publisher** | https://linked.data.gov.au/org/ga[Geoscience Australia]
@@ -36,7 +36,7 @@ This model is built on a "baseline" of Semantic Web models which use a variatey 
 
 | **`super`** | **`https://linked.data.gov.au/def/ga-supermodel/`** | **this model**
 |`dcterms:` | `http://purl.org/dc/terms/` | Dublin Core Terms vocabulary namespace
-|`ex:` | `http://example.com/thing` | Generic examples namespace
+|`ex:` | `http://example.com/` | Generic examples namespace
 |`owl:` | `http://www.w3.org/2002/07/owl#` | Web Ontology Language ontology namespace
 |`rdfs:` | `http://www.w3.org/2000/01/rdf-schema#` | RDF Schema ontology namespace
 |`sosa:` | `http://www.w3.org/ns/sosa/` | Sensor, Observation, Sample, and Actuator ontology namespace
