@@ -464,13 +464,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_level_3_domain_main_classes">4.4. Level 3: Domain Main Classes</a></li>
 </ul>
 </li>
-<li><a href="#_data_domain_resources">5. Data Domain Resources</a>
+<li><a href="#_data_domains_details">5. Data Domains Details</a>
 <ul class="sectlevel2">
-<li><a href="#_data_cataloguing_resources">5.1. Data Cataloguing Resources</a></li>
-<li><a href="#_organisations_people_resources">5.2. Organisations &amp; People Resources</a></li>
-<li><a href="#_sampling_resources">5.3. Sampling Resources</a></li>
-<li><a href="#_spatiality_resources">5.4. Spatiality Resources</a></li>
-<li><a href="#_theming_resources">5.5. Theming Resources</a></li>
+<li><a href="#_data_cataloguing_domain">5.1. Data Cataloguing Domain</a></li>
+<li><a href="#_organisations_people_domain">5.2. Organisations &amp; People Domain</a></li>
+<li><a href="#_sampling_domain">5.3. Sampling Domain</a></li>
+<li><a href="#_spatiality_domain">5.4. Spatiality Domain</a></li>
+<li><a href="#_theming_domain">5.5. Theming Domain</a></li>
 </ul>
 </li>
 <li><a href="#_annex_a_pid_policy">Annex A: PID Policy</a></li>
@@ -494,7 +494,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Title</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">National Data Exchange Standard&#8217;s Specifciation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Geoscience Australia Supermodel Specifciation</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Description</strong></p></td>
@@ -1061,10 +1061,7 @@ This supermodel&#8217;s origins are in GA&#8217;s geology and spatial data work 
 <div class="title">Figure 8. Domain Main Classes for Sampling</div>
 </div>
 <div class="paragraph">
-<p>This Data Domain&#8217;s main classes are taken directly from the <em>Sensor, Observation, Sample, and Actuator Ontology</em> (SOSA) which is part of the <em>Semanic Sensor Networks Ontology</em> <a href="#SSN">[SSN]</a>.</p>
-</div>
-<div class="paragraph">
-<p>The specialised form of SOSA use seen here - SOSA is general-purpose and has many patterns of use - is informed by the TERN Ontolology <sup class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnotedef_3" title="View footnote.">3</a>]</sup> which is used as the doamin model of the <em>Australian Biodiversity Information Standard</em> (ABIS) <a href="#ABIS">[ABIS]</a> with which GA sampling data is intended to be compatible.</p>
+<p>Most of this Data Domain&#8217;s main classes are taken directly from the <em>Sensor, Observation, Sample, and Actuator Ontology</em> (SOSA) which is part of the <em>Semanic Sensor Networks Ontology</em> <a href="#SSN">[SSN]</a> with only the <code>tern:Site</code> class taken from another specialisation of SOSA, the TERN Ontology <a href="#TERN">[TERN]</a>. The TERN Ontology is the domain model of the <em>Australian Biodiversity Information Standard</em> (ABIS) <a href="#ABIS">[ABIS]</a> with which GA sampling data is intended to be compatible.</p>
 </div>
 <div class="paragraph">
 <p>In addition to samples &amp; sampling, this domain can cater for general <em>observations</em> of things, e.g., observations of:</p>
@@ -1084,6 +1081,9 @@ This supermodel&#8217;s origins are in GA&#8217;s geology and spatial data work 
 </div>
 <div class="paragraph">
 <p>Where <code>sosa:Sampling</code> activities result in <code>sosa:Sample</code> objects, <code>sosa:Observation</code> activities result in <code>sosa:Result</code> objects. The observation/result pair is a more generic form of the samplling/sample pair.</p>
+</div>
+<div class="paragraph">
+<p>Additional classes in this domain cater for special forms of Sites and Samples. See the <a href="#_sampling_domain">Sampling Domain</a> detailed section below.</p>
 </div>
 </div>
 <div class="sect3">
@@ -1116,30 +1116,49 @@ This supermodel&#8217;s origins are in GA&#8217;s geology and spatial data work 
 <div class="title">Figure 10. Domain Main Classes for Theming</div>
 </div>
 <div class="paragraph">
-<p>This Data Domain&#8217;s main classes are taken from <a href="#SKOS">[SKOS]</a> and their expected/required properties and relations are formally defined in <em>VocPub</em>, a "vocabulary publication profile of SKOS" <a href="#VOCPUB">[VOCPUB]</a>. VocPub just mandates certain vocabulary metadata and relations between elements in vocabularies. Conformance of vocabularies to VocPub is also easily testable using the profile&#8217;s validator and online tooling that support it <sup class="footnote">[<a id="_footnoteref_4" class="footnote" href="#_footnotedef_4" title="View footnote.">4</a>]</sup>.</p>
+<p>This Data Domain&#8217;s main classes are taken from <a href="#SKOS">[SKOS]</a> and their expected/required properties and relations are formally defined in <em>VocPub</em>, a "vocabulary publication profile of SKOS" <a href="#VOCPUB">[VOCPUB]</a>. VocPub just mandates certain vocabulary metadata and relations between elements in vocabularies. Conformance of vocabularies to VocPub is also easily testable using the profile&#8217;s validator and online tooling that support it <sup class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnotedef_3" title="View footnote.">3</a>]</sup>.</p>
 </div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_data_domain_resources">5. Data Domain Resources</h2>
+<h2 id="_data_domains_details">5. Data Domains Details</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Data Domains described above are implemented using a number of resources. The following subsections link to these resources.</p>
+<p>The Data Domains described above are implemented using multiple models and other resources. The following subsections describe the Domains' details and link to all their resources.</p>
 </div>
 <div class="sect2">
-<h3 id="_data_cataloguing_resources">5.1. Data Cataloguing Resources</h3>
+<h3 id="_data_cataloguing_domain">5.1. Data Cataloguing Domain</h3>
 
 </div>
 <div class="sect2">
-<h3 id="_organisations_people_resources">5.2. Organisations &amp; People Resources</h3>
+<h3 id="_organisations_people_domain">5.2. Organisations &amp; People Domain</h3>
 
 </div>
 <div class="sect2">
-<h3 id="_sampling_resources">5.3. Sampling Resources</h3>
+<h3 id="_sampling_domain">5.3. Sampling Domain</h3>
 <div class="ulist">
 <ul>
+<li>
+<p><strong>GA Sampling Profile</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://surroundaustralia.github.io/ga-supermodel/ga-sampling.html" class="bare">https://surroundaustralia.github.io/ga-supermodel/ga-sampling.html</a></p>
+</li>
+<li>
+<p>A profile of several ontologies and a Semantic Web implementation of the Sampling Features Schema described in clauses 9-11 of <a href="#ISO19156">[ISO19156]</a></p>
+</li>
+<li>
+<p>This ontology directly inherits from the <em>SAM Lite ontology</em> <a href="#SAM">[SAM]</a>, the <em>SOSA</em> ontology <a href="#SOSA">[SOSA]</a> and the <em>TERN Ontology</em> <a href="#TERN">[TERN]</a></p>
+</li>
+<li>
+<p>It is concerned only with characterising physical samples</p>
+</li>
+</ul>
+</div>
+</li>
 <li>
 <p><strong><em>Semantic Sensor Networks</em> ontology</strong></p>
 <div class="ulist">
@@ -1152,25 +1171,6 @@ This supermodel&#8217;s origins are in GA&#8217;s geology and spatial data work 
 </li>
 <li>
 <p>The Domain Main Classes for the <em>Sampling</em> domain are all SOSA Ontology classes. SOSA is a component ontology of the SSN Ontology</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>GA Samples ontology</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://surroundaustralia.github.io/ga-supermodel/ga-samples.html" class="bare">https://surroundaustralia.github.io/ga-supermodel/ga-samples.html</a></p>
-</li>
-<li>
-<p>A Semantic Web implementation of the Sampling Features Schema described in clauses 9-11 of <a href="#ISO19156">[ISO19156]</a></p>
-</li>
-<li>
-<p>This ontology directly inherits from the <em>SAM Lite ontology</em> but uses lots of <em>SOSA</em> too</p>
-</li>
-<li>
-<p>It is concerned only with characterising physical samples</p>
 </li>
 </ul>
 </div>
@@ -1224,11 +1224,11 @@ This supermodel&#8217;s origins are in GA&#8217;s geology and spatial data work 
 </div>
 </div>
 <div class="sect2">
-<h3 id="_spatiality_resources">5.4. Spatiality Resources</h3>
+<h3 id="_spatiality_domain">5.4. Spatiality Domain</h3>
 
 </div>
 <div class="sect2">
-<h3 id="_theming_resources">5.5. Theming Resources</h3>
+<h3 id="_theming_domain">5.5. Theming Domain</h3>
 
 </div>
 </div>
@@ -1308,6 +1308,9 @@ This supermodel&#8217;s origins are in GA&#8217;s geology and spatial data work 
 <p><a id="PROV"></a> World Wide Web Consortium, <em>PROV-O: The PROV Ontology</em>, W3C Working Group Note (18 December 2019). <a href="https://www.w3.org/TR/prov-o/" class="bare">https://www.w3.org/TR/prov-o/</a></p>
 </li>
 <li>
+<p><a id="SAM"></a> Cox, S.J.D., <em>OWL representation of ISO 19156 Sampling Features model</em>. (2014). Online at: <a href="https://surroundaustralia.github.io/ga-supermodel/sam-lite.html" class="bare">https://surroundaustralia.github.io/ga-supermodel/sam-lite.html</a>, accessed 2022-03-02</p>
+</li>
+<li>
 <p><a id="SDO"></a> W3C Schema.org Community Group, <em>schema.org</em>. Community ontology (2015). <a href="https://schema.org" class="bare">https://schema.org</a></p>
 </li>
 <li>
@@ -1315,6 +1318,9 @@ This supermodel&#8217;s origins are in GA&#8217;s geology and spatial data work 
 </li>
 <li>
 <p><a id="SKOS"></a> World Wide Web Consortium, <em>SKOS Simple Knowledge Organization System Reference</em>, W3C Recommendation (18 August 2009). <a href="https://www.w3.org/TR/skos-reference/" class="bare">https://www.w3.org/TR/skos-reference/</a></p>
+</li>
+<li>
+<p><a id="TERN"></a> Terrestrinal Ecosystems Research Network, <em>TERN Ontology</em>, Organisation ontology (2022). <a href="https://linkeddata.tern.org.au/viewers/tern-ontology" class="bare">https://linkeddata.tern.org.au/viewers/tern-ontology</a></p>
 </li>
 <li>
 <p><a id="TTL"></a> World Wide Web Consortium, <em>RDF 1.1 Turtle Terse RDF Triple Language</em>, W3C Recommendation (25 February 2014). <a href="https://www.w3.org/TR/turtle/" class="bare">https://www.w3.org/TR/turtle/</a></p>
@@ -1336,15 +1342,12 @@ This supermodel&#8217;s origins are in GA&#8217;s geology and spatial data work 
 <a href="#_footnoteref_2">2</a>. <a href="https://pypi.org/project/pyLODE/" class="bare">https://pypi.org/project/pyLODE/</a>
 </div>
 <div class="footnote" id="_footnotedef_3">
-<a href="#_footnoteref_3">3</a>. <a href="https://linkeddata.tern.org.au/tern-ontology" class="bare">https://linkeddata.tern.org.au/tern-ontology</a>
-</div>
-<div class="footnote" id="_footnotedef_4">
-<a href="#_footnoteref_4">4</a>. The validator itself is online at <a href="https://w3id.org/profile/vocpub/validator" class="bare">https://w3id.org/profile/vocpub/validator</a> and is pre-loaded into GA&#8217;s vocabulary servers e.g. <a href="https://vocabs.ga.gov.au" class="bare">https://vocabs.ga.gov.au</a>. It can also be selected for online validation use at <a href="https://rdftools.surroundaustralia.com" class="bare">https://rdftools.surroundaustralia.com</a>
+<a href="#_footnoteref_3">3</a>. The validator itself is online at <a href="https://w3id.org/profile/vocpub/validator" class="bare">https://w3id.org/profile/vocpub/validator</a> and is pre-loaded into GA&#8217;s vocabulary servers e.g. <a href="https://vocabs.ga.gov.au" class="bare">https://vocabs.ga.gov.au</a>. It can also be selected for online validation use at <a href="https://rdftools.surroundaustralia.com" class="bare">https://rdftools.surroundaustralia.com</a>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-02-25 00:26:32 UTC
+Last updated 2022-03-02 02:17:31 UTC
 </div>
 </div>
 </body>
