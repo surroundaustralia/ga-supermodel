@@ -28,7 +28,7 @@ sites:
                           geo:asGeoJson "{\"type\": \"Polygon\", \"coordinates\": [[ [70.0,-69.41700],[70.0,-9.14250], [170.0,-9.14250], [170.0,-69.41700], [70.0,-69.41700]]]}"^^geo:geoJSONLiteral ;
                          ] ;
     dcterms:description "xxx"@en ;
-    dcterms:title "xxx"@en ;
+    dcterms:title "Sites"@en ;
 .
 
 samples:
@@ -41,20 +41,20 @@ samples:
                           geo:asGeoJson "{\"type\": \"Polygon\", \"coordinates\": [[ [70.0,-69.41700],[70.0,-9.14250], [170.0,-9.14250], [170.0,-69.41700], [70.0,-69.41700]]]}"^^geo:geoJSONLiteral ;
                          ] ;
     dcterms:description "xxx"@en ;
-    dcterms:title "xxx"@en ;
+    dcterms:title "Samples"@en ;
 .
 
 surveys:
     a geo:FeatureCollection ;
     a owl:Ontology ;
-    dcterms:identifier "samples" ;
+    dcterms:identifier "surveys" ;
     dcterms:isPartOf dataset: ;
     geo:hasBoundingBox [ a geo:Geometry ;
                           geo:asWKT "POLYGON ((70 -69.41700, 70 -9.14250, 170 -9.14250, 170 -69.41700, 70 -69.41700))"^^geo:wktLiteral ;
                           geo:asGeoJson "{\"type\": \"Polygon\", \"coordinates\": [[ [70.0,-69.41700],[70.0,-9.14250], [170.0,-9.14250], [170.0,-69.41700], [70.0,-69.41700]]]}"^^geo:geoJSONLiteral ;
                          ] ;
     dcterms:description "xxx"@en ;
-    dcterms:title "xxx"@en ;
+    dcterms:title "Surveys"@en ;
 .
 dataset:
     a dcat:Dataset ;
@@ -86,5 +86,3 @@ dataset:
 <https://linked.data.gov.au/org/ga> reg:register <https://linked.data.gov.au/org/> .
 <https://linked.data.gov.au/dataset/sites-samples-surveys/provenance> a prov:Bundle ;
   dcterms:hasPart pwfs:ce51861d-e380-11eb-9522-5986ca540bea .  # update
-
-
