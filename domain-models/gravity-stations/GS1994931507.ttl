@@ -12,7 +12,8 @@
 @prefix ssn:     <http://www.w3.org/ns/ssn/> .
 @prefix qudt:    <http://qudt.org/schema/qudt#> .
 @prefix site:    <http://pid.geoscience.gov.au/site/> .
-@prefix gas:    <http://pid.geoscience.gov.au/def/ga-samples/> .
+@prefix gas:     <http://pid.geoscience.gov.au/def/ga-samples/> .
+@prefix todo:    <http://todo/> .
 
 gs:GS1994931507
     a                  sosa:Platform, geo:Feature ;
@@ -33,11 +34,9 @@ gs:GS1994931507
                                                      sosa:hasSample site:17594 ] ] ;
     geo:hasGeometry    [ a                         geo:Point ;
                          geo:asGeoJSON             "{\"type\": \"Point\", \"coordinates\": [137.6250691792, -34.0411726571]}"^^geo:geoJSONLiteral ] ;
-    gas:hasStationType gas:GravityStation ;
+    gas:hasStationType todo:do-we-need-a-vocab ;
 .
 #Condition  # does this need a vocabulary? if not, use 'comment'
-#Gravity Datum
-#Station Type
 
 fc:
     rdfs:member gs:GS1994931507 .
