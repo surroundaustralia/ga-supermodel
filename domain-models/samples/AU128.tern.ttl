@@ -22,11 +22,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     void:inDataset <http://pid.geoscience.gov.au/sample> ;
 .
 
-<http://pid.geoscience.gov.au/site/17594>
-    a tern:Site ;
-    dcterms:title "TODO: get from GA DB" ;
-.
-
 <http://sweetontology.net/realmGeol/Lithosphere>
     a tern:FeatureOfInterest ;
     rdfs:label "Lithosphere" ;

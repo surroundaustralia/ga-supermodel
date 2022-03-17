@@ -7,16 +7,14 @@
 @prefix wiki: <https://www.wikidata.org/wiki/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://pid.geoscience.gov.au/sample/AU128>
+<http://pid.geoscience.gov.au/site/17594>
     a sosa:Sample ;
-    rdfs:label "Sample AU128" ;
-    sosa:isSampleOf <http://pid.geoscience.gov.au/site/17594> ;
-    sosa:hasSampledFeature <http://sweetontology.net/realmGeol/Lithosphere> ;
-    sosa:isResultOf [
-        a sosa:Sampling ;
-        sosa:hasSamplingMethod <http://pid.geoscience.gov.au/def/voc/ga/igsncode/Rock> ;
-#        sosa:resultTime "TODO: Unclear in data which datetime is relevant" ;
-    ]
+    wiki:Q2633778 "NaN" ; # elevation. keep only when value is not None
+    geo:hasGeometry [
+        a geo:Geometry ;
+        geo:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4283> POLYGON((137.6250691792 ,  ,  -34.0411726571,  -34.0411726571, 137.6250691792 ))"^^geo:wktLiteral ;
+        geo:asGeoJSON "{\"type\": \"Point\", \"coordinates\": [137.6250691792, -34.0411726571]}"^^geo:geoJSONLiteral ;
+    ] ;
 .
 
 <http://sweetontology.net/realmGeol/Lithosphere>

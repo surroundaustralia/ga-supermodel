@@ -1,0 +1,29 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix foiType: <http://pid.geoscience.gov.au/def/voc/featureofinteresttype/> .
+@prefix gas: <http://pid.geoscience.gov.au/def/ga-samples/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix sites: <http://pid.geoscience.gov.au/site/ga> .
+@prefix site: <http://pid.geoscience.gov.au/site/> .
+
+
+site:17594
+    a tern:Site ;
+    a geo:Feature ;
+    dct:identifier "17594" ;
+    dct:isPartOf sites: ;
+    rdfs:label "Site 17594" ;
+    geo:hasGeometry [
+        a geo:Geometry ;
+        geo:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4283> POLYGON((137.6250691792 -34.0411726571, ... -34.0411726571, 137.6250691792))"^^geo:wktLiteral ;
+        geo:asGeoJSON "{\"type\": \"Point\", \"coordinates\": [137.6250691792, -34.0411726571]}"^^geo:geoJSONLiteral ;
+    ] ;
+.
+
+sites: rdfs:member site:17594
+ .
