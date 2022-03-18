@@ -1,0 +1,39 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix foiType: <http://pid.geoscience.gov.au/def/voc/featureofinteresttype/> .
+@prefix gas: <http://pid.geoscience.gov.au/def/ga-samples/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+@prefix survey: <https://pid.geoscience.gov.au/survey/au/> .
+@prefix surveys: <https://pid.geoscience.gov.au/survey/au/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix site: <http://pid.geoscience.gov.au/site/> .
+@prefix ph: <http://placeholder/> .
+@prefix sm: <http://linked.data.gov.au/def/survey-method/> .
+@prefix st: <http://linked.data.gov.au/def/survey-type/> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
+
+surveys: rdfs:member survey:SV2 .
+
+survey:SV2
+    a gas:Survey , sosa:Sampling , tern:SiteVisit , geo:Feature ;
+    dct:isPartOf surveys: ;
+    rdfs:label "Early Two 1960, Leg 1"@en ;
+    gas:surveyMethod sm:marine ;
+    gas:surveyType st:magnetic-NOT_IN_VOCAB ;
+    dct:identifier "SV2"^^ph:datatype1 ;
+    dct:identifier "ET6001"^^ph:datatype2 ;
+    sosa:hasResult site:17594 ;
+    dwc:country "Australia"^^xsd:string ;
+    dwc:stateProvince ""^^xsd:string ;
+    geo:hasGeometry _:bn1 ;
+.
+
+_:bn1 a geo:Geometry ;
+        geo:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4283> POINT(137.6250691792 -34.0411726571)"^^geo:wktLiteral ;
+        geo:asGeoJSON "{\"type\": \"Point\", \"coordinates\": [137.6250691792, -34.0411726571]}"^^geo:geoJSONLiteral ;
+      .
