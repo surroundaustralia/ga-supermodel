@@ -1080,7 +1080,25 @@ This supermodel&#8217;s origins are in GA&#8217;s geology and spatial data work 
 </ul>
 </div>
 <div class="paragraph">
-<p>Where <code>sosa:Sampling</code> activities result in <code>sosa:Sample</code> objects, <code>sosa:Observation</code> activities result in <code>sosa:Result</code> objects. The observation/result pair is a more generic form of the samplling/sample pair.</p>
+<p>Where <code>sosa:Sampling</code> activities result in <code>sosa:Sample</code> objects, <code>sosa:Observation</code> activities result in <code>sosa:Result</code> objects. The observation/result pair is a more generic form of the sampling/sample pair.</p>
+</div>
+<div class="paragraph">
+<p>Some types of tern:Sites are also sosa:Platforms, a class used to represent entities that host other entities. For example gravity stations, which host sensors for detecting gravity.</p>
+</div>
+<div id="fig-domain-classes-sites-platforms" class="imageblock">
+<div class="content">
+<img src="https://surroundaustralia.github.io/ga-supermodel/img/domain-classes-sites-platforms.png" alt="domain classes sites platforms">
+</div>
+<div class="title">Figure 9. Domain Main Classes for Sites and Platforms</div>
+</div>
+<div class="paragraph">
+<p>Surveys are a subclass of Samplings, and where the survey took place at a site, are related to the site through a tern:SiteVisit. Soft typing of surveys is done through the dcterms:type property, and vocabularies for types and methods of surveys are defined in the <a href="#xx">[xx]</a> and <a href="#yy">[yy]</a> vocabularies</p>
+</div>
+<div id="fig-domain-classes-surveys" class="imageblock">
+<div class="content">
+<img src="https://surroundaustralia.github.io/ga-supermodel/img/domain-classes-surveys.png" alt="domain classes surveys">
+</div>
+<div class="title">Figure 10. Domain Main Classes for Surveys</div>
 </div>
 <div class="paragraph">
 <p>Additional classes in this domain cater for special forms of Sites and Samples. See the <a href="#_sampling_domain">Sampling Domain</a> detailed section below.</p>
@@ -1095,7 +1113,7 @@ This supermodel&#8217;s origins are in GA&#8217;s geology and spatial data work 
 <div class="content">
 <img src="https://surroundaustralia.github.io/ga-supermodel/img/domain-classes-spatiality.png" alt="domain classes spatiality">
 </div>
-<div class="title">Figure 9. Domain Main Classes for Spatiality</div>
+<div class="title">Figure 11. Domain Main Classes for Spatiality</div>
 </div>
 <div class="paragraph">
 <p>This Data Domain&#8217;s main classes are taken directly from GeoSPARQL 1.1 <a href="#GEO">[GEO]</a> which is used extensively in GA already. GeoSPARQL&#8217;s main purposes are to relate things (<code>geo:Feature</code>) to their spatial projections - their geometries - and to relate things to one another - topological relations between features, such as <em>within</em>, <em>touches</em>, <em>disjoint</em> etc.</p>
@@ -1113,7 +1131,7 @@ This supermodel&#8217;s origins are in GA&#8217;s geology and spatial data work 
 <div class="content">
 <img src="https://surroundaustralia.github.io/ga-supermodel/img/domain-classes-theming.png" alt="domain classes theming">
 </div>
-<div class="title">Figure 10. Domain Main Classes for Theming</div>
+<div class="title">Figure 12. Domain Main Classes for Theming</div>
 </div>
 <div class="paragraph">
 <p>This Data Domain&#8217;s main classes are taken from <a href="#SKOS">[SKOS]</a> and their expected/required properties and relations are formally defined in <em>VocPub</em>, a "vocabulary publication profile of SKOS" <a href="#VOCPUB">[VOCPUB]</a>. VocPub just mandates certain vocabulary metadata and relations between elements in vocabularies. Conformance of vocabularies to VocPub is also easily testable using the profile&#8217;s validator and online tooling that support it <sup class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnotedef_3" title="View footnote.">3</a>]</sup>.</p>
@@ -1347,7 +1365,7 @@ This supermodel&#8217;s origins are in GA&#8217;s geology and spatial data work 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-03-18 02:34:36 UTC
+Last updated 2022-03-21 04:40:40 UTC
 </div>
 </div>
 </body>
