@@ -34,8 +34,7 @@ sites:
 .
 
 samples:
-    a geo:FeatureCollection ;
-    a owl:Ontology ;
+    a geo:FeatureCollection , owl:Ontology ;
     dcterms:identifier "samples" ;
     dcterms:isPartOf dataset: ;
     geo:hasBoundingBox [ a geo:Geometry ;

@@ -16,7 +16,7 @@
 @prefix todo:    <http://todo/> .
 
 gs:GS1994931507
-    a                  sosa:Platform, geo:Feature ;
+    a                  sosa:Platform ;
     dcterms:isPartOf   fc: ;
     rdfs:label         "Gravity Station GS1994931507" ;
     dcterms:identifier "GS1994931507" ;  # Station No
