@@ -11,6 +11,7 @@ PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
 PREFIX vann: <http://purl.org/vocab/vann/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX tbc: <https://tobeconfirmed/>
 
 <http://pid.geoscience.gov.au/def/ga-sampling>
     a owl:Ontology ;
@@ -46,6 +47,13 @@ gas:surveyType
     rdfs:comment "The type of survey"@en ;
     rdfs:domain gas:Survey ;
     rdfs:range skos:Concept ;
+.
+
+gas:materialClass
+    a owl:ObjectProperty ;
+    rdfs:label "Material Class"@en ;
+    rdfs:comment "The class of the material"@en ;
+    rdfs:domain sosa:Sample ;
 .
 
 gas:currentLocation
