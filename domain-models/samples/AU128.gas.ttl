@@ -7,7 +7,8 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix tern: <https://w3id.org/tern/ontologies/tern/> .
-@prefix samples: <http://pid.geoscience.gov.au/sample> .
+@prefix sample: <http://pid.geoscience.gov.au/sample/> .
+@prefix samples: <http://pid.geoscience.gov.au/samples> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 
 samples: rdfs:member <http://pid.geoscience.gov.au/sample/AU128> .
@@ -15,12 +16,12 @@ samples: rdfs:member <http://pid.geoscience.gov.au/sample/AU128> .
 <http://pid.geoscience.gov.au/org/ga/geoscienceaustralia> a org:Organization ;
     foaf:name "Geoscience Australia" .
 
-<http://pid.geoscience.gov.au/sample/AU128>
+sample:AU128
     a tern:MaterialSample ,
     geo:Feature ;
     dct:isPartOf samples: ;
     rdfs:label "Sample igsn:AU128" ;
-    gas:currentLocation [ 
+    gas:currentLocation [
         a dct:Location ;
         dct:description "GA Services building" ;
     ] ;

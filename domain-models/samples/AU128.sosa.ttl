@@ -6,8 +6,10 @@
 @prefix tern: <https://w3id.org/tern/ontologies/tern/> .
 @prefix wiki: <https://www.wikidata.org/wiki/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sample: <http://pid.geoscience.gov.au/sample/> .
+@prefix samples: <http://pid.geoscience.gov.au/samples> .
 
-<http://pid.geoscience.gov.au/sample/AU128>
+sample:AU128
     a sosa:Sample ;
     rdfs:label "Sample AU128" ;
     sosa:isSampleOf <http://pid.geoscience.gov.au/site/17594> ;

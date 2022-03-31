@@ -8,9 +8,10 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix tern: <https://w3id.org/tern/ontologies/tern/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix sample: <http://pid.geoscience.gov.au/sample/> .
+@prefix samples: <http://pid.geoscience.gov.au/samples> .
 
-
-<http://pid.geoscience.gov.au/sample/AU128> 
+sample:AU128
   a <https://w3id.org/gso/common/Sample> ;  # https://w3id.org/gso/geologicrole/Rock_Sample
   rdfs:label "Sample igsn:AU128" ;
   <https://w3id.org/gso/common/isSampleOf> ??

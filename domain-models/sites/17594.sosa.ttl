@@ -6,8 +6,10 @@
 @prefix tern: <https://w3id.org/tern/ontologies/tern/> .
 @prefix wiki: <https://www.wikidata.org/wiki/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sites: <http://pid.geoscience.gov.au/sites> .
+@prefix site: <http://pid.geoscience.gov.au/site/> .
 
-<http://pid.geoscience.gov.au/site/17594>
+site:17594
     a sosa:Sample ;
     wiki:Q2633778 "NaN" ; # elevation. keep only when value is not None
     geo:hasGeometry [

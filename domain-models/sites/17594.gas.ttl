@@ -8,7 +8,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix tern: <https://w3id.org/tern/ontologies/tern/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix sites: <http://pid.geoscience.gov.au/site/ga> .
+@prefix sites: <http://pid.geoscience.gov.au/sites> .
 @prefix site: <http://pid.geoscience.gov.au/site/> .
 
 
