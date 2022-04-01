@@ -23,6 +23,7 @@
 
 survey:SV2
     a sosa:Sampling ;
+    sosa:hasResult site:17594 ;
     sosa:madeBySampler [
         a sosa:Sampler ;
             sosa:isHostedBy [
