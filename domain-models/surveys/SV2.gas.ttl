@@ -1,3 +1,5 @@
+@prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
+@prefix country: <http://linked.data.gov.au/dataset/asgs2016/country/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix foiType: <http://pid.geoscience.gov.au/def/voc/featureofinteresttype/> .
@@ -15,25 +17,67 @@
 @prefix sm: <http://linked.data.gov.au/def/survey-method/> .
 @prefix st: <http://linked.data.gov.au/def/survey-type/> .
 @prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
-@prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
+@prefix state: <http://linked.data.gov.au/dataset/asgs2016/stateorterritory/> .
+@prefix tbc: <https://tobeconfirmed/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
 
 surveys: rdfs:member survey:SV2 .
 
 survey:SV2
     a gas:Survey , sosa:Sampling , tern:SiteVisit , geo:Feature ;
     dct:isPartOf surveys: ;
-    rdfs:label "Early Two 1960, Leg 1"@en ;
-    gas:surveyMethod sm:marine ;
-    gas:surveyType st:magnetic-NOT_IN_VOCAB ;
-    dct:identifier "SV2"^^ph:datatype1 ;
-    dct:identifier "ET6001"^^ph:datatype2 ;
+    rdfs:label "Arnhem Land, Composite Grids, NT, 1996."@en ;
+    dct:identifier "SV228163"^^xsd:token ;
+    dct:identifier "68"^^tbc:gaidentifier ;
     sosa:hasResult site:17594 ;
-    dwc:country "Australia"^^xsd:string ;
-    dwc:stateProvince ""^^xsd:string ;
-    geo:hasGeometry _:bn1 ;
+    gas:onshoreOffshore "onshore", "offshore" ;
+    gas:surveyType "air" ;
+    gas:surveyDetail "detailed" ;
+    gas:measurementType "elevation", "magnetic", "radiometric" ;
+    geo:hasBoundingBox [
+        a geo:Geometry ;
+        geo:asWKT "POLYGON ((96.0000 -45.0000, 96.0000 -9.0000, 168.0000 -9.0000, 168.0000 -45.0000, 96.0000 -45.0000))"^^geo:wktLiteral ;
+        geo:asGeoJSON "{\"type\": \"Polygon\", \"coordinates\": [[ [96.0,-45.0],[96.0,-9.0], [168.0,-9.0], [168.0,-45.0], [96.0,-45.0]]]}"^^geo:geoJSONLiteral ;
+                       ] ;
+    gas:maxLineSpacing [
+        qudt:numericValue "200"^^xsd:double ;
+        qudt:unit unit:M ;
+            ] ;
+    gas:minLineSpacing [
+        qudt:numericValue "200"^^xsd:double ;
+        qudt:unit unit:M ;
+            ] ;
+    gas:tieSpacing [
+        qudt:numericValue "2000"^^xsd:double ;
+        qudt:unit unit:M ;
+            ] ;
+    gas:lineKilometres [
+        qudt:numericValue "730"^^xsd:double ;
+        qudt:unit unit:KiloM ;
+            ] ;
+    gas:tieKilometres [
+        qudt:numericValue "515"^^xsd:double ;
+        qudt:unit unit:KiloM ;
+            ] ;
+    gas:totalKilometres [
+        qudt:numericValue "1245"^^xsd:double ;
+        qudt:unit unit:KiloM ;
+            ] ;
+    gas:lineAzimuth [
+        qudt:numericValue "150"^^xsd:double ;
+        qudt:unit unit:DEG ;
+            ] ;
+    gas:tieAzimuth [
+        qudt:numericValue "60"^^xsd:double ;
+        qudt:unit unit:DEG ;
+            ] ;
+    gas:minStationSpacing [
+        qudt:numericValue "100"^^xsd:double ;
+        qudt:unit unit:DEG ;
+            ] ;
+    gas:maxStationSpacing [
+        qudt:numericValue "150"^^xsd:double ;
+        qudt:unit unit:DEG ;
+            ] ;
 .
-
-_:bn1 a geo:Geometry ;
-        geo:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4283> POINT(137.6250691792 -34.0411726571)"^^geo:wktLiteral ;
-        geo:asGeoJSON "{\"type\": \"Point\", \"coordinates\": [137.6250691792, -34.0411726571]}"^^geo:geoJSONLiteral ;
-      .

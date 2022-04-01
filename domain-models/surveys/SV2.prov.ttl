@@ -7,39 +7,46 @@
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix ph: <http://placeholder/> .
+@prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
+@prefix state: <http://linked.data.gov.au/dataset/asgs2016/stateorterritory/> .
 
 survey:SV2
-    a gas:Survey ;
+    a gas:Survey , prov:Activity;
     rdfs:label "Early Two 1960, Leg 1"@en ;
-    prov:qualifiedAttribution [
-        prov:agent [
-            a prov:Organization ;
+    prov:qualifiedAssociation [
+        a prov:Association ;
+        prov:association [
+            a prov:Organization , prov:Agent ;
             sdo:name "Geoscience Australia"@en ;
+            prov:hadRole <http://linked.data.gov.au/def/iso19115-1/RoleCode/Owner> ;
         ] ;
-        prov:hadRole <http://linked.data.gov.au/def/iso19115-1/RoleCode/Owner> ;
-    ] ;
-        prov:qualifiedAttribution [
-        prov:agent [
-            a prov:Organization ;
+    ] , [
+        a prov:Association ;
+        prov:association [
+            a prov:Organization , prov:Agent ;
             sdo:name "Australian Geological Survey Organisation"@en ;
+            prov:hadRole ph:Operator ;
         ] ;
-        prov:hadRole ph:Operator ;
-    ] ;
-        prov:qualifiedAttribution [
-        prov:agent [
-            a prov:Organization ;
+    ] , [
+        a prov:Association ;
+        prov:association [
+            a prov:Organization , prov:Agent ;
             sdo:name "Contractor"@en ;
+            prov:hadRole ph:Contractor ;
         ] ;
-        prov:hadRole ph:Contractor ;
-    ] ;
-        prov:qualifiedAttribution [
-        prov:agent [
-            a prov:Organization ;
+    ] , [
+         a prov:Association ;
+        prov:association [
+            a prov:Organization , prov:Agent ;
             sdo:name "Processor"@en ;
+            prov:hadRole <http://linked.data.gov.au/def/iso19115-1/RoleCode/Processor> ;
         ] ;
-        prov:hadRole <http://linked.data.gov.au/def/iso19115-1/RoleCode/Processor> ;
     ] ;
     prov:startedAtTime "1960-01-01T00:00:00Z"^^xsd:dateTime ;
     prov:endedAtTime "1960-12-31T00:00:00Z"^^xsd:dateTime ;
+    prov:at:Location [
+        dwc:country "Australia" ;
+        dwc:stateProvince state:7 ;
+                     ]
 
 .
