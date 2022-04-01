@@ -35,10 +35,15 @@ survey:SV2
     gas:surveyType "air" ;
     gas:surveyDetail "detailed" ;
     gas:measurementType "elevation", "magnetic", "radiometric" ;
-    geo:hasBoundingBox [
+    geo:hasBoundingBox [ # from max min coords
         a geo:Geometry ;
         geo:asWKT "POLYGON ((96.0000 -45.0000, 96.0000 -9.0000, 168.0000 -9.0000, 168.0000 -45.0000, 96.0000 -45.0000))"^^geo:wktLiteral ;
         geo:asGeoJSON "{\"type\": \"Polygon\", \"coordinates\": [[ [96.0,-45.0],[96.0,-9.0], [168.0,-9.0], [168.0,-45.0], [96.0,-45.0]]]}"^^geo:geoJSONLiteral ;
+                       ] ;
+    geo:hasGeometry [ # from polygon extent
+        a geo:Geometry ;
+        geo:asWKT "POLYGON ((137.600006 -33.75, 137.5 -34.0, 137.399994 -34.5, 138.0 -34.5, 138.0 -33.75, 137.600006 -33.75))"^^geo:wktLiteral ;
+        geo:asGeoJSON "{\"type\": \"Polygon\", \"coordinates\": [[ [137.600006,-33.75],[137.5,-34.0], [137.399994,-34.5], [138.0,-34.5], [138.0,-33.75], [137.600006,-33.75]]]}"^^geo:geoJSONLiteral ;
                        ] ;
     gas:maxLineSpacing [
         qudt:numericValue "200"^^xsd:double ;
