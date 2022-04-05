@@ -8,7 +8,7 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix ph: <http://placeholder/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
-@prefix state: <http://linked.data.gov.au/dataset/asgs2016/stateorterritory/> .
+@prefix geonames: <https://www.geonames.org/> .
 
 survey:SV2
     a gas:Survey , prov:Activity;
@@ -44,9 +44,6 @@ survey:SV2
     ] ;
     prov:startedAtTime "1960-01-01T00:00:00Z"^^xsd:dateTime ;
     prov:endedAtTime "1960-12-31T00:00:00Z"^^xsd:dateTime ;
-    prov:at:Location [
-        dwc:country "Australia" ;
-        dwc:stateProvince state:7 ;
-                     ]
+    prov:atLocation geonames:SouthAustralia ;
 
 .

@@ -21,6 +21,7 @@
 @prefix tbc: <https://tobeconfirmed/> .
 @prefix unit: <http://qudt.org/vocab/unit/> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix mtype: <http://pid.geoscience.gov.au/def/voc/measurement-type/> .
 
 surveys: rdfs:member survey:SV2 .
 
@@ -34,7 +35,7 @@ survey:SV2
     gas:onshoreOffshore "onshore", "offshore" ;
     gas:surveyType "air" ;
     gas:surveyDetail "detailed" ;
-    gas:measurementType "elevation", "magnetic", "radiometric" ;
+    gas:measurementType mtype:elevation, mtype:magnetic, mtype:radiometric ;
     geo:hasBoundingBox [ # from max min coords
         a geo:Geometry ;
         geo:asWKT "POLYGON ((96.0000 -45.0000, 96.0000 -9.0000, 168.0000 -9.0000, 168.0000 -45.0000, 96.0000 -45.0000))"^^geo:wktLiteral ;
