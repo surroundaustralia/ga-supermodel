@@ -7,6 +7,7 @@
 @prefix gs: <http://pid.geoscience.gov.au/gs> .
 @prefix locn: <http://www.w3.org/ns/locn#> .
 @prefix mines: <http://pid.geoscience.gov.au/mines> .
+@prefix mo: <http://pid.geoscience.gov.au/mo> .
 @prefix ms: <http://pid.geoscience.gov.au/ms> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -55,6 +56,16 @@ mines: a geo:FeatureCollection,
     dcterms:identifier "mines"^^xsd:token ;
     dcterms:isPartOf dataset: ;
     dcterms:title "Mines"@en ;
+    geo:hasBoundingBox [ a geo:Geometry ;
+            geo:asGeoJSON "{\"type\": \"Polygon\", \"coordinates\": [[ [70.0,-69.41700],[70.0,-9.14250], [170.0,-9.14250], [170.0,-69.41700], [70.0,-69.41700]]]}"^^geo:geoJSONLiteral ;
+            geo:asWKT "POLYGON ((70 -69.41700, 70 -9.14250, 170 -9.14250, 170 -69.41700, 70 -69.41700))"^^geo:wktLiteral ] .
+
+mo: a geo:FeatureCollection,
+        owl:Ontology ;
+    dcterms:description "xxx"@en ;
+    dcterms:identifier "mo"^^xsd:token ;
+    dcterms:isPartOf dataset: ;
+    dcterms:title "Mineral Occurence"@en ;
     geo:hasBoundingBox [ a geo:Geometry ;
             geo:asGeoJSON "{\"type\": \"Polygon\", \"coordinates\": [[ [70.0,-69.41700],[70.0,-9.14250], [170.0,-9.14250], [170.0,-69.41700], [70.0,-69.41700]]]}"^^geo:geoJSONLiteral ;
             geo:asWKT "POLYGON ((70 -69.41700, 70 -9.14250, 170 -9.14250, 170 -69.41700, 70 -69.41700))"^^geo:wktLiteral ] .
