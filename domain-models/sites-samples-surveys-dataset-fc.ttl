@@ -119,12 +119,13 @@ dataset: a owl:Ontology,
             dcat:bbox "POLYGON ((70 -69.41700, 70 -9.14250, 170 -9.14250, 170 -69.41700, 70 -69.41700))"^^geo:wktLiteral ;
             locn:geometry "{\"type\": \"Polygon\", \"coordinates\": [[ [70.0,-69.41700],[70.0,-9.14250], [170.0,-9.14250], [170.0,-69.41700], [70.0,-69.41700]]]}"^^geo:geoJSONLiteral ] ;
     dcterms:title "Sites Samples Surveys"@en ;
-    rdfs:member boreholes:,
-        fs:,
-        gs:,
-        mines:,
-        ms:,
-        samples:,
+    rdfs:member boreholes: ,
+        fs: ,
+        gs: ,
+        mines: ,
+        mo: ,
+        ms: ,
+        samples: ,
         surveys: ;
     dcat:contactPoint [ a vcard:Individual ;
             vcard:hasEmail <mailto:david.habgood@surroundaustralia.com> ;
