@@ -1,0 +1,26 @@
+== Annex A: Profile Requirements
+
+_Requirements_ for this specification are organised as perr the classes within the GA Supermodel. See the https://surroundaustralia.github.io/ga-supermodel/supermodel.html[Supermodel main documentation] for more information.
+
+=== A.1 Material Sample Class
+
+`tern:MaterialSample`
+
+The https://linkeddata.tern.org.au/viewers/tern-ontology[TERN Ontology] defines a `tern:MaterialSample` subclass of https://www.w3.org/TR/vocab-ssn/[SOSA]'s `Sample` class which is used by GA for physical samples.
+
+[cols="1,3,6,8"]
+|===
+| ID | Title | Rule | Notes
+
+| https://linked.data.gov.au/def/ga-supermodel/req/ms.1[req:ms.1] | Material Sample IGSN | Each Material Sample _MUST_ indicate an IGSN with a `dcterms:identifier` property with an object of datatype `gas:igsnIri` | 
+
+| https://linked.data.gov.au/def/ga-supermodel/req/ms.2[req:ms.2] | Material Sample Sample ID | Each Material Sample _MUST_ indicate an GA Sample ID with a `dcterms:identifier` property with an object of datatype `gas:sampleid` | 
+
+
+| https://linked.data.gov.au/def/ga-supermodel/req/ms.z[req:ms.z] | Material Sample State | Each Material Sample _MAY_ indicate the Australian State they were aquired within and, if it does, it must indicate the state with its IRI taken from the ASGS2021 dataset | 
+
+| https://linked.data.gov.au/def/ga-supermodel/req/ms.y[req:ms.y] | Material Sample Date Aquired | Each Material Sample _MUST_ indicate the date at which it was aquired with the `gas:dateAcquired` property with an literal object of datatype `xsd:date` | 
+
+| https://linked.data.gov.au/def/ga-supermodel/req/ms.x[req:ms.x] | Material Sample Sampling Location | Each Material Sample _MUST_ indicate exactly one location at which it was aquired with the `gas:samplingLocation` property with an `geo:Geometry` type object | 
+
+|===

@@ -1,4 +1,4 @@
-== Annex A: PID Policy
+== Annex B: PID Policy
 
 * sources of principles
 ** previous GA practice

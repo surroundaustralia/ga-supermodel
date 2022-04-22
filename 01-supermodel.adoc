@@ -338,6 +338,8 @@ include::02-domain-details.adoc[]
 
 :sectnums!:
 
+include::97-annex-profile-requirements.adoc[]
+
 include::98-annex-pid-policy.adoc[]
 
 include::99-references.adoc[]

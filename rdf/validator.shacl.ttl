@@ -1,0 +1,61 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix gas: <http://pid.geoscience.gov.au/def/ga-samples/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix req: <https://linked.data.gov.au/def/ga-supermodel/req/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://linked.data.gov.au/def/ga-supermodel/validator> 
+    a owl:Ontology ;
+    dcterms:created "2022-04-21"^^xsd:date ;
+    dcterms:creator <https://linked.data.gov.au/org/surround> ;
+    dcterms:modified "2022-04-21"^^xsd:date ;
+    dcterms:publisher <https://linked.data.gov.au/org/surround> ;
+    owl:versionIRI <https://linked.data.gov.au/def/ga-supermodel/validator/1.0> ;
+    skos:definition "SHACL validator for the Geoscience Australia SpacePrez Profile"@en ;
+    skos:prefLabel "GA Supermodel Profile Validator"@en .
+
+<https://linked.data.gov.au/def/ga-supermodel/MaterialSample>
+    a sh:NodeShape ;
+    sh:targetClass tern:MaterialSample ;
+    # sh:property [ 
+    #     sh:path dcterms:identifier ;
+    #     sh:message ""@en ;
+    #     sh:or (
+    #         [ sh:datatype gas:igsnIri ]
+    #         [ sh:datatype gas:sampleid ]
+    #         [ sh:datatype gas:eno ]
+    #     ) ;
+    # ] ;
+    # sh:property [
+    #     sh:path gas:hasFoiName ;
+    #     sh:message "comes from spec"@en ;
+    #     sh:datatype xsd:string ;
+    # ] ;    
+    sh:property [
+        a sh:PropertyShape ;
+        dcterms:source req:ms.z ;
+        sh:path gas:samplingLocation ;
+        sh:message "Req ms.z: Each Material Sample MAY indicate the Australian State they were aquired within and, if it does, it must indicate the state with its IRI taken from the ASGS2021 dataset"@en ;
+        sh:nodeKind sh:IRI ;
+    ] ; 
+    sh:property [
+        a sh:PropertyShape ;
+        dcterms:source req:ms.y ;
+        sh:path gas:samplingLocation ;
+        sh:message "Req ms.y: Each Material Sample MUST indicate the date at which it was aquired with the gas:dateAcquired property with an literal object of datatype xsd:date"@en ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:class geo:Geometry ;
+    ] ;    
+    sh:property [
+        a sh:PropertyShape ;
+        dcterms:source req:ms.x ;
+        sh:path gas:samplingLocation ;
+        sh:message "Req ms.x: Each Material Sample MUST indicate exactly one location at which it was aquired with the gas:samplingLocation property with an geo:Geometry type object"@en ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:class geo:Geometry ;
+    ] ;
+.
