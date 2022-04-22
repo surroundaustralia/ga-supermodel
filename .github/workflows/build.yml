@@ -27,8 +27,8 @@ jobs:
         cp rdf/*.ttl docs/
         echo "Add images to docs/"
         cp -r img docs/
-        cp domain-models/samples/references/sam-lite* docs/
-        cp domain-models/samples/ga-sampling/* docs/
+        cp domain-models/examples/samples/references/sam-lite* docs/
+        cp domain-models/definitions/ga-sampling/* docs/
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
