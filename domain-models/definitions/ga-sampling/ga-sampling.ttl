@@ -1,10 +1,11 @@
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX gas: <http://pid.geoscience.gov.au/def/ga-sampling/>
+PREFIx geo: <http://www.opengis.net/ont/geosparql>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX samfl: <http://def.seegrid.csiro.au/ontology/om/sam-lite#>
-PREFIX sdo: <http://schema.org/>
+PREFIX sdo: <https://schema.org/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX sosa: <http://www.w3.org/ns/sosa/>
 PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
@@ -15,45 +16,70 @@ PREFIX tbc: <https://tobeconfirmed/>
 
 <http://pid.geoscience.gov.au/def/ga-sampling>
     a owl:Ontology ;
-    dcterms:contributor
+    sdo:contributor
         <http://orcid.org/0000-0002-3884-3420> ,
         <https://orcid.org/0000-0002-3322-1868> ;
-    dcterms:created "2022-02-18"^^xsd:date ;
-    dcterms:creator <http://orcid.org/0000-0002-8742-7730> ;
-    dcterms:description """A simple profile of an OWL representation of the Sampling Features Schema described in clauses 9-11 of ISO 19156:2011 Geographic Information - Observations and Measurements for Samples information and other ontologies, such as Sensor, Observation, Sample, and Actuator (SOSA) for Sampling events and Feature relation.
+    sdo:dateCreated "2022-02-18"^^xsd:date ;
+    sdo:dateModified "2022-04-22"^^xsd:date ;
+    sdo:dateIssued "2001-01-01"^^xsd:date ;
+    sdo:creator <http://orcid.org/0000-0002-8742-7730> ;
+    sdo:publisher <https://linked.data.gov.au/org.ga> ;
+    skos:definition """A simple profile of an OWL representation of the Sampling Features Schema described in clauses 9-11 of ISO 19156:2011 Geographic Information - Observations and Measurements for Samples information and other ontologies, such as Sensor, Observation, Sample, and Actuator (SOSA) for Sampling events and Feature relation.
 
 This profile's Sample modelling is centred on the main elements of the now unsuported SAM-Lite (https://surroundaustralia.github.io/ga-supermodel/sam-lite.html) ontology which is a simple OWL representation of parts of the Sampling Features Schema.
 
 The notion of a 'Site' as a special kind of Sample is present in many standards and ontologies, with the TERN Ontology being the one directly reused here."""@en ;
-    dcterms:modified "2022-03-02" ;
-    dcterms:publisher <https://linked.data.gov.au/org/ga> ;
-    dcterms:title "Geoscience Australia Sampling Profile"@en ;
+    skos:prefLabel "Geoscience Australia Sampling Profile"@en ;
     vann:preferredNamespacePrefix "gas" ;
     owl:versionIRI gas:0.2 ;
     owl:versionInfo "0.2"@en ;
+    dcterms:provenance "This ontology was implemented as part of the 2022 work on the GA Supermodel" ;
+.
+
+<https://linked.data.gov.au/org.ga>
+    sdo:name "Geoscience Australia" ;
+    sdo:url "https://www.ga.gov.au"^^xsd:anyURI ;
+.
+
+<http://orcid.org/0000-0002-8742-7730>
+    a sdo:Person ;
+    sdo:affiliation <https://linked.data.gov.au/org/surround> ;
+    sdo:email "nicholas.car@surroundaustralia.com"^^xsd:anyURI ;
+    sdo:name "Nicholas J. Car" ;
+.
+
+<https://orcid.org/0000-0002-3322-1868>
+    a sdo:Person ;
+    sdo:affiliation <https://linked.data.gov.au/org/surround> ;
+    sdo:email "david.habgood@surroundaustralia.com"^^xsd:anyURI ;
+    sdo:name "David Habgood" ;
 .
 
 gas:Survey
     a owl:Class ;
-    rdfs:label "Survey"@en ;
+    skos:prefLabel "Survey"@en ;
     rdfs:subClassOf prov:Activity , sosa:Sampling ;
+    dcterms:provenance "Defined in this ontology" ;
+    skos:definition "TODO: put in a definition"@en
 .
 
 tern:SiteVisit rdfs:subClassOf gas:Survey .
 
 gas:surveyType
     a owl:ObjectProperty ;
-    rdfs:label "Survey Type"@en ;
-    rdfs:comment "The type of survey"@en ;
+    skos:prefLabel "Survey Type"@en ;
+    skos:definition "The type of survey"@en ;
     rdfs:domain gas:Survey ;
     rdfs:range skos:Concept ;
+    dcterms:provenance "Defined in this ontology" ;
 .
 
 gas:materialClass
     a owl:ObjectProperty ;
-    rdfs:label "Material Class"@en ;
-    rdfs:comment "The class of the material"@en ;
+    skos:prefLabel "Material Class"@en ;
+    skos:definition "The class of the material"@en ;
     rdfs:domain sosa:Sample ;
+    dcterms:provenance "Defined in this ontology" ;
 .
 
 gas:currentLocation
@@ -66,11 +92,12 @@ gas:currentLocation
 
 NOTE If a specimen no longer exists, for example, it was destroyed in connection with an observation act, then the currentLocation should be omitted or carry a suitable null indicator."""@en ;
     skos:prefLabel "current location"@en ;
+    dcterms:provenance "Defined in this ontology" ;
 .
 
 gas:samplingLocation
     a owl:ObjectProperty ;
-    gas:samplingLocation owl:propertyChainAxiom ;
+    owl:propertyChainAxiom ( sosa:isResultOf geo:hasGeometry ) ;
     rdfs:domain gas:Specimen ;
     rdfs:isDefinedBy <http://pid.geoscience.gov.au/def/ga-sampling> ;
     rdfs:range dcterms:Location ;
@@ -139,26 +166,6 @@ EXAMPLE A profile typically samples a water- or atmospheric-column; a well sampl
 NOTE: In this ontology sosa:isSampleOf is expecte to link Samples to other Samples which, relative to the domain are Features of Interested but may be defined only as Samples themselves. For direct links from a Sample to an onject only declared as a Feature of Interest, sosa:hasSampledFeature should be used."""@en ;
 .
 
-<http://orcid.org/0000-0002-3884-3420>
-    a sdo:Person ;
-    sdo:affiliation <https://linked.data.gov.au/org/csiro> ;
-    sdo:email "simon.cox@csiro.au"^^xsd:anyURI ;
-    sdo:name "Simon J.D. Cox" ;
-.
-
-<http://orcid.org/0000-0002-8742-7730>
-    a sdo:Person ;
-    sdo:affiliation <https://linked.data.gov.au/org/surround> ;
-    sdo:email "nicholas.car@surroundaustralia.com"^^xsd:anyURI ;
-    sdo:name "Nicholas J. Car" ;
-.
-
-<https://orcid.org/0000-0002-3322-1868>
-    a sdo:Person ;
-    sdo:affiliation <https://linked.data.gov.au/org/surround> ;
-    sdo:email "david.habgood@surroundaustralia.com"^^xsd:anyURI ;
-    sdo:name "David Habgood" ;
-.
 
 sosa:FeatureOfInterest
     a owl:Class ;
