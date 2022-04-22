@@ -10,10 +10,12 @@ PREFIX sosa: <http://www.w3.org/ns/sosa/>
 PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
 PREFIX vann: <http://purl.org/vocab/vann/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX tbc: <https://tobeconfirmed/>
 
 <http://pid.geoscience.gov.au/def/ga-sampling>
     a owl:Ontology ;
-    dcterms:contributor 
+    dcterms:contributor
         <http://orcid.org/0000-0002-3884-3420> ,
         <https://orcid.org/0000-0002-3322-1868> ;
     dcterms:created "2022-02-18"^^xsd:date ;
@@ -29,6 +31,29 @@ The notion of a 'Site' as a special kind of Sample is present in many standards 
     vann:preferredNamespacePrefix "gas" ;
     owl:versionIRI gas:0.2 ;
     owl:versionInfo "0.2"@en ;
+.
+
+gas:Survey
+    a owl:Class ;
+    rdfs:label "Survey"@en ;
+    rdfs:subClassOf prov:Activity , sosa:Sampling ;
+.
+
+tern:SiteVisit rdfs:subClassOf gas:Survey .
+
+gas:surveyType
+    a owl:ObjectProperty ;
+    rdfs:label "Survey Type"@en ;
+    rdfs:comment "The type of survey"@en ;
+    rdfs:domain gas:Survey ;
+    rdfs:range skos:Concept ;
+.
+
+gas:materialClass
+    a owl:ObjectProperty ;
+    rdfs:label "Material Class"@en ;
+    rdfs:comment "The class of the material"@en ;
+    rdfs:domain sosa:Sample ;
 .
 
 gas:currentLocation

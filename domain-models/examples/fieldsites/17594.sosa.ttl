@@ -1,0 +1,26 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foiType: <http://pid.geoscience.gov.au/def/voc/featureofinteresttype/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+@prefix wiki: <https://www.wikidata.org/wiki/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sites: <http://pid.geoscience.gov.au/sites> .
+@prefix site: <http://pid.geoscience.gov.au/site/> .
+
+site:17594
+    a sosa:Sample ;
+    wiki:Q2633778 "NaN" ; # elevation. keep only when value is not None
+    geo:hasGeometry [
+        a geo:Geometry ;
+        geo:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4283> POLYGON((137.6250691792 ,  ,  -34.0411726571,  -34.0411726571, 137.6250691792 ))"^^geo:wktLiteral ;
+        geo:asGeoJSON "{\"type\": \"Point\", \"coordinates\": [137.6250691792, -34.0411726571]}"^^geo:geoJSONLiteral ;
+    ] ;
+.
+
+<http://sweetontology.net/realmGeol/Lithosphere>
+    a sosa:FeatureOfInterest ;
+    rdfs:label "lithosphere" ;
+    rdfs:comment "An ultimate FeatureOfInterest" ;
+.

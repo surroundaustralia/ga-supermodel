@@ -1,0 +1,42 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dwc:     <http://rs.tdwg.org/dwc/terms/> .
+@prefix foiType: <http://pid.geoscience.gov.au/def/voc/featureofinteresttype/> .
+@prefix geo:     <http://www.opengis.net/ont/geosparql#> .
+@prefix fc:      <https://pid.geoscience.gov.au/samplingfeature/gravity-stations> .
+@prefix gs:      <https://pid.geoscience.gov.au/samplingfeature/au/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sosa:    <http://www.w3.org/ns/sosa/> .
+@prefix tern:    <https://w3id.org/tern/ontologies/tern/> .
+@prefix wiki:    <https://www.wikidata.org/wiki/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix ssn:     <http://www.w3.org/ns/ssn/> .
+@prefix qudt:    <http://qudt.org/schema/qudt#> .
+@prefix site:    <http://pid.geoscience.gov.au/site/> .
+@prefix gas:     <http://pid.geoscience.gov.au/def/ga-samples/> .
+@prefix todo:    <http://todo/> .
+
+gs:GS1994931507
+    a                  sosa:Platform ;
+    dcterms:isPartOf   fc: ;
+    rdfs:label         "Gravity Station GS1994931507" ;
+    dcterms:identifier "GS1994931507" ;  # Station No
+    dwc:State          "**State from state vocab**" ;
+    dwc:Municipality   "***City from asgs?***" ;
+    sosa:hosts         [ a                         sosa:Sensor ;
+                         sosa:observes             [ rdfs:label "Gravity" ;
+                                                     a          sosa:ObservableProperty ] ;
+                         sosa:madeObservation      [ a              sosa:Observation ;
+                                                     sosa:resultTime "0001-01-01T00:00:00"^^xsd:dateTime ;
+                                                     sosa:hasResult [ a                 sosa:Result ;
+                                                                      qudt:numericValue "***Gravity Value***" ;
+                                                                      qudt:unit         "http://qudt.org/vocab/unit/*****" ; ] ] ;
+                         sosa:hasFeatureOfInterest [ a              sosa:FeatureOfInterest ;
+                                                     sosa:hasSample site:17594 ] ] ;
+    geo:hasGeometry    [ a                         geo:Point ;
+                         geo:asGeoJSON             "{\"type\": \"Point\", \"coordinates\": [137.6250691792, -34.0411726571]}"^^geo:geoJSONLiteral ] ;
+    gas:hasStationType todo:do-we-need-a-vocab ;
+.
+#Condition  # does this need a vocabulary? if not, use 'comment'
+
+fc:
+    rdfs:member gs:GS1994931507 .

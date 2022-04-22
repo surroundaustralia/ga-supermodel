@@ -46,8 +46,8 @@ CSIRO"""^^xsd:string ;
   dct:modified "2015-07-17"^^xsd:date ;
   vann:preferredNamespacePrefix "oml:"^^xsd:string ;
   vann:preferredNamespaceUri oml: ;
-  rdfs:comment """An OWL representation of the Observation Schema described in clauses 7-8 of ISO 19156:2011 Geographic Information - Observations and Measurements. 
-In contrast to previous versions developed through SSN and in conjunction with ISO 19150-2, this ontology has minimal dependencies on existing ontologies, particularly those that trigger extended chains of imports. 
+  rdfs:comment """An OWL representation of the Observation Schema described in clauses 7-8 of ISO 19156:2011 Geographic Information - Observations and Measurements.
+In contrast to previous versions developed through SSN and in conjunction with ISO 19150-2, this ontology has minimal dependencies on existing ontologies, particularly those that trigger extended chains of imports.
 This allows use of this ontology without committing to an entire family of ontologies. """^^xsd:string ;
   rdfs:member oml:CountObservation ;
   rdfs:member oml:GeometryObject ;
@@ -107,11 +107,11 @@ oml:GeometryObservation
 oml:Measure
   rdf:type owl:Class ;
   dct:description "Scaled number. "^^xsd:string ;
-  rdfs:comment """This is an abstract class, which should be substituted by a suitable concrete representation of a measure or quantity at run-tme. 
+  rdfs:comment """This is an abstract class, which should be substituted by a suitable concrete representation of a measure or quantity at run-tme.
 
-oml:SimpleMeasure 
-qudt:QuantityValue <http://qudt.org/schema/qudt#QuantityValue> 
-DUL:Region <http://www.loa-cnr.it/ontologies/DUL.owl#Region> 
+oml:SimpleMeasure
+qudt:QuantityValue <http://qudt.org/schema/qudt#QuantityValue>
+DUL:Region <http://www.loa-cnr.it/ontologies/DUL.owl#Region>
 
 are candidates. """^^xsd:string ;
   rdfs:label "Measure or quantity"^^xsd:string ;
@@ -197,7 +197,7 @@ This association complements the Intention association which describes relations
 oml:Process
   rdf:type owl:Class ;
   dct:description "Process used in an observation, including sensors, algorithms, computation methods"^^xsd:string ;
-  rdfs:comment """The class OM_Process (Figure 2) is an instance of the «metaclass» GF_FeatureType (ISO 19109:2005), which therefore represents a feature type. OM_Process is abstract, and has no attributes, operations or associations. It serves as the base class for observation processes. The purpose of an observation process is to generate an observation result. An instance of OM_Process is often an instrument or sensor, but may be a human observer, a simulator, or a process or algorithm applied to more primitive results used as inputs. 
+  rdfs:comment """The class OM_Process (Figure 2) is an instance of the «metaclass» GF_FeatureType (ISO 19109:2005), which therefore represents a feature type. OM_Process is abstract, and has no attributes, operations or associations. It serves as the base class for observation processes. The purpose of an observation process is to generate an observation result. An instance of OM_Process is often an instrument or sensor, but may be a human observer, a simulator, or a process or algorithm applied to more primitive results used as inputs.
 
 NOTE	ISO 19115-2:2008 provides MI_Instrument, LE_Processing and LE_Algorithm, which could all be modelled as specializations of OM_Process. OGC SensorML [10] provides a model which is suitable for many observation procedures."""^^xsd:string ;
   rdfs:isDefinedBy <http://def.seegrid.csiro.au/ontology/om/om-lite> ;

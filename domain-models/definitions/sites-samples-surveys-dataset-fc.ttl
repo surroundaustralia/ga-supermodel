@@ -1,0 +1,140 @@
+@prefix boreholes: <http://pid.geoscience.gov.au/boreholes> .
+@prefix dataset: <https://linked.data.gov.au/dataset/sites-samples-surveys> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix fs: <http://pid.geoscience.gov.au/fs> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix gs: <http://pid.geoscience.gov.au/gs> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix mines: <http://pid.geoscience.gov.au/mines> .
+@prefix mo: <http://pid.geoscience.gov.au/mo> .
+@prefix ms: <http://pid.geoscience.gov.au/ms> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix pwfs: <https://data.surroundaustralia.com/dataset/provworkflows/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix samples: <http://pid.geoscience.gov.au/samples> .
+@prefix sdo: <https://schema.org/> .
+@prefix surveys: <http://pid.geoscience.gov.au/surveys> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+boreholes: a geo:FeatureCollection,
+        owl:Ontology ;
+    dcterms:description "xxx"@en ;
+    dcterms:identifier "boreholes"^^xsd:token ;
+    dcterms:isPartOf dataset: ;
+    dcterms:title "Boreholes"@en ;
+    geo:hasBoundingBox [ a geo:Geometry ;
+            geo:asGeoJSON "{\"type\": \"Polygon\", \"coordinates\": [[ [70.0,-69.41700],[70.0,-9.14250], [170.0,-9.14250], [170.0,-69.41700], [70.0,-69.41700]]]}"^^geo:geoJSONLiteral ;
+            geo:asWKT "POLYGON ((70 -69.41700, 70 -9.14250, 170 -9.14250, 170 -69.41700, 70 -69.41700))"^^geo:wktLiteral ] .
+
+fs: a geo:FeatureCollection,
+        owl:Ontology ;
+    dcterms:description "xxx"@en ;
+    dcterms:identifier "fieldsites"^^xsd:token ;
+    dcterms:isPartOf dataset: ;
+    dcterms:title "Field Sites"@en ;
+    geo:hasBoundingBox [ a geo:Geometry ;
+            geo:asGeoJSON "{\"type\": \"Polygon\", \"coordinates\": [[ [70.0,-69.41700],[70.0,-9.14250], [170.0,-9.14250], [170.0,-69.41700], [70.0,-69.41700]]]}"^^geo:geoJSONLiteral ;
+            geo:asWKT "POLYGON ((70 -69.41700, 70 -9.14250, 170 -9.14250, 170 -69.41700, 70 -69.41700))"^^geo:wktLiteral ] .
+
+gs: a geo:FeatureCollection,
+        owl:Ontology ;
+    dcterms:description "xxx"@en ;
+    dcterms:identifier "gs"^^xsd:token ;
+    dcterms:isPartOf dataset: ;
+    dcterms:title "Gravity Stations"@en ;
+    geo:hasBoundingBox [ a geo:Geometry ;
+            geo:asGeoJSON "{\"type\": \"Polygon\", \"coordinates\": [[ [70.0,-69.41700],[70.0,-9.14250], [170.0,-9.14250], [170.0,-69.41700], [70.0,-69.41700]]]}"^^geo:geoJSONLiteral ;
+            geo:asWKT "POLYGON ((70 -69.41700, 70 -9.14250, 170 -9.14250, 170 -69.41700, 70 -69.41700))"^^geo:wktLiteral ] .
+
+mines: a geo:FeatureCollection,
+        owl:Ontology ;
+    dcterms:description "xxx"@en ;
+    dcterms:identifier "mines"^^xsd:token ;
+    dcterms:isPartOf dataset: ;
+    dcterms:title "Mines"@en ;
+    geo:hasBoundingBox [ a geo:Geometry ;
+            geo:asGeoJSON "{\"type\": \"Polygon\", \"coordinates\": [[ [70.0,-69.41700],[70.0,-9.14250], [170.0,-9.14250], [170.0,-69.41700], [70.0,-69.41700]]]}"^^geo:geoJSONLiteral ;
+            geo:asWKT "POLYGON ((70 -69.41700, 70 -9.14250, 170 -9.14250, 170 -69.41700, 70 -69.41700))"^^geo:wktLiteral ] .
+
+mo: a geo:FeatureCollection,
+        owl:Ontology ;
+    dcterms:description "xxx"@en ;
+    dcterms:identifier "mo"^^xsd:token ;
+    dcterms:isPartOf dataset: ;
+    dcterms:title "Mineral Occurence"@en ;
+    geo:hasBoundingBox [ a geo:Geometry ;
+            geo:asGeoJSON "{\"type\": \"Polygon\", \"coordinates\": [[ [70.0,-69.41700],[70.0,-9.14250], [170.0,-9.14250], [170.0,-69.41700], [70.0,-69.41700]]]}"^^geo:geoJSONLiteral ;
+            geo:asWKT "POLYGON ((70 -69.41700, 70 -9.14250, 170 -9.14250, 170 -69.41700, 70 -69.41700))"^^geo:wktLiteral ] .
+
+ms: a geo:FeatureCollection,
+        owl:Ontology ;
+    dcterms:description "xxx"@en ;
+    dcterms:identifier "ms"^^xsd:token ;
+    dcterms:isPartOf dataset: ;
+    dcterms:title "Measured Sections"@en ;
+    geo:hasBoundingBox [ a geo:Geometry ;
+            geo:asGeoJSON "{\"type\": \"Polygon\", \"coordinates\": [[ [70.0,-69.41700],[70.0,-9.14250], [170.0,-9.14250], [170.0,-69.41700], [70.0,-69.41700]]]}"^^geo:geoJSONLiteral ;
+            geo:asWKT "POLYGON ((70 -69.41700, 70 -9.14250, 170 -9.14250, 170 -69.41700, 70 -69.41700))"^^geo:wktLiteral ] .
+
+samples: a geo:FeatureCollection,
+        owl:Ontology ;
+    dcterms:description "xxx"@en ;
+    dcterms:identifier "samples"^^xsd:token ;
+    dcterms:isPartOf dataset: ;
+    dcterms:title "Samples"@en ;
+    geo:hasBoundingBox [ a geo:Geometry ;
+            geo:asGeoJSON "{\"type\": \"Polygon\", \"coordinates\": [[ [70.0,-69.41700],[70.0,-9.14250], [170.0,-9.14250], [170.0,-69.41700], [70.0,-69.41700]]]}"^^geo:geoJSONLiteral ;
+            geo:asWKT "POLYGON ((70 -69.41700, 70 -9.14250, 170 -9.14250, 170 -69.41700, 70 -69.41700))"^^geo:wktLiteral ] .
+
+surveys: a geo:FeatureCollection,
+        owl:Ontology ;
+    dcterms:description "xxx"@en ;
+    dcterms:identifier "surveys"^^xsd:token ;
+    dcterms:isPartOf dataset: ;
+    dcterms:title "Surveys"@en ;
+    geo:hasBoundingBox [ a geo:Geometry ;
+            geo:asGeoJSON "{\"type\": \"Polygon\", \"coordinates\": [[ [70.0,-69.41700],[70.0,-9.14250], [170.0,-9.14250], [170.0,-69.41700], [70.0,-69.41700]]]}"^^geo:geoJSONLiteral ;
+            geo:asWKT "POLYGON ((70 -69.41700, 70 -9.14250, 170 -9.14250, 170 -69.41700, 70 -69.41700))"^^geo:wktLiteral ] .
+
+<https://linked.data.gov.au/dataset/sites-samples-surveys/provenance> a prov:Bundle ;
+    dcterms:hasPart pwfs:ce51861d-e380-11eb-9522-5986ca540bea .
+
+<https://linked.data.gov.au/org/ga> a sdo:GovernmentOrganization ;
+    reg:register <https://linked.data.gov.au/org/> .
+
+dataset: a owl:Ontology,
+        dcat:Dataset ;
+    dcterms:created "2022-03-03"^^xsd:date ;
+    dcterms:creator <https://linked.data.gov.au/org/ga> ;
+    dcterms:description "xxx."@en ;
+    dcterms:identifier "sites-samples-surveys"^^xsd:token ;
+    dcterms:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+    dcterms:modified "2022-03-03"^^xsd:date ;
+    dcterms:publisher <https://linked.data.gov.au/org/ga> ;
+    dcterms:spatial [ a dcterms:Location ;
+            dcat:bbox "POLYGON ((70 -69.41700, 70 -9.14250, 170 -9.14250, 170 -69.41700, 70 -69.41700))"^^geo:wktLiteral ;
+            locn:geometry "{\"type\": \"Polygon\", \"coordinates\": [[ [70.0,-69.41700],[70.0,-9.14250], [170.0,-9.14250], [170.0,-69.41700], [70.0,-69.41700]]]}"^^geo:geoJSONLiteral ] ;
+    dcterms:title "Sites Samples Surveys"@en ;
+    rdfs:member boreholes: ,
+        fs: ,
+        gs: ,
+        mines: ,
+        mo: ,
+        ms: ,
+        samples: ,
+        surveys: ;
+    dcat:contactPoint [ a vcard:Individual ;
+            vcard:hasEmail <mailto:david.habgood@surroundaustralia.com> ;
+            vcard:hasName "David Habgood" ;
+            sdo:affiliation <https://linked.data.gov.au/org/surround> ] ;
+    dcat:keyword "Boreholes",
+        "Measured Sections",
+        "Samples",
+        "Sites",
+        "Surveys" ;
+    prov:asInBundle <https://linked.data.gov.au/dataset/sites-samples-surveys/provenance> ;
+    prov:wasDerivedFrom <http://pid.geoscience.gov.au/> .

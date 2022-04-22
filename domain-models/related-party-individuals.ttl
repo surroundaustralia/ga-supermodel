@@ -1,0 +1,34 @@
+@prefix : <http://pid.geoscience.gov.au/def/voc/ga/related-party/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sites: <http://pid.geoscience.gov.au/sites> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix st: <http://pid.geoscience.gov.au/def/voc/ga/related-party> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+:Operator
+  rdf:type owl:Class ;
+  skos:prefLabel "Operator"@en ;
+  skos:definition "The operator of the survey"@en .
+
+:Contractor
+  rdf:type owl:Class ;
+  skos:prefLabel "Contractor"@en ;
+  skos:definition "The contractor of the survey"@en .
+
+:Processor
+  rdf:type owl:Class ;
+  skos:prefLabel "Processor"@en ;
+  skos:definition "The processor of the survey"@en .
+
+:Client
+  rdf:type owl:Class ;
+  skos:prefLabel "Client"@en ;
+  skos:definition "The client of the survey"@en .
+
+:Owner
+  rdf:type owl:Class ;
+  skos:prefLabel "Owner"@en ;
+  skos:definition "The owner of the survey"@en .

@@ -56,8 +56,8 @@
   dct:modified "2015-07-17"^^xsd:date ;
   vann:preferredNamespacePrefix "saml:"^^xsd:string ;
   vann:preferredNamespaceUri samfl: ;
-  rdfs:comment """An OWL representation of the Sampling Features Schema described in clauses 9-11 of ISO 19156:2011 Geographic Information - Observations and Measurements. 
-In contrast to previous versions developed through SSN and in conjunction with ISO 19150-2, this ontology has minimal dependencies on existing ontologies, particularly those that trigger extended chains of imports. 
+  rdfs:comment """An OWL representation of the Sampling Features Schema described in clauses 9-11 of ISO 19156:2011 Geographic Information - Observations and Measurements.
+In contrast to previous versions developed through SSN and in conjunction with ISO 19150-2, this ontology has minimal dependencies on existing ontologies, particularly those that trigger extended chains of imports.
 This allows use of this ontology without committing to an entire family of ontologies. """^^xsd:string ;
   rdfs:label "OWL representation of ISO 19156 Sampling Features model"^^xsd:string ;
   owl:imports dc: ;
@@ -92,11 +92,11 @@ samfl:Location
 samfl:Measure
   rdf:type owl:Class ;
   dct:description "Scaled number. "^^xsd:string ;
-  rdfs:comment """This is an abstract class, which should be substituted by a suitable concrete representation of a measure or quantity at run-tme. 
+  rdfs:comment """This is an abstract class, which should be substituted by a suitable concrete representation of a measure or quantity at run-tme.
 
 oml:SimpleMeasure <http://def.seegrid.csiro.au/ontology/om/om-lite#SimpleMeasure>
-qudt:QuantityValue <http://qudt.org/schema/qudt#QuantityValue> 
-DUL:Region <http://www.loa-cnr.it/ontologies/DUL.owl#Region> 
+qudt:QuantityValue <http://qudt.org/schema/qudt#QuantityValue>
+DUL:Region <http://www.loa-cnr.it/ontologies/DUL.owl#Region>
 
 are candidates. """^^xsd:string ;
   rdfs:label "Measure or quantity"^^xsd:string ;

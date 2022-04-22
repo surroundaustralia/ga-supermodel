@@ -4,8 +4,10 @@ PREFIX sosa: <http://www.w3.org/ns/sosa/>
 PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
 PREFIX void: <http://rdfs.org/ns/void#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+@prefix sample: <http://pid.geoscience.gov.au/sample/> .
+@prefix samples: <http://pid.geoscience.gov.au/samples> .
 
-<http://pid.geoscience.gov.au/sample/AU128>
+sample:AU128
     a
         tern:Sample ;
     tern:featureType <http://linked.data.gov.au/def/tern-cv/d738a3f9-9b00-4adf-9dc8-0577269b691d> ;
@@ -20,11 +22,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         ] ;
     sosa:isSampleOf <http://pid.geoscience.gov.au/site/17594> ;
     void:inDataset <http://pid.geoscience.gov.au/sample> ;
-.
-
-<http://pid.geoscience.gov.au/site/17594>
-    a tern:Site ;
-    dcterms:title "TODO: get from GA DB" ;
 .
 
 <http://sweetontology.net/realmGeol/Lithosphere>

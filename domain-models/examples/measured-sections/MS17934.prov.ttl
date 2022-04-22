@@ -1,0 +1,28 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix gas: <http://pid.geoscience.gov.au/def/ga-samples/> .
+@prefix sdo: <http://schema.org/> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix survey: <https://pid.geoscience.gov.au/survey/au/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix ph: <http://placeholder/> .
+@prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
+@prefix geonames: <https://www.geonames.org/> .
+@prefix ms: <https://pid.geoscience.gov.au/samplingFeature/au/> .
+@prefix geonames: <https://www.geonames.org/> .
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+
+ms:
+    a tern:Site , prov:Activity;
+    rdfs:label "Early Two 1960, Leg 1"@en ;
+    prov:qualifiedAssociation [
+        a prov:Association ;
+        prov:association [
+            a prov:Agent ;
+            sdo:name "Geoscience Australia"@en ;
+            prov:hadRole gas:Originator ;
+        ] ;
+    ] ;
+    prov:atLocation geonames:Australia ;
+.

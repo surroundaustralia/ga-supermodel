@@ -55,7 +55,7 @@ Central Class::
 
 `https://linked.data.gov.au/def/supermodel-td/central-class[smtd:central-class]`
 +
-Central Classes are the generic data classes at the centre of Data Domains with high-level relationships between them defined in this supermodel. 
+Central Classes are the generic data classes at the centre of Data Domains with high-level relationships between them defined in this supermodel.
 +
 These classes are taken from general standards - usually well-known international stadnards - and Geoscience Australia specialises and extends them to make specific, custom, classes for their needs.
 
@@ -64,7 +64,7 @@ Data Domain::
 
 `https://linked.data.gov.au/def/supermodel-td/data-domain[smtd:data-domain]`
 +
-High-level conceptual areas within which Geosicence Australia has data. 
+High-level conceptual areas within which Geosicence Australia has data.
 +
 These Data Domains are not themed scientificly - 'geology', 'hydrogeology', etc. - but instead based on parts of the _Observations & Measurement_ <<ISO19156>> standard, realised in Semantic Web form in the SOSA Ontology, part of the _Semantic Sensor Network Ontology_ <<SSN>>.
 +
@@ -82,7 +82,7 @@ Linked Data::
 
 `https://linked.data.gov.au/def/supermodel-td/linked-data[smtd:linked-data]`
 +
-A set of technologies and conventions defined by the https://www.w3.org[World Wide Web Consortium] that aim to present data in both human- and machine-readable form over the Internet. 
+A set of technologies and conventions defined by the https://www.w3.org[World Wide Web Consortium] that aim to present data in both human- and machine-readable form over the Internet.
 +
 Linked Data is strongly-defined with each element having either a local definition or a link to an available definition on the Internet.
 +
@@ -95,7 +95,7 @@ Semantic Web::
 
 `https://linked.data.gov.au/def/supermodel-td/semantic-web[smtd:semantic-web]`
 +
-The https://www.w3.org[World Wide Web Consortium]'s vision of an Internet-based web of Linked Data. 
+The https://www.w3.org[World Wide Web Consortium]'s vision of an Internet-based web of Linked Data.
 +
 Semantic Web is used to refer to something more than just the technologies and conventions of Linked Data; the term also encompases a specific set of interoperable data models - often called ontologies - published by the W3C, other standards bodies and some well-known companies.
 +
@@ -111,11 +111,11 @@ All code snippets in this document, used to show formal and machine-readable ver
 
 == Introduction
 
-This model described a set of <<#data-domain, Data Domains>> with <<#central-class, Central Classes>> that are associated using <<#linked-data, Linked Data>> principles. Specialisations of the Central Classes are made to cater for particular data needs. 
+This model described a set of <<#data-domain, Data Domains>> with <<#central-class, Central Classes>> that are associated using <<#linked-data, Linked Data>> principles. Specialisations of the Central Classes are made to cater for particular data needs.
 
 Altogether, these things form a <<#knowledge-graph, Knowledge Graph>> of data for Geoscience Australia that participates in the wider, international, <<#semantic-web, Semantic Web>>.
 
-This model is predicated on an assumption that GA is a data aggregation organisation and therefore data cataloguing is its major concern. At the centre of this model then is a domain of `Data Cataloguing`, the main elements of which are taken from the _Data Catalog Vocabulary_ (<<DCAT>>). The things that GA's data are mostly about are spatial things, hence a Data Domain of `Spatiality`, for which the _GeoSPARQL_ <<GEO>> is core. The way GA generates information about spatial things is via observations and various forms of sampling, hence a Data Domain of `Sampling` and for this one the _Sensor, Observation, Sample, and Actuator_ (SOSA) ontology <<SSN>> is mainly used as it which focuseses on observations and how they produce results, what the results are about and so on. GA's data is cetegorised in various ways and for this the Data Domain of `Theming` is indicated. Within it, taxonomy representation using <<SKOS>> is paramount. Finally, all organisations relate their data and processes to thus who are responsible for them, thus the final Data Domain is indeed `Organisations and People` which is modelled using a number of models such as <<DCTERMS>>, <<PROV>> and <<SDO>>. 
+This model is predicated on an assumption that GA is a data aggregation organisation and therefore data cataloguing is its major concern. At the centre of this model then is a domain of `Data Cataloguing`, the main elements of which are taken from the _Data Catalog Vocabulary_ (<<DCAT>>). The things that GA's data are mostly about are spatial things, hence a Data Domain of `Spatiality`, for which the _GeoSPARQL_ <<GEO>> is core. The way GA generates information about spatial things is via observations and various forms of sampling, hence a Data Domain of `Sampling` and for this one the _Sensor, Observation, Sample, and Actuator_ (SOSA) ontology <<SSN>> is mainly used as it which focuseses on observations and how they produce results, what the results are about and so on. GA's data is cetegorised in various ways and for this the Data Domain of `Theming` is indicated. Within it, taxonomy representation using <<SKOS>> is paramount. Finally, all organisations relate their data and processes to thus who are responsible for them, thus the final Data Domain is indeed `Organisations and People` which is modelled using a number of models such as <<DCTERMS>>, <<PROV>> and <<SDO>>.
 
 These models are also all Semantic Web models and they have been selected for their easy interoperability.
 
@@ -234,7 +234,7 @@ Physical samples are sometimes known as 'specimens'. | Sensor, Observation, Samp
 | Organisations & People | `prov:Agent` | An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity | PROV-O: The PROV Ontology <<PROV>>
 |===
 
-The definitions of the main relations between Central Classes are given in 
+The definitions of the main relations between Central Classes are given in
 
 [#tbl-cc-relations, width=75%, frame=none, grid=none]
 .Central Class main relations their definitions and origins
@@ -274,7 +274,7 @@ This subsection details the main elements of the Organisations & People Data Dom
 .Domain Main Classes for Organisations & People
 image::img/domain-classes-organisations-people.png[]
 
-This Data Domain's main classes are centered on <<PROV>>'s `prof:Agent` class but specific types of agent - _person_ & _organisation_ are defined using schema.org <<SDO>>, the general-purpose ontology provisioned by Google, Microsoft & Yahoo for the description of web page data. 
+This Data Domain's main classes are centered on <<PROV>>'s `prof:Agent` class but specific types of agent - _person_ & _organisation_ are defined using schema.org <<SDO>>, the general-purpose ontology provisioned by Google, Microsoft & Yahoo for the description of web page data.
 
 schema.org objects and properties are also used to define agents in the VocPub profile <<VOCPUB>> and are understood by ontology documentation tools such as pyLODE footnote:[https://pypi.org/project/pyLODE/] which is used by GA.
 
@@ -294,9 +294,23 @@ In addition to samples & sampling, this domain can cater for general _observatio
 * images of the earth
 * classification of statigraphic unit
 
-Where `sosa:Sampling` activities result in `sosa:Sample` objects, `sosa:Observation` activities result in `sosa:Result` objects. The observation/result pair is a more generic form of the samplling/sample pair.
+Where `sosa:Sampling` activities result in `sosa:Sample` objects, `sosa:Observation` activities result in `sosa:Result` objects. The observation/result pair is a more generic form of the sampling/sample pair.
+
+Some types of tern:Sites are also sosa:Platforms, a class used to represent entities that host other entities. For example gravity stations, which host sensors for detecting gravity.
+
+[id=fig-domain-classes-sites-platforms]
+.Domain Main Classes for Sites and Platforms
+image::img/domain-classes-sites-platforms.png[]
+
+Surveys are a subclass of Samplings, and where the survey took place at a site, are related to the site through a tern:SiteVisit. Soft typing of surveys is done through the dcterms:type property, and vocabularies for types and methods of surveys are defined in the <<xx>> and <<yy>> vocabularies
+
+[id=fig-domain-classes-surveys]
+.Domain Main Classes for Surveys
+image::img/domain-classes-surveys.png[]
+
 
 Additional classes in this domain cater for special forms of Sites and Samples. See the <<Sampling Domain, Sampling Domain>> detailed section below.
+
 
 ==== Spatiality
 

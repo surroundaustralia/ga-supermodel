@@ -1,0 +1,12 @@
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
+PREFIX void: <http://rdfs.org/ns/void#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+@prefix sites: <http://pid.geoscience.gov.au/sites> .
+@prefix site: <http://pid.geoscience.gov.au/site/> .
+
+site:17594
+    a tern:Site ;
+.

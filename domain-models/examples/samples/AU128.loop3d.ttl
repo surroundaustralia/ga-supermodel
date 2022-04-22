@@ -1,0 +1,26 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix foiType: <http://pid.geoscience.gov.au/def/voc/featureofinteresttype/> .
+@prefix gas: <http://pid.geoscience.gov.au/def/ga-samples/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix sample: <http://pid.geoscience.gov.au/sample/> .
+@prefix samples: <http://pid.geoscience.gov.au/samples> .
+
+sample:AU128
+  a <https://w3id.org/gso/common/Sample> ;  # https://w3id.org/gso/geologicrole/Rock_Sample
+  rdfs:label "Sample igsn:AU128" ;
+  <https://w3id.org/gso/common/isSampleOf> ??
+
+
+<x>
+  <https://w3id.org/gso/common/hasSample>
+
+
+<https://w3id.org/gso/common/Spatial_Location>
+
+<https://w3id.org/gso/geology/Geologic_Material>
