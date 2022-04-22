@@ -11,7 +11,7 @@
 |**Title** | Geoscience Australia Supermodel Specification
 |**Description** | This Model - the GA Supermodel - is https://www.ga.gov.au[Geoscience Australia]'s overarching data model that provides integration logic for data elements in many of GA's specialised domains. It also provides logic for Persistent Identifier (PID) patterning.
 |**Created** | 2021-12-14
-|**Modified** | 2022-03-02
+|**Modified** | 2022-03-30
 |**Issued** | 0000-00-00
 |**Creator** | https://linked.data.gov.au/org/ga[Geoscience Australia]
 |**Publisher** | https://linked.data.gov.au/org/ga[Geoscience Australia]
@@ -23,18 +23,18 @@
 
 === Abstract
 
-This Model - the GA Supermodel - is https://www.ga.gov.au[Geoscience Australia]'s overarching data model that provides integration logic for data elements in many of GA's specialised domains. It also provides logic for Persistent Identifier (PID) patterning.
+This Model - the GA Supermodel - is https://www.ga.gov.au[Geoscience Australia]'s overarching data model that provides integration logic for data elements in many of GA's specialised domains. It also provides logic for Persistent Identifier (PID) patterning. It is based on the general-purpose https://linked.data.gov.au/def/supermodel[Supermodel Model].
 
 === Namespaces
 
 This model is built on a "baseline" of Semantic Web models which use a variatey of namespaces. Prefixes for thess namespaces, used througout this document, are listed below.
 
-[id=tbl-prefixes, width=75%, frame=none, grid=none]
+[id=tbl-prefixes, width=100%, frame=none, grid=none, cols="1,4,4"]
 .Namespaces
 |===
 |Prefix | Namespace | Description
 
-| **`super`** | **`https://linked.data.gov.au/def/ga-supermodel/`** | **this model**
+| **`super:`** | **`https://linked.data.gov.au/def/supermodel/`** | **the Supermodel meta-model**
 |`dcterms:` | `http://purl.org/dc/terms/` | Dublin Core Terms vocabulary namespace
 |`ex:` | `http://example.com/` | Generic examples namespace
 |`owl:` | `http://www.w3.org/2002/07/owl#` | Web Ontology Language ontology namespace
@@ -53,7 +53,7 @@ The following terms appear in this document and, when they do, the definitions i
 [id=central-class]
 Central Class::
 
-`http://pid.geoscience.gov.au/def/sm/terms-definitions/central-class`
+`https://linked.data.gov.au/def/supermodel-td/central-class[smtd:central-class]`
 +
 Central Classes are the generic data classes at the centre of Data Domains with high-level relationships between them defined in this supermodel. 
 +
@@ -62,7 +62,7 @@ These classes are taken from general standards - usually well-known internationa
 [id=data-domain]
 Data Domain::
 
-`http://pid.geoscience.gov.au/def/sm/terms-definitions/data-domain`
+`https://linked.data.gov.au/def/supermodel-td/data-domain[smtd:data-domain]`
 +
 High-level conceptual areas within which Geosicence Australia has data. 
 +
@@ -73,14 +73,14 @@ Current Data Domain are shown in <<fig-top-level, Figure 1>>.
 [id=knowledge-graph]
 Knowledge Graph::
 
-`http://pid.geoscience.gov.au/def/sm/terms-definitions/knowledge-graph`
+`https://linked.data.gov.au/def/supermodel-td/knowledge-graph[smtd:knowledge-graph]`
 +
 A Knowledge Graph is a dataset that uses a graph data tructure - nodes and edges - with strongly-defined elements.
 
 [id=linked-data]
 Linked Data::
 
-`http://pid.geoscience.gov.au/def/sm/terms-definitions/linked-data`
+`https://linked.data.gov.au/def/supermodel-td/linked-data[smtd:linked-data]`
 +
 A set of technologies and conventions defined by the https://www.w3.org[World Wide Web Consortium] that aim to present data in both human- and machine-readable form over the Internet. 
 +
@@ -93,7 +93,7 @@ Linked Data is graph-based in nature, that is it consistes of nodes and edges th
 [id=semantic-web]
 Semantic Web::
 
-`http://pid.geoscience.gov.au/def/sm/terms-definitions/semantic-web`
+`https://linked.data.gov.au/def/supermodel-td/semantic-web[smtd:semantic-web]`
 +
 The https://www.w3.org[World Wide Web Consortium]'s vision of an Internet-based web of Linked Data. 
 +
@@ -180,11 +180,11 @@ While not often in front of mind for objects in any Data Domain, provenance rela
 
 The top-level view of the GA supermodel that assumes Level 0 background mechanics shows a set of 5 <<#data-domain, Data Domains>> which are:
 
-1. http://pid.geoscience.gov.au/def/sm/data-domains/data-cataloguing:[Data Cataloguing]
-2. http://pid.geoscience.gov.au/def/sm/data-domains/organisations-people:[Organisations & People]
-3. http://pid.geoscience.gov.au/def/sm/data-domains/sampling:[Sampling]
-4. http://pid.geoscience.gov.au/def/sm/data-domains/spatiality:[Spatiality]
-5. http://pid.geoscience.gov.au/def/sm/data-domains/theming:[Theming]
+1. https://linked.data.gov.au/def/supermodel/data-domains/data-cataloguing[Data Cataloguing]
+2. https://linked.data.gov.au/def/supermodel/data-domains/organisations-people[Organisations & People]
+3. https://linked.data.gov.au/def/supermodel/data-domains/theming[Theming]
+4. https://linked.data.gov.au/def/supermodel/data-domains/observation[Sampling & Observation]
+5. https://linked.data.gov.au/def/supermodel/data-domains/spatiality[Spatiality]
 
 These are shown in <<fig-top-level, Figure 1>> below.
 
@@ -192,7 +192,7 @@ These are shown in <<fig-top-level, Figure 1>> below.
 .Top-level view of the GA Supermodel showing Data Domains
 image::img/data-domains.png[]
 
-These Data Domains are defined formally in a simple SKOS vocabulary within this model's set of machine-readable resources. The vocabulary may be access ddirectly at http://pid.geoscience.gov.au/def/sm/data-domains.
+These Data Domains are defined formally in a simple SKOS vocabulary within this model's set of machine-readable resources. The vocabulary may be access ddirectly at https://linked.data.gov.au/def/supermodel/data-domains.
 
 Elements at all other levels of detail in this model are classified according to these Data Domains by use of the `dcat:theme` property, for example, the class `sosa:Sample` is within the _Sampling_ Data Domain, so it is defined as follows:
 
@@ -308,7 +308,7 @@ image::img/domain-classes-spatiality.png[]
 
 This Data Domain's main classes are taken directly from GeoSPARQL 1.1 <<GEO>> which is used extensively in GA already. GeoSPARQL's main purposes are to relate things (`geo:Feature`) to their spatial projections - their geometries - and to relate things to one another - topological relations between features, such as _within_, _touches_, _disjoint_ etc.
 
-Particular datasets tend to implement specialised types of things (usually referred to as _Feature Types_) and sometimes specialised relations between things, e.g. special _hydrological catchment_ feature type might relate to another by being _upstream_ of it. This is as per modelling in the Geofabric footnot:[https://linked.data.gov.au/dataset/geofabric].
+Particular datasets tend to implement specialised types of things (usually referred to as _Feature Types_) and sometimes specialised relations between things, e.g. special _hydrological catchment_ feature type might relate to another by being _upstream_ of it. This is as per modelling in the Geofabric footnote:[https://linked.data.gov.au/dataset/geofabric].
 
 ==== Theming
 
