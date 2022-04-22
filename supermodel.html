@@ -473,7 +473,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_theming_domain">5.5. Theming Domain</a></li>
 </ul>
 </li>
-<li><a href="#_annex_a_pid_policy">Annex A: PID Policy</a></li>
+<li><a href="#_annex_a_profile_requirements">Annex A: Profile Requirements</a>
+<ul class="sectlevel2">
+<li><a href="#_a_1_material_sample_class">A.1 Material Sample Class</a></li>
+</ul>
+</li>
+<li><a href="#_annex_b_pid_policy">Annex B: PID Policy</a></li>
 <li><a href="#_references">References</a></li>
 </ul>
 </div>
@@ -506,7 +511,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Modified</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2022-03-02</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-03-30</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Issued</strong></p></td>
@@ -538,7 +543,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="_abstract">2.1. Abstract</h3>
 <div class="paragraph">
-<p>This Model - the GA Supermodel - is <a href="https://www.ga.gov.au">Geoscience Australia</a>'s overarching data model that provides integration logic for data elements in many of GA&#8217;s specialised domains. It also provides logic for Persistent Identifier (PID) patterning.</p>
+<p>This Model - the GA Supermodel - is <a href="https://www.ga.gov.au">Geoscience Australia</a>'s overarching data model that provides integration logic for data elements in many of GA&#8217;s specialised domains. It also provides logic for Persistent Identifier (PID) patterning. It is based on the general-purpose <a href="https://linked.data.gov.au/def/supermodel">Supermodel Model</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -546,12 +551,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="paragraph">
 <p>This model is built on a "baseline" of Semantic Web models which use a variatey of namespaces. Prefixes for thess namespaces, used througout this document, are listed below.</p>
 </div>
-<table id="tbl-prefixes" class="tableblock frame-none grid-none stripes-even" style="width: 75%;">
+<table id="tbl-prefixes" class="tableblock frame-none grid-none stripes-even stretch">
 <caption class="title">Table 1. Namespaces</caption>
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
+<col style="width: 11.1111%;">
+<col style="width: 44.4444%;">
+<col style="width: 44.4445%;">
 </colgroup>
 <thead>
 <tr>
@@ -562,9 +567,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>super</code></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code><a href="https://linked.data.gov.au/def/ga-supermodel/" class="bare">https://linked.data.gov.au/def/ga-supermodel/</a></code></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>this model</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>super:</code></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code><a href="https://linked.data.gov.au/def/supermodel/" class="bare">https://linked.data.gov.au/def/supermodel/</a></code></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>the Supermodel meta-model</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>dcterms:</code></p></td>
@@ -623,7 +628,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <dl>
 <dt class="hdlist1">Central Class</dt>
 <dd>
-<p><code><a href="http://pid.geoscience.gov.au/def/sm/terms-definitions/central-class" class="bare">http://pid.geoscience.gov.au/def/sm/terms-definitions/central-class</a></code></p>
+<p><code><a href="https://linked.data.gov.au/def/supermodel-td/central-class">smtd:central-class</a></code></p>
 <div class="paragraph">
 <p>Central Classes are the generic data classes at the centre of Data Domains with high-level relationships between them defined in this supermodel.</p>
 </div>
@@ -637,7 +642,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <dl>
 <dt class="hdlist1">Data Domain</dt>
 <dd>
-<p><code><a href="http://pid.geoscience.gov.au/def/sm/terms-definitions/data-domain" class="bare">http://pid.geoscience.gov.au/def/sm/terms-definitions/data-domain</a></code></p>
+<p><code><a href="https://linked.data.gov.au/def/supermodel-td/data-domain">smtd:data-domain</a></code></p>
 <div class="paragraph">
 <p>High-level conceptual areas within which Geosicence Australia has data.</p>
 </div>
@@ -654,7 +659,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <dl>
 <dt class="hdlist1">Knowledge Graph</dt>
 <dd>
-<p><code><a href="http://pid.geoscience.gov.au/def/sm/terms-definitions/knowledge-graph" class="bare">http://pid.geoscience.gov.au/def/sm/terms-definitions/knowledge-graph</a></code></p>
+<p><code><a href="https://linked.data.gov.au/def/supermodel-td/knowledge-graph">smtd:knowledge-graph</a></code></p>
 <div class="paragraph">
 <p>A Knowledge Graph is a dataset that uses a graph data tructure - nodes and edges - with strongly-defined elements.</p>
 </div>
@@ -665,7 +670,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <dl>
 <dt class="hdlist1">Linked Data</dt>
 <dd>
-<p><code><a href="http://pid.geoscience.gov.au/def/sm/terms-definitions/linked-data" class="bare">http://pid.geoscience.gov.au/def/sm/terms-definitions/linked-data</a></code></p>
+<p><code><a href="https://linked.data.gov.au/def/supermodel-td/linked-data">smtd:linked-data</a></code></p>
 <div class="paragraph">
 <p>A set of technologies and conventions defined by the <a href="https://www.w3.org">World Wide Web Consortium</a> that aim to present data in both human- and machine-readable form over the Internet.</p>
 </div>
@@ -685,7 +690,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <dl>
 <dt class="hdlist1">Semantic Web</dt>
 <dd>
-<p><code><a href="http://pid.geoscience.gov.au/def/sm/terms-definitions/semantic-web" class="bare">http://pid.geoscience.gov.au/def/sm/terms-definitions/semantic-web</a></code></p>
+<p><code><a href="https://linked.data.gov.au/def/supermodel-td/semantic-web">smtd:semantic-web</a></code></p>
 <div class="paragraph">
 <p>The <a href="https://www.w3.org">World Wide Web Consortium</a>'s vision of an Internet-based web of Linked Data.</p>
 </div>
@@ -734,7 +739,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="_uses">3.1. Uses</h3>
 <div class="paragraph">
-<p>This model should be used to understand the broad relationships between any data elements within GA. It can also be used to inform policy that is based on GA&#8217;s overall data structure, for example persistent identifier (PID) policy for which there is a dedicated Annex, <a href="#_annex_a_pid_policy">Annex A: PID Policy</a>.</p>
+<p>This model should be used to understand the broad relationships between any data elements within GA. It can also be used to inform policy that is based on GA&#8217;s overall data structure, for example persistent identifier (PID) policy for which there is a dedicated Annex, <a href="#Annex A: PID Policy">Annex A: PID Policy</a>.</p>
 </div>
 </div>
 </div>
@@ -842,19 +847,19 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><a href="http://pid.geoscience.gov.au/def/sm/data-domains/data-cataloguing:">Data Cataloguing</a></p>
+<p><a href="https://linked.data.gov.au/def/supermodel/data-domains/data-cataloguing">Data Cataloguing</a></p>
 </li>
 <li>
-<p><a href="http://pid.geoscience.gov.au/def/sm/data-domains/organisations-people:">Organisations &amp; People</a></p>
+<p><a href="https://linked.data.gov.au/def/supermodel/data-domains/organisations-people">Organisations &amp; People</a></p>
 </li>
 <li>
-<p><a href="http://pid.geoscience.gov.au/def/sm/data-domains/sampling:">Sampling</a></p>
+<p><a href="https://linked.data.gov.au/def/supermodel/data-domains/theming">Theming</a></p>
 </li>
 <li>
-<p><a href="http://pid.geoscience.gov.au/def/sm/data-domains/spatiality:">Spatiality</a></p>
+<p><a href="https://linked.data.gov.au/def/supermodel/data-domains/observation">Sampling &amp; Observation</a></p>
 </li>
 <li>
-<p><a href="http://pid.geoscience.gov.au/def/sm/data-domains/theming:">Theming</a></p>
+<p><a href="https://linked.data.gov.au/def/supermodel/data-domains/spatiality">Spatiality</a></p>
 </li>
 </ol>
 </div>
@@ -868,7 +873,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="title">Figure 4. Top-level view of the GA Supermodel showing Data Domains</div>
 </div>
 <div class="paragraph">
-<p>These Data Domains are defined formally in a simple SKOS vocabulary within this model&#8217;s set of machine-readable resources. The vocabulary may be access ddirectly at <a href="http://pid.geoscience.gov.au/def/sm/data-domains" class="bare">http://pid.geoscience.gov.au/def/sm/data-domains</a>.</p>
+<p>These Data Domains are defined formally in a simple SKOS vocabulary within this model&#8217;s set of machine-readable resources. The vocabulary may be access ddirectly at <a href="https://linked.data.gov.au/def/supermodel/data-domains" class="bare">https://linked.data.gov.au/def/supermodel/data-domains</a>.</p>
 </div>
 <div class="paragraph">
 <p>Elements at all other levels of detail in this model are classified according to these Data Domains by use of the <code>dcat:theme</code> property, for example, the class <code>sosa:Sample</code> is within the <em>Sampling</em> Data Domain, so it is defined as follows:</p>
@@ -1119,7 +1124,7 @@ This supermodel&#8217;s origins are in GA&#8217;s geology and spatial data work 
 <p>This Data Domain&#8217;s main classes are taken directly from GeoSPARQL 1.1 <a href="#GEO">[GEO]</a> which is used extensively in GA already. GeoSPARQL&#8217;s main purposes are to relate things (<code>geo:Feature</code>) to their spatial projections - their geometries - and to relate things to one another - topological relations between features, such as <em>within</em>, <em>touches</em>, <em>disjoint</em> etc.</p>
 </div>
 <div class="paragraph">
-<p>Particular datasets tend to implement specialised types of things (usually referred to as <em>Feature Types</em>) and sometimes specialised relations between things, e.g. special <em>hydrological catchment</em> feature type might relate to another by being <em>upstream</em> of it. This is as per modelling in the Geofabric footnot:[<a href="https://linked.data.gov.au/dataset/geofabric" class="bare">https://linked.data.gov.au/dataset/geofabric</a>].</p>
+<p>Particular datasets tend to implement specialised types of things (usually referred to as <em>Feature Types</em>) and sometimes specialised relations between things, e.g. special <em>hydrological catchment</em> feature type might relate to another by being <em>upstream</em> of it. This is as per modelling in the Geofabric <sup class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnotedef_3" title="View footnote.">3</a>]</sup>.</p>
 </div>
 </div>
 <div class="sect3">
@@ -1134,7 +1139,7 @@ This supermodel&#8217;s origins are in GA&#8217;s geology and spatial data work 
 <div class="title">Figure 12. Domain Main Classes for Theming</div>
 </div>
 <div class="paragraph">
-<p>This Data Domain&#8217;s main classes are taken from <a href="#SKOS">[SKOS]</a> and their expected/required properties and relations are formally defined in <em>VocPub</em>, a "vocabulary publication profile of SKOS" <a href="#VOCPUB">[VOCPUB]</a>. VocPub just mandates certain vocabulary metadata and relations between elements in vocabularies. Conformance of vocabularies to VocPub is also easily testable using the profile&#8217;s validator and online tooling that support it <sup class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnotedef_3" title="View footnote.">3</a>]</sup>.</p>
+<p>This Data Domain&#8217;s main classes are taken from <a href="#SKOS">[SKOS]</a> and their expected/required properties and relations are formally defined in <em>VocPub</em>, a "vocabulary publication profile of SKOS" <a href="#VOCPUB">[VOCPUB]</a>. VocPub just mandates certain vocabulary metadata and relations between elements in vocabularies. Conformance of vocabularies to VocPub is also easily testable using the profile&#8217;s validator and online tooling that support it <sup class="footnote">[<a id="_footnoteref_4" class="footnote" href="#_footnotedef_4" title="View footnote.">4</a>]</sup>.</p>
 </div>
 </div>
 </div>
@@ -1252,7 +1257,72 @@ This supermodel&#8217;s origins are in GA&#8217;s geology and spatial data work 
 </div>
 </div>
 <div class="sect1">
-<h2 id="_annex_a_pid_policy">Annex A: PID Policy</h2>
+<h2 id="_annex_a_profile_requirements">Annex A: Profile Requirements</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>Requirements</em> for this specification are organised as perr the classes within the GA Supermodel. See the <a href="https://surroundaustralia.github.io/ga-supermodel/supermodel.html">Supermodel main documentation</a> for more information.</p>
+</div>
+<div class="sect2">
+<h3 id="_a_1_material_sample_class">A.1 Material Sample Class</h3>
+<div class="paragraph">
+<p><code>tern:MaterialSample</code></p>
+</div>
+<div class="paragraph">
+<p>The <a href="https://linkeddata.tern.org.au/viewers/tern-ontology">TERN Ontology</a> defines a <code>tern:MaterialSample</code> subclass of <a href="https://www.w3.org/TR/vocab-ssn/">SOSA</a>'s <code>Sample</code> class which is used by GA for physical samples.</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 5.5555%;">
+<col style="width: 16.6666%;">
+<col style="width: 33.3333%;">
+<col style="width: 44.4446%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">ID</th>
+<th class="tableblock halign-left valign-top">Title</th>
+<th class="tableblock halign-left valign-top">Rule</th>
+<th class="tableblock halign-left valign-top">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ga-supermodel/req/ms.1">req:ms.1</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Material Sample IGSN</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Each Material Sample <em>MUST</em> indicate an IGSN with a <code>dcterms:identifier</code> property with an object of datatype <code>gas:igsnIri</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ga-supermodel/req/ms.2">req:ms.2</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Material Sample Sample ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Each Material Sample <em>MUST</em> indicate an GA Sample ID with a <code>dcterms:identifier</code> property with an object of datatype <code>gas:sampleid</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ga-supermodel/req/ms.z">req:ms.z</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Material Sample State</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Each Material Sample <em>MAY</em> indicate the Australian State they were aquired within and, if it does, it must indicate the state with its IRI taken from the ASGS2021 dataset</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ga-supermodel/req/ms.y">req:ms.y</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Material Sample Date Aquired</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Each Material Sample <em>MUST</em> indicate the date at which it was aquired with the <code>gas:dateAcquired</code> property with an literal object of datatype <code>xsd:date</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/ga-supermodel/req/ms.x">req:ms.x</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Material Sample Sampling Location</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Each Material Sample <em>MUST</em> indicate exactly one location at which it was aquired with the <code>gas:samplingLocation</code> property with an <code>geo:Geometry</code> type object</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_annex_b_pid_policy">Annex B: PID Policy</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -1360,12 +1430,15 @@ This supermodel&#8217;s origins are in GA&#8217;s geology and spatial data work 
 <a href="#_footnoteref_2">2</a>. <a href="https://pypi.org/project/pyLODE/" class="bare">https://pypi.org/project/pyLODE/</a>
 </div>
 <div class="footnote" id="_footnotedef_3">
-<a href="#_footnoteref_3">3</a>. The validator itself is online at <a href="https://w3id.org/profile/vocpub/validator" class="bare">https://w3id.org/profile/vocpub/validator</a> and is pre-loaded into GA&#8217;s vocabulary servers e.g. <a href="https://vocabs.ga.gov.au" class="bare">https://vocabs.ga.gov.au</a>. It can also be selected for online validation use at <a href="https://rdftools.surroundaustralia.com" class="bare">https://rdftools.surroundaustralia.com</a>
+<a href="#_footnoteref_3">3</a>. <a href="https://linked.data.gov.au/dataset/geofabric" class="bare">https://linked.data.gov.au/dataset/geofabric</a>
+</div>
+<div class="footnote" id="_footnotedef_4">
+<a href="#_footnoteref_4">4</a>. The validator itself is online at <a href="https://w3id.org/profile/vocpub/validator" class="bare">https://w3id.org/profile/vocpub/validator</a> and is pre-loaded into GA&#8217;s vocabulary servers e.g. <a href="https://vocabs.ga.gov.au" class="bare">https://vocabs.ga.gov.au</a>. It can also be selected for online validation use at <a href="https://rdftools.surroundaustralia.com" class="bare">https://rdftools.surroundaustralia.com</a>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-04-14 05:58:03 UTC
+Last updated 2022-04-22 01:32:35 UTC
 </div>
 </div>
 </body>
