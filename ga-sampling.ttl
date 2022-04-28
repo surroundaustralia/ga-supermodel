@@ -109,7 +109,7 @@ NOTE Where a specimen has a relatedSamplingFeature whose location provides an un
     skos:scopeNote "This property is related to SOSA via the property chain axiom gas:samplingLocation owl:propertyChainAxiom ( sosa:isResultOf geo:hasGeometry ) which essentially links a sosa:Sample to the location of the sosa:Sampling used to obtain it"@en ;
 .
 
-gas:samplingMethod
+gas:hasSamplingMethod
     a owl:ObjectProperty ;
     rdfs:domain gas:Specimen ;
     rdfs:isDefinedBy <http://pid.geoscience.gov.au/def/ga-sampling> ;
@@ -119,7 +119,7 @@ gas:samplingMethod
     skos:prefLabel "sampling method"@en ;
 .
 
-gas:samplingTime
+gas:hasSamplingTime
     a owl:DatatypeProperty ;
     rdfs:domain gas:Specimen ;
     rdfs:isDefinedBy <http://pid.geoscience.gov.au/def/ga-sampling> ;
@@ -139,6 +139,40 @@ gas:samplingTime
     skos:prefLabel "sampling time"@en ;
     skos:scopeNote "This property is related to SOSA via the property chain axiom gas:samplingLocation owl:propertyChainAxiom ( sosa:isResultOf sosa:resultTime ) which essentially links a sosa:Sample to the time of the sosa:Sampling used to obtain it"@en ;
 .
+
+gas:hasFoiName
+    a owl:DatatypeProperty ;
+    skos:prefLabel "has Feature of Interest Name"@en ;
+.
+gas:hasFoiType
+    a owl:DatatypeProperty ;
+    skos:prefLabel "has Feature of Interest Type"@en ;
+.
+gas:hasMaterialClass
+    a owl:DatatypeProperty ;
+    skos:prefLabel "has Material Class"@en ;
+.
+gas:hasOtherGeologicalData
+    a owl:DatatypeProperty ;
+    skos:prefLabel "has Other Geological Data"@en ;
+.
+gas:hasSampleOriginator
+    a owl:DatatypeProperty ;
+    skos:prefLabel "has Sample Originator"@en ;
+.
+gas:hasSampleType
+    a owl:DatatypeProperty ;
+    skos:prefLabel "has Sample Type"@en ;
+.
+gas:hasSamplingLocation
+    a owl:DatatypeProperty ;
+    skos:prefLabel "has Sampling Location"@en ;
+.
+gas:hasSamplingMethod
+    a owl:DatatypeProperty ;
+    skos:prefLabel "has Sampling Method"@en ;
+.
+
 
 sosa:hasSampledFeature
     a owl:ObjectProperty ;
