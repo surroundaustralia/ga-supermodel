@@ -172,9 +172,9 @@ gas:hasSamplingMethod
     a owl:DatatypeProperty ;
     skos:prefLabel "has Sampling Method"@en ;
 .
-gas:hasBoreholePurpose
+gas:hasPurpose
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Borehole Purpose"@en ;
+    skos:prefLabel "has Purpose"@en ;
 .
 gas:hasOperator
     a owl:DatatypeProperty ;
@@ -339,10 +339,6 @@ gas:hasProcessor
 gas:hasFieldSiteType
     a owl:DatatypeProperty ;
     skos:prefLabel "has Field Site Type"@en ;
-.
-gas:hasFieldSitePurpose
-    a owl:DatatypeProperty ;
-    skos:prefLabel "has Field Site Purpose"@en ;
 .
 gas:hasProject
     a owl:DatatypeProperty ;
