@@ -172,6 +172,10 @@ gas:hasSamplingMethod
     a owl:DatatypeProperty ;
     skos:prefLabel "has Sampling Method"@en ;
 .
+gas:hasBoreholePurpose
+    a owl:DatatypeProperty ;
+    skos:prefLabel "has Borehole Purpose"@en ;
+.
 gas:hasOperator
     a owl:DatatypeProperty ;
     skos:prefLabel "has Operator"@en ;
@@ -311,10 +315,6 @@ gas:hasLineAzimuth
 gas:hasTieAzimuth
     a owl:DatatypeProperty ;
     skos:prefLabel "has Tie Azimuth"@en ;
-.
-gas:hasPolygonExtent
-    a owl:DatatypeProperty ;
-    skos:prefLabel "has Polygon Extent"@en ;
 .
 gas:hasOwner
     a owl:DatatypeProperty ;
