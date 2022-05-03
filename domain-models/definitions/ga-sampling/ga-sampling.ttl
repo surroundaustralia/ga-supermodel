@@ -173,7 +173,6 @@ gas:hasSamplingMethod
     skos:prefLabel "has Sampling Method"@en ;
 .
 
-
 sosa:hasSampledFeature
     a owl:ObjectProperty ;
     rdfs:domain sosa:Sample ;
