@@ -191,7 +191,7 @@ gas:hasStartDate
 .
 gas:hasEndDate
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Drill end date"@en ;
+    skos:prefLabel "has end date"@en ;
     rdfs:range xsd:date ;
 .
 gas:hasRigReleaseDate
