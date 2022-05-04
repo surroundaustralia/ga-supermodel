@@ -61,7 +61,13 @@ gas:Survey
     skos:prefLabel "Survey"@en ;
     rdfs:subClassOf prov:Activity , sosa:Sampling ;
     dcterms:provenance "Defined in this ontology" ;
-    skos:definition "TODO: put in a definition"@en
+.
+
+gas:Borehole
+    a owl:Class ;
+    skos:prefLabel "Borehole"@en ;
+    rdfs:subClassOf sosa:Platform , sosa:Site ;
+    dcterms:provenance "Defined in this ontology" ;
 .
 
 tern:SiteVisit rdfs:subClassOf gas:Survey .
@@ -143,231 +149,231 @@ gas:hasSamplingTime
 
 gas:hasFoiName
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Feature of Interest Name"@en ;
+    skos:prefLabel "Feature of Interest Name"@en ;
 .
 gas:hasFoiType
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Feature of Interest Type"@en ;
+    skos:prefLabel "Feature of Interest Type"@en ;
 .
 gas:hasMaterialClass
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Material Class"@en ;
+    skos:prefLabel "Material Class"@en ;
 .
 gas:hasOtherGeologicalData
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Other Geological Data"@en ;
+    skos:prefLabel "Other Geological Data"@en ;
 .
 gas:hasSampleOriginator
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Sample Originator"@en ;
+    skos:prefLabel "Sample Originator"@en ;
 .
 gas:hasSampleType
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Sample Type"@en ;
+    skos:prefLabel "Sample Type"@en ;
 .
 gas:hasSamplingLocation
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Sampling Location"@en ;
+    skos:prefLabel "Sampling Location"@en ;
 .
 gas:hasSamplingMethod
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Sampling Method"@en ;
+    skos:prefLabel "Sampling Method"@en ;
 .
 gas:hasPurpose
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Purpose"@en ;
+    skos:prefLabel "Purpose"@en ;
 .
 gas:hasOperator
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Operator"@en ;
+    skos:prefLabel "Operator"@en ;
 .
 gas:hasDriller
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Driller"@en ;
+    skos:prefLabel "Driller"@en ;
 .
 gas:hasStartDate
     a owl:DatatypeProperty ;
-    skos:prefLabel "has start date"@en ;
+    skos:prefLabel "start date"@en ;
     rdfs:range xsd:date ;
 .
 gas:hasEndDate
     a owl:DatatypeProperty ;
-    skos:prefLabel "has end date"@en ;
+    skos:prefLabel "end date"@en ;
     rdfs:range xsd:date ;
 .
 gas:hasRigReleaseDate
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Rig Release Date"@en ;
+    skos:prefLabel "Rig Release Date"@en ;
     rdfs:range xsd:date ;
 .
 gas:hasInclinationType
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Inclination Type"@en ;
+    skos:prefLabel "Inclination Type"@en ;
 .
 gas:hasBoreholeLength
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Borehole Length"@en ;
+    skos:prefLabel "Borehole Length"@en ;
 .
 gas:hasKickoffDepth
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Kickoff Depth"@en ;
+    skos:prefLabel "Kickoff Depth"@en ;
 .
 gas:hasParentBorehole
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Parent Borehole"@en ;
+    skos:prefLabel "Parent Borehole"@en ;
     rdfs:range tern:Site ;
 .
 gas:hasStartPoint
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Start Point"@en ;
+    skos:prefLabel "Start Point"@en ;
 .
 gas:hasGeologicalProvinces
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Geological Provinces"@en ;
+    skos:prefLabel "Geological Provinces"@en ;
 .
 gas:hasTenement
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Tenement"@en ;
+    skos:prefLabel "Tenement"@en ;
 .
 gas:hasEarthMaterialIntervals
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Earth Material Intervals"@en ;
+    skos:prefLabel "Earth Material Intervals"@en ;
 .
 gas:hasStratigraphyIntervals
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Stratigraphy Intervals"@en ;
+    skos:prefLabel "Stratigraphy Intervals"@en ;
 .
 gas:hasInorganicChemistryAnalyses
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Inorganic Chemistry Analyses"@en ;
+    skos:prefLabel "Inorganic Chemistry Analyses"@en ;
 .
 gas:hasOrganicChemistryAnalyses
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Organic Chemistry Analyses"@en ;
+    skos:prefLabel "Organic Chemistry Analyses"@en ;
 .
 gas:hasSHRIMPGeochronology
     a owl:DatatypeProperty ;
-    skos:prefLabel "has SHRIMP Geochronology"@en ;
+    skos:prefLabel "SHRIMP Geochronology"@en ;
 .
 gas:hasOtherIsotopesAndGeochronology
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Other Isotopes and Geochronology"@en ;
+    skos:prefLabel "Other Isotopes and Geochronology"@en ;
 .
 gas:hasGroundwaterHydrochemistryAnalyses
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Groundwater Hydrochemistry Analyses"@en ;
+    skos:prefLabel "Groundwater Hydrochemistry Analyses"@en ;
 .
 gas:hasRockPropertiesMeasurements
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Rock Properties Measurements"@en ;
+    skos:prefLabel "Rock Properties Measurements"@en ;
 .
 gas:hasThinSections
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Thin Sections"@en ;
+    skos:prefLabel "Thin Sections"@en ;
 .
 gas:hasLinkedFiles
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Linked Files"@en ;
+    skos:prefLabel "Linked Files"@en ;
 .
 gas:hasBoreholeReports
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Borehole Reports"@en ;
+    skos:prefLabel "Borehole Reports"@en ;
 .
 gas:hasSurveyType
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Survey Type"@en ;
+    skos:prefLabel "Survey Type"@en ;
 .
 gas:hasSurveyDetail
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Survey Detail"@en ;
+    skos:prefLabel "Survey Detail"@en ;
 .
 gas:hasMeasurementType
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Measurement Type"@en ;
+    skos:prefLabel "Measurement Type"@en ;
 .
 gas:hasMinLineSpacing
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Min Line Spacing"@en ;
+    skos:prefLabel "Min Line Spacing"@en ;
 .
 gas:hasMaxLineSpacing
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Max Line Spacing"@en ;
+    skos:prefLabel "Max Line Spacing"@en ;
 .
 gas:hasTieSpacing
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Tie Spacing"@en ;
+    skos:prefLabel "Tie Spacing"@en ;
 .
 gas:hasLineLength
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Line Length"@en ;
+    skos:prefLabel "Line Length"@en ;
 .
 gas:hasTieLength
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Tie Length"@en ;
+    skos:prefLabel "Tie Length"@en ;
 .
 gas:hasTotalLength
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Total Length"@en ;
+    skos:prefLabel "Total Length"@en ;
 .
 gas:hasLineAzimuth
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Line Azimuth"@en ;
+    skos:prefLabel "Line Azimuth"@en ;
 .
 gas:hasTieAzimuth
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Tie Azimuth"@en ;
+    skos:prefLabel "Tie Azimuth"@en ;
 .
 gas:hasOwner
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Owner"@en ;
+    skos:prefLabel "Owner"@en ;
     owl:propertyChainAxiom ( prov:qualifiedAttribution prov:agent ) ;
 .
 gas:hasOperator
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Operator"@en ;
+    skos:prefLabel "Operator"@en ;
     owl:propertyChainAxiom ( prov:qualifiedAttribution prov:agent ) ;
 .
 gas:hasContractor
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Contractor"@en ;
+    skos:prefLabel "Contractor"@en ;
     owl:propertyChainAxiom ( prov:qualifiedAttribution prov:agent ) ;
 .
 gas:hasProcessor
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Processor"@en ;
+    skos:prefLabel "Processor"@en ;
     owl:propertyChainAxiom ( prov:qualifiedAttribution prov:agent ) ;
 .
 gas:hasFieldSiteType
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Field Site Type"@en ;
+    skos:prefLabel "Field Site Type"@en ;
 .
 gas:hasProject
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Project"@en ;
+    skos:prefLabel "Project"@en ;
 .
 gas:hasLocationDescription
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Location Description"@en ;
+    skos:prefLabel "Location Description"@en ;
 .
 gas:hasElevation
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Elevation"@en ;
+    skos:prefLabel "Elevation"@en ;
 .
 gas:hasRegionName
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Region Name"@en ;
+    skos:prefLabel "Region Name"@en ;
 .
 gas:hasOriginator
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Originator"@en ;
+    skos:prefLabel "Originator"@en ;
 .
 gas:hasObservationDate
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Observation Date"@en ;
+    skos:prefLabel "Observation Date"@en ;
 .
 gas:hasRemark
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Remark"@en ;
+    skos:prefLabel "Remark"@en ;
 .
 gas:isOnshoreOffshore
     a owl:DatatypeProperty ;
@@ -375,16 +381,16 @@ gas:isOnshoreOffshore
 .
 gas:hasLength
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Length"@en ;
+    skos:prefLabel "Length"@en ;
     owl:propertyChainAxiom ( sosa:hasResult qudt:numericalValue ) ;
 .
 gas:hasPlatformType
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Platform Type"@en ;
+    skos:prefLabel "Platform Type"@en ;
 .
 gas:hasPlatformName
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Platform Name"@en ;
+    skos:prefLabel "Platform Name"@en ;
 .
 
 sosa:hasSampledFeature
@@ -394,7 +400,7 @@ sosa:hasSampledFeature
     rdfs:range sosa:FeatureOfInterest ;
     owl:equivalentProperty samfl:sampledFeature ;
     skos:definition "Link to the ultimate feature of interest of the context sample - i.e. the end of a chain of isSampleOf relations"@en ;
-    skos:prefLabel "has sampled feature"@en ;
+    skos:prefLabel "sampled feature"@en ;
     skos:scopeNote "See not in sosa:isSampleOf"@en ;
 .
 
