@@ -2,6 +2,7 @@ PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX gas: <http://pid.geoscience.gov.au/def/ga-sampling/>
 PREFIx geo: <http://www.opengis.net/ont/geosparql>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX samfl: <http://def.seegrid.csiro.au/ontology/om/sam-lite#>
@@ -296,17 +297,17 @@ gas:hasTieSpacing
     a owl:DatatypeProperty ;
     skos:prefLabel "has Tie Spacing"@en ;
 .
-gas:hasLineKilometers
+gas:hasLineLength
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Line Kilometers"@en ;
+    skos:prefLabel "has Line Length"@en ;
 .
-gas:hasTieKilometers
+gas:hasTieLength
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Tie Kilometers"@en ;
+    skos:prefLabel "has Tie Length"@en ;
 .
-gas:hasTotalKilometers
+gas:hasTotalLength
     a owl:DatatypeProperty ;
-    skos:prefLabel "has Total Kilometers"@en ;
+    skos:prefLabel "has Total Length"@en ;
 .
 gas:hasLineAzimuth
     a owl:DatatypeProperty ;
@@ -368,6 +369,24 @@ gas:hasRemark
     a owl:DatatypeProperty ;
     skos:prefLabel "has Remark"@en ;
 .
+gas:isOnshoreOffshore
+    a owl:DatatypeProperty ;
+    skos:prefLabel "is Onshore or Offshore"@en ;
+.
+gas:hasLength
+    a owl:DatatypeProperty ;
+    skos:prefLabel "has Length"@en ;
+    owl:propertyChainAxiom ( sosa:hasResult qudt:numericalValue ) ;
+.
+gas:hasPlatformType
+    a owl:DatatypeProperty ;
+    skos:prefLabel "has Platform Type"@en ;
+.
+gas:hasPlatformName
+    a owl:DatatypeProperty ;
+    skos:prefLabel "has Platform Name"@en ;
+.
+
 sosa:hasSampledFeature
     a owl:ObjectProperty ;
     rdfs:domain sosa:Sample ;
@@ -378,6 +397,7 @@ sosa:hasSampledFeature
     skos:prefLabel "has sampled feature"@en ;
     skos:scopeNote "See not in sosa:isSampleOf"@en ;
 .
+
 
 sosa:isSampleOf
     a owl:FunctionalProperty ;
