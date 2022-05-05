@@ -59,14 +59,14 @@ The notion of a 'Site' as a special kind of Sample is present in many standards 
 gas:Survey
     a owl:Class ;
     skos:prefLabel "Survey"@en ;
-    rdfs:subClassOf prov:Activity , sosa:Sampling ;
+    rdfs:subClassOf prov:Activity , sosa:Sampling , geo:Feature ;
     dcterms:provenance "Defined in this ontology" ;
 .
 
 gas:Borehole
     a owl:Class ;
     skos:prefLabel "Borehole"@en ;
-    rdfs:subClassOf sosa:Platform , sosa:Site ;
+    rdfs:subClassOf sosa:Platform , sosa:Site , geo:Feature ;
     dcterms:provenance "Defined in this ontology" ;
 .
 
@@ -102,7 +102,7 @@ NOTE If a specimen no longer exists, for example, it was destroyed in connection
     dcterms:provenance "Defined in this ontology" ;
 .
 
-gas:samplingLocation
+gas:hasSamplingLocation
     a owl:ObjectProperty ;
     owl:propertyChainAxiom ( sosa:isResultOf geo:hasGeometry ) ;
     rdfs:domain gas:Specimen ;
@@ -170,10 +170,6 @@ gas:hasSampleOriginator
 gas:hasSampleType
     a owl:DatatypeProperty ;
     skos:prefLabel "Sample Type"@en ;
-.
-gas:hasSamplingLocation
-    a owl:DatatypeProperty ;
-    skos:prefLabel "Sampling Location"@en ;
 .
 gas:hasSamplingMethod
     a owl:DatatypeProperty ;
@@ -462,7 +458,7 @@ w3geo:SpatialThing, geosparql:SpatialObject are subclasses"""@en ;
 tern:MaterialSample
     a owl:Class ;
     rdfs:isDefinedBy <https://linkeddata.tern.org.au/information-models/tern-ontology> ;
-    rdfs:subClassOf sosa:Sample ;
+    rdfs:subClassOf sosa:Sample , geo:Feature ;
     owl:equivalentClass samfl:Specimen ;
     skos:definition "A physical result of a sampling (or subsampling) event."@en ;
     skos:prefLabel "Material Sample"@en ;
