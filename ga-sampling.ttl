@@ -1,6 +1,6 @@
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX gas: <http://pid.geoscience.gov.au/def/ga-sampling/>
-PREFIx geo: <http://www.opengis.net/ont/geosparql>
+PREFIx geo: <http://www.opengis.net/ont/geosparql#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX qudt: <http://qudt.org/schema/qudt/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
