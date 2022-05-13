@@ -388,7 +388,75 @@ gas:hasPlatformName
     a owl:DatatypeProperty ;
     skos:prefLabel "Platform Name"@en ;
 .
-
+gas:hasEarthMaterial
+    a owl:DatatypeProperty ;
+    skos:prefLabel "Earth Material"@en ;
+.
+gas:hasCondition
+    a owl:DatatypeProperty ;
+    skos:prefLabel "Condition"@en ;
+.
+gas:hasDateLastVisited
+    a owl:DatatypeProperty ;
+    skos:prefLabel "Date Last Visited"@en ;
+.
+gas:hasGravityDatum
+    a owl:DatatypeProperty ;
+    skos:prefLabel "Gravity Datum"@en ;
+.
+gas:hasGravityValue
+    a owl:DatatypeProperty ;
+    skos:prefLabel "Gravity Value"@en ;
+.
+gas:hasStationName
+    a owl:DatatypeProperty ;
+    skos:prefLabel "Station Name"@en ;
+.
+gas:hasStationType
+    a owl:DatatypeProperty ;
+    skos:prefLabel "Station Type"@en ;
+.
+gas:GravityStation
+    a owl:Class ;
+    rdfs:subClassOf geo:Feature ;
+    skos:prefLabel "Gravity Station"@en ;
+.
+gas:hasRockProperties
+    a owl:DatatypeProperty ;
+    skos:prefLabel "Rock Properties"@en ;
+.
+gas:hasStratigraphy
+    a owl:DatatypeProperty ;
+    skos:prefLabel "Stratigraphy"@en ;
+.
+gas:measuredSectionType
+    a owl:DatatypeProperty ;
+    skos:prefLabel "Measured Section Type"@en ;
+.
+gas:hasAssociatedCommodities
+    a owl:DatatypeProperty ;
+    skos:prefLabel "Associated Commodities"@en ;
+.
+gas:hasAssociatedCompanies
+    a owl:DatatypeProperty ;
+    skos:prefLabel "Associated Companies"@en ;
+.
+gas:hasOccurenceType
+    a owl:DatatypeProperty ;
+    skos:prefLabel "Occurence Type"@en ;
+.
+gas:hasSamples
+    a owl:DatatypeProperty ;
+    skos:prefLabel "Samples"@en ;
+.
+gas:hasOperatingStatus
+    a owl:DatatypeProperty ;
+    skos:prefLabel "Operating Status"@en ;
+.
+gas:hasProductionResults
+    a owl:DatatypeProperty ;
+    skos:prefLabel "Production Results"@en ;
+    .
 sosa:hasSampledFeature
     a owl:ObjectProperty ;
     rdfs:domain sosa:Sample ;
@@ -399,8 +467,6 @@ sosa:hasSampledFeature
     skos:prefLabel "sampled feature"@en ;
     skos:scopeNote "See not in sosa:isSampleOf"@en ;
 .
-
-
 sosa:isSampleOf
     a owl:FunctionalProperty ;
     rdfs:domain sosa:Sample ;
