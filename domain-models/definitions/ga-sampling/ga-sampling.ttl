@@ -421,6 +421,26 @@ gas:GravityStation
     rdfs:subClassOf geo:Feature ;
     skos:prefLabel "Gravity Station"@en ;
 .
+gas:Mine
+    a owl:Class ;
+    rdfs:subClassOf geo:Feature ;
+    skos:prefLabel "Mine"@en ;
+.
+gas:MeasuredSection
+    a owl:Class ;
+    rdfs:subClassOf geo:Feature ;
+    skos:prefLabel "Measured Section"@en ;
+.
+gas:MineralOccurence
+    a owl:Class ;
+    rdfs:subClassOf geo:Feature ;
+    skos:prefLabel "Mineral Occurence"@en ;
+.
+gas:FieldSite
+    a owl:Class ;
+    rdfs:subClassOf geo:Feature ;
+    skos:prefLabel "Field Site"@en ;
+.
 gas:hasRockProperties
     a owl:DatatypeProperty ;
     skos:prefLabel "Rock Properties"@en ;
