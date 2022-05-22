@@ -1,0 +1,17 @@
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX ex: <http://example.com/>
+PREFIX gas: <http://pid.geoscience.gov.au/def/ga-samples/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+
+SELECT *
+WHERE {
+    ?ms a tern:MaterialSample ;
+        gas:samplingLocation ?sampling_location ;
+        gas:dateAcquired ?date_aquired ;
+    .
+}
