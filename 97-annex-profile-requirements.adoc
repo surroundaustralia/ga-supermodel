@@ -17,7 +17,7 @@ The https://linkeddata.tern.org.au/viewers/tern-ontology[TERN Ontology] defines 
 | https://linked.data.gov.au/def/ga-supermodel/req/ms.2[req:ms.2] | Material Sample Sample ID | Each Material Sample _MUST_ indicate an GA Sample ID with a `dcterms:identifier` property with an object of datatype `gas:sampleid` | 
 
 
-| https://linked.data.gov.au/def/ga-supermodel/req/ms.z[req:ms.z] | Material Sample State | Each Material Sample _MAY_ indicate the Australian State they were aquired within and, if it does, it must indicate the state with its IRI taken from the ASGS2021 dataset | 
+| https://linked.data.gov.au/def/ga-supermodel/req/ms.z[req:ms.z] | Material Sample State | Each Material Sample _MAY_ indicate the Australian State they were aquired within with a `geo:sfWithin` property and, if it does, it must indicate the state with its IRI taken from the ASGS2021 dataset | 
 
 | https://linked.data.gov.au/def/ga-supermodel/req/ms.y[req:ms.y] | Material Sample Date Aquired | Each Material Sample _MUST_ indicate the date at which it was aquired with the `gas:dateAcquired` property with an literal object of datatype `xsd:date` | 
 

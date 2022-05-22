@@ -1,0 +1,14 @@
+
+
+[id=fig-dd-sites-platforms]
+.Domain Main Classes for Sites and Platforms
+image::img/dd-sites-platforms.png[]
+
+Surveys are a subclass of Samplings, and where the survey took place at a site, are related to the site through a tern:SiteVisit. Soft typing of surveys is done through the dcterms:type property, and vocabularies for types and methods of surveys are defined in the <<xx>> and <<yy>> vocabularies
+
+[id=fig-dd-surveys]
+.Domain Main Classes for Surveys
+image::img/dd-surveys.png[]
+
+
+Additional classes in this domain cater for special forms of Sites and Samples. See the <<Sampling Domain, Sampling Domain>> detailed section below.
