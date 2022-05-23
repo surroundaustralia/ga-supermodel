@@ -1151,6 +1151,12 @@ This supermodel&#8217;s origins are in GA&#8217;s geology and spatial data work 
 </tbody>
 </table>
 </div>
+<div class="sect4">
+<h5 id="_examples"><a class="anchor" href="#_examples"></a>Examples</h5>
+<div class="paragraph">
+<p>To do</p>
+</div>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_organisations_people_domain"><a class="anchor" href="#_organisations_people_domain"></a>4.5.2. Organisations &amp; People Domain</h4>
@@ -1177,6 +1183,12 @@ This supermodel&#8217;s origins are in GA&#8217;s geology and spatial data work 
 </tr>
 </tbody>
 </table>
+</div>
+<div class="sect4">
+<h5 id="_examples_2"><a class="anchor" href="#_examples_2"></a>Examples</h5>
+<div class="paragraph">
+<p>To do</p>
+</div>
 </div>
 </div>
 <div class="sect3">
@@ -1232,7 +1244,7 @@ This supermodel&#8217;s origins are in GA&#8217;s geology and spatial data work 
 <div class="ulist">
 <ul>
 <li>
-<p>SOSA <a href="#_sosa">SOSA</a></p>
+<p>SOSA <a href="#SOSA">[SOSA]</a></p>
 </li>
 <li>
 <p><em>TERN Ontology</em> <a href="#TERN">[TERN]</a></p>
@@ -1259,12 +1271,12 @@ This supermodel&#8217;s origins are in GA&#8217;s geology and spatial data work 
 </table>
 </div>
 <div class="sect4">
-<h5 id="_examples"><a class="anchor" href="#_examples"></a>Examples</h5>
+<h5 id="_examples_sample"><a class="anchor" href="#_examples_sample"></a>Examples: Sample</h5>
 <div class="paragraph">
-<p>Example representations of a Sample, <a href="http://pid.geoscience.gov.au/sample/AU128" class="bare">http://pid.geoscience.gov.au/sample/AU128</a>, according to several of the models listed above, are given below. Also given is a representation according to PROV, the background provenance model used for many elements of this Supermodel.</p>
+<p>Example representations of a Sample, <a href="http://pid.geoscience.gov.au/sample/AU128" class="bare">http://pid.geoscience.gov.au/sample/AU128</a>, according to one of the models listed above, is given below.</p>
 </div>
 <div class="paragraph">
-<p>These representations are all available live, online, from the API delivering GA Samples data online, see:</p>
+<p>Representations of AU128 according to all of the models listed above is delivered by the GA Samples API online at:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1273,10 +1285,18 @@ This supermodel&#8217;s origins are in GA&#8217;s geology and spatial data work 
 </li>
 </ul>
 </div>
-<div class="sect5">
-<h6 id="_ga_samples_profile"><a class="anchor" href="#_ga_samples_profile"></a>GA Samples Profile</h6>
 <div class="paragraph">
-<p>Full example: <a href="https://github.com/surroundaustralia/ga-supermodel/blob/main/domain-models/examples/samples/AU128.gas.ttl">AU128.gas.ttl</a></p>
+<p>See also complete static data examples fpr AU128:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/surroundaustralia/ga-supermodel/blob/main/domain-models/examples/samples/">AU128 static examples</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example data according to the <a href="#GAS">[GAS]</a>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1352,34 +1372,21 @@ samples: rdfs:member &lt;http://pid.geoscience.gov.au/sample/&gt; .</code></pre>
 </div>
 </li>
 <li>
-<p><code>&lt;http://linked.data.gov.au/org/ga&gt;</code> (Geosceicne Australia) - the sample&#8217;s custodian</p>
+<p><code>&lt;http://linked.data.gov.au/org/ga&gt;</code> (Geoscience Australia) - the sample&#8217;s custodian</p>
 </li>
 </ul>
 </div>
 </div>
-<div class="sect5">
-<h6 id="_sosa"><a class="anchor" href="#_sosa"></a>SOSA</h6>
+<div class="sect4">
+<h5 id="_examples_survey"><a class="anchor" href="#_examples_survey"></a>Examples: Survey</h5>
 <div class="paragraph">
-<p>Full example: <a href="https://github.com/surroundaustralia/ga-supermodel/blob/main/domain-models/examples/samples/AU128.sosa.ttl">AU128.sosa.ttl</a></p>
+<p>Surveys are modelled according to the GA Samples Profile, inheriting from the TERN Ontology, as per <a href="#fig-surveys">Figure X</a></p>
 </div>
+<div id="fig-surveys" class="imageblock">
+<div class="content">
+<img src="https://surroundaustralia.github.io/ga-supermodel/img/surveys.png" alt="surveys">
 </div>
-<div class="sect5">
-<h6 id="_tern_ontology"><a class="anchor" href="#_tern_ontology"></a>TERN Ontology</h6>
-<div class="paragraph">
-<p>Full example: <a href="https://github.com/surroundaustralia/ga-supermodel/blob/main/domain-models/examples/samples/AU128.tern.ttl">AU128.tern.ttl</a></p>
-</div>
-</div>
-<div class="sect5">
-<h6 id="_prov"><a class="anchor" href="#_prov"></a>PROV</h6>
-<div class="paragraph">
-<p>Full example: <a href="https://github.com/surroundaustralia/ga-supermodel/blob/main/domain-models/examples/samples/AU128.prov.ttl">AU128.prov.ttl</a></p>
-</div>
-</div>
-<div class="sect5">
-<h6 id="_loop3d"><a class="anchor" href="#_loop3d"></a>Loop3D</h6>
-<div class="paragraph">
-<p>Full example: <a href="https://github.com/surroundaustralia/ga-supermodel/blob/main/domain-models/examples/samples/AU128.loop3d.ttl">AU128.loop3d.ttl</a></p>
-</div>
+<div class="title">Figure 12. Survey modelling in the GA Samples Profile <a href="#GAS">[GAS]</a></div>
 </div>
 </div>
 </div>
@@ -1409,6 +1416,12 @@ samples: rdfs:member &lt;http://pid.geoscience.gov.au/sample/&gt; .</code></pre>
 </tbody>
 </table>
 </div>
+<div class="sect4">
+<h5 id="_examples_3"><a class="anchor" href="#_examples_3"></a>Examples</h5>
+<div class="paragraph">
+<p>To do</p>
+</div>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_theming_domain"><a class="anchor" href="#_theming_domain"></a>4.5.5. Theming Domain</h4>
@@ -1435,11 +1448,17 @@ samples: rdfs:member &lt;http://pid.geoscience.gov.au/sample/&gt; .</code></pre>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="sect4">
+<h5 id="_examples_4"><a class="anchor" href="#_examples_4"></a>Examples</h5>
+<div class="paragraph">
+<p>To do</p>
+</div>
 <div id="fig-dd-sites-platforms" class="imageblock">
 <div class="content">
 <img src="https://surroundaustralia.github.io/ga-supermodel/img/dd-sites-platforms.png" alt="dd sites platforms">
 </div>
-<div class="title">Figure 12. Domain Main Classes for Sites and Platforms</div>
+<div class="title">Figure 13. Domain Main Classes for Sites and Platforms</div>
 </div>
 <div class="paragraph">
 <p>Surveys are a subclass of Samplings, and where the survey took place at a site, are related to the site through a tern:SiteVisit. Soft typing of surveys is done through the dcterms:type property, and vocabularies for types and methods of surveys are defined in the <a href="#xx">[xx]</a> and <a href="#yy">[yy]</a> vocabularies</p>
@@ -1448,7 +1467,7 @@ samples: rdfs:member &lt;http://pid.geoscience.gov.au/sample/&gt; .</code></pre>
 <div class="content">
 <img src="https://surroundaustralia.github.io/ga-supermodel/img/dd-surveys.png" alt="dd surveys">
 </div>
-<div class="title">Figure 13. Domain Main Classes for Surveys</div>
+<div class="title">Figure 14. Domain Main Classes for Surveys</div>
 </div>
 <div class="paragraph">
 <p>Additional classes in this domain cater for special forms of Sites and Samples. See the <a href="#_sampling_domain">Sampling Domain</a> detailed section below.</p>
@@ -1583,6 +1602,9 @@ samples: rdfs:member &lt;http://pid.geoscience.gov.au/sample/&gt; .</code></pre>
 <p><a id="DCAT"></a> [DCAT] World Wide Web Consortium, <em>Data Catalog Vocabulary (DCAT) - Version 2</em>, W3C Working Group Note (04 February 2020). <a href="https://www.w3.org/TR/vocab-dcat/" class="bare">https://www.w3.org/TR/vocab-dcat/</a></p>
 </li>
 <li>
+<p><a id="GAS"></a> [GAS] Geoscience Australia, <em>GA Samples Profile</em> (2022). Geoscience Australia ontology. <a href="https://linked.data.gov.au/def/gas" class="bare">https://linked.data.gov.au/def/gas</a></p>
+</li>
+<li>
 <p><a id="GEO"></a> [GEO] Open Geospatial Consortium, <em>OGC GeoSPARQL - A Geographic Query Language for RDF Data, Version 1.1</em> (2021). OGC Implementation Specification. <a href="http://www.opengis.net/doc/IS/geosparql/1.1" class="bare">http://www.opengis.net/doc/IS/geosparql/1.1</a></p>
 </li>
 <li>
@@ -1640,7 +1662,7 @@ samples: rdfs:member &lt;http://pid.geoscience.gov.au/sample/&gt; .</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-05-23 01:43:59 UTC
+Last updated 2022-05-23 02:16:08 UTC
 </div>
 </div>
 </body>
