@@ -15,6 +15,10 @@ The Data Domains described above are implemented using multiple models and other
 | Supplies main modelling structures for this domain
 |===
 
+===== Examples
+
+To do
+
 ==== Organisations & People Domain
 
 ===== Models
@@ -27,6 +31,10 @@ The Data Domains described above are implemented using multiple models and other
 | Domain main models
 | Supplies main modelling structures for this domain. `prov:Agent` is the main class and `sdo:Person` & `sdo:Organization` are the two schema.org classes differentiating People & Organisations. PROV properties are used to link data to Agents; schema.org properties used to label Agents and relate them to one another
 |===
+
+===== Examples
+
+To do
 
 ==== Sampling Domain
 
@@ -72,17 +80,19 @@ The https://loop3d.github.io/[Loop3D initiative]'s GeoScience Ontology
 The Loop3D GSO is a detailed geology model and attempts are being made to align GA Samples data with it.
 |===
 
-===== Examples
+===== Examples: Sample
 
-Example representations of a Sample, http://pid.geoscience.gov.au/sample/AU128, according to several of the models listed above, are given below. Also given is a representation according to PROV, the background provenance model used for many elements of this Supermodel.
+Example representations of a Sample, http://pid.geoscience.gov.au/sample/AU128, according to one of the models listed above, is given below. 
 
-These representations are all available live, online, from the API delivering GA Samples data online, see:
+Representations of AU128 according to all of the models listed above is delivered by the GA Samples API online at:
 
 * http://pid.geoscience.gov.au/sample/AU128?_view=alternates[Alternative Profiles of AU128]
 
-====== GA Samples Profile
+See also complete static data examples fpr AU128:
 
-Full example: https://github.com/surroundaustralia/ga-supermodel/blob/main/domain-models/examples/samples/AU128.gas.ttl[AU128.gas.ttl]
+* https://github.com/surroundaustralia/ga-supermodel/blob/main/domain-models/examples/samples/[AU128 static examples]
+
+Example data according to the <<GAS>>:
 
 ```turtle
 @prefix role: <http://def.isotc211.org/.../CI_RoleCode/> .
@@ -134,24 +144,15 @@ Finally, two Agents are indicated as haveing roles in relation to this sample:
 
 * a person "Raymond, O.L." - the sample's originator
 ** a more specialised role for this might be defined shortly
-* `+<http://linked.data.gov.au/org/ga>+` (Geosceicne Australia) - the sample's custodian
+* `+<http://linked.data.gov.au/org/ga>+` (Geoscience Australia) - the sample's custodian
 
-====== SOSA
+===== Examples: Survey
 
-Full example: https://github.com/surroundaustralia/ga-supermodel/blob/main/domain-models/examples/samples/AU128.sosa.ttl[AU128.sosa.ttl]
+Surveys are modelled according to the GA Samples Profile, inheriting from the TERN Ontology, as per <<fig-surveys, Figure X>>
 
-====== TERN Ontology
-
-Full example: https://github.com/surroundaustralia/ga-supermodel/blob/main/domain-models/examples/samples/AU128.tern.ttl[AU128.tern.ttl]
-
-====== PROV
-
-Full example: https://github.com/surroundaustralia/ga-supermodel/blob/main/domain-models/examples/samples/AU128.prov.ttl[AU128.prov.ttl]
-
-====== Loop3D
-
-Full example: https://github.com/surroundaustralia/ga-supermodel/blob/main/domain-models/examples/samples/AU128.loop3d.ttl[AU128.loop3d.ttl]
-
+[id=fig-surveys]
+.Survey modelling in the GA Samples Profile <<GAS>>
+image::img/surveys.png[]
 
 ==== Spatiality Domain
 
@@ -166,6 +167,10 @@ Full example: https://github.com/surroundaustralia/ga-supermodel/blob/main/domai
 | Supplies main modelling structures for this domain
 |===
 
+===== Examples
+
+To do
+
 ==== Theming Domain
 
 ===== Models
@@ -178,3 +183,7 @@ Full example: https://github.com/surroundaustralia/ga-supermodel/blob/main/domai
 | Domain main model
 | Supplies main modelling structures for this domain
 |===
+
+===== Examples
+
+To do

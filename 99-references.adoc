@@ -6,6 +6,8 @@
 
 * [[DCAT]] [DCAT] World Wide Web Consortium, _Data Catalog Vocabulary (DCAT) - Version 2_, W3C Working Group Note (04 February 2020). https://www.w3.org/TR/vocab-dcat/
 
+* [[GAS]] [GAS] Geoscience Australia, _GA Samples Profile_ (2022). Geoscience Australia ontology. https://linked.data.gov.au/def/gas
+
 * [[GEO]] [GEO] Open Geospatial Consortium, _OGC GeoSPARQL - A Geographic Query Language for RDF Data, Version 1.1_ (2021). OGC Implementation Specification. http://www.opengis.net/doc/IS/geosparql/1.1
 
 * [[ISO19156]] [ISO19156] International Organization for Standardization, _ISO 19156: Geographic information — Observations and measurements_ (2011)
