@@ -4,14 +4,29 @@ The Data Domains described above are implemented using multiple models and other
 
 ==== Data Cataloguing Domain
 
-* **Main Model**
-** Data Catalog Vocabulary <<DCAT>>
+===== Models
+
+[cols="1,2,4"]
+|===
+| Model | Role | Notes
+
+| Data Catalog Vocabulary <<DCAT>>
+| Domain main model
+| Supplies main modelling structures for this domain
+|===
 
 ==== Organisations & People Domain
 
-* **Main Models**
-** PROV-O: The PROV Ontology <<PROV>>
-** schema.org <<SDO>>: Organization & Person classes
+===== Models
+
+[cols="1,2,4"]
+|===
+| Model | Role | Notes
+
+| The PROV Ontology <<PROV>> & schema.org <<SDO>>
+| Domain main models
+| Supplies main modelling structures for this domain. `prov:Agent` is the main class and `sdo:Person` & `sdo:Organization` are the two schema.org classes differentiating People & Organisations. PROV properties are used to link data to Agents; schema.org properties used to label Agents and relate them to one another
+|===
 
 ==== Sampling Domain
 
@@ -27,7 +42,8 @@ The Data Domains described above are implemented using multiple models and other
 
 | TERN Ontology <<TERN>>
 | Supporting Model
-| Based on the Semantic Sensor Network Ontology <<SSN>>, this model is used to characterise _sites_ and field sampling:
+a| Based on the Semantic Sensor Network Ontology <<SSN>>, this model is used to characterise _sites_ and field sampling:
+
 * supplies the `tern:Site` class which is the parent class of `gas:Mine`, `gas:FieldSite` etc.
 * supplies `tern:SiteVisit` which is the parent class of `gas:Survey`
 
@@ -35,9 +51,10 @@ The Data Domains described above are implemented using multiple models and other
 | A <<component-data-model, Component Data Model>> defined for this Supermodel. 
 
 Caters for detailed Material Sample properties; Specialised Sites modelling
-| A profile of several ontologies and a Semantic Web implementation of the Sampling Features Schema described in clauses 9-11 of <<ISO19156>>.
+a| A profile of several ontologies and a Semantic Web implementation of the Sampling Features Schema described in clauses 9-11 of <<ISO19156>>.
 
 Directly inherits from:
+
 * SOSA <<SOSA>> 
 * _TERN Ontology_ <<TERN>>
 * _SAM Lite ontology_ <<SAM>>
@@ -138,10 +155,26 @@ Full example: https://github.com/surroundaustralia/ga-supermodel/blob/main/domai
 
 ==== Spatiality Domain
 
-* **Main Model**
-** GeoSPARQL 1.1 <<GEO>>
+===== Models
+
+[cols="1,2,4"]
+|===
+| Model | Role | Notes
+
+| GeoSPARQL 1.1 <<GEO>>
+| Domain main model
+| Supplies main modelling structures for this domain
+|===
 
 ==== Theming Domain
 
-* **Main Model**
-** _Simple Knowledge Organization system (SKOS)_ ontology <<SKOS>>
+===== Models
+
+[cols="1,2,4"]
+|===
+| Model | Role | Notes
+
+| _Simple Knowledge Organization system (SKOS)_ ontology <<SKOS>>
+| Domain main model
+| Supplies main modelling structures for this domain
+|===
