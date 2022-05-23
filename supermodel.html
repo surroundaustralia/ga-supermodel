@@ -1127,45 +1127,62 @@ This supermodel&#8217;s origins are in GA&#8217;s geology and spatial data work 
 </div>
 <div class="sect3">
 <h4 id="_data_cataloguing_domain"><a class="anchor" href="#_data_cataloguing_domain"></a>4.5.1. Data Cataloguing Domain</h4>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Main Model</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Data Catalog Vocabulary <a href="#DCAT">[DCAT]</a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
+<div class="sect4">
+<h5 id="_models"><a class="anchor" href="#_models"></a>Models</h5>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 28.5714%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Model</th>
+<th class="tableblock halign-left valign-top">Role</th>
+<th class="tableblock halign-left valign-top">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data Catalog Vocabulary <a href="#DCAT">[DCAT]</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Domain main model</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Supplies main modelling structures for this domain</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_organisations_people_domain"><a class="anchor" href="#_organisations_people_domain"></a>4.5.2. Organisations &amp; People Domain</h4>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Main Models</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>PROV-O: The PROV Ontology <a href="#PROV">[PROV]</a></p>
-</li>
-<li>
-<p>schema.org <a href="#SDO">[SDO]</a>: Organization &amp; Person classes</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
+<div class="sect4">
+<h5 id="_models_2"><a class="anchor" href="#_models_2"></a>Models</h5>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 28.5714%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Model</th>
+<th class="tableblock halign-left valign-top">Role</th>
+<th class="tableblock halign-left valign-top">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The PROV Ontology <a href="#PROV">[PROV]</a> &amp; schema.org <a href="#SDO">[SDO]</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Domain main models</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Supplies main modelling structures for this domain. <code>prov:Agent</code> is the main class and <code>sdo:Person</code> &amp; <code>sdo:Organization</code> are the two schema.org classes differentiating People &amp; Organisations. PROV properties are used to link data to Agents; schema.org properties used to label Agents and relate them to one another</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_sampling_domain"><a class="anchor" href="#_sampling_domain"></a>4.5.3. Sampling Domain</h4>
 <div class="sect4">
-<h5 id="_models"><a class="anchor" href="#_models"></a>Models</h5>
+<h5 id="_models_3"><a class="anchor" href="#_models_3"></a>Models</h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 14.2857%;">
@@ -1188,19 +1205,43 @@ This supermodel&#8217;s origins are in GA&#8217;s geology and spatial data work 
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">TERN Ontology <a href="#TERN">[TERN]</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Supporting Model</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Based on the Semantic Sensor Network Ontology <a href="#SSN">[SSN]</a>, this model is used to characterise <em>sites</em> and field sampling:
-* supplies the <code>tern:Site</code> class which is the parent class of <code>gas:Mine</code>, <code>gas:FieldSite</code> etc.
-* supplies <code>tern:SiteVisit</code> which is the parent class of <code>gas:Survey</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Based on the Semantic Sensor Network Ontology <a href="#SSN">[SSN]</a>, this model is used to characterise <em>sites</em> and field sampling:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>supplies the <code>tern:Site</code> class which is the parent class of <code>gas:Mine</code>, <code>gas:FieldSite</code> etc.</p>
+</li>
+<li>
+<p>supplies <code>tern:SiteVisit</code> which is the parent class of <code>gas:Survey</code></p>
+</li>
+</ul>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://surroundaustralia.github.io/ga-supermodel/ga-sampling.html">GA Sampling Profile</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">A <a href="#component-data-model">Component Data Model</a> defined for this Supermodel.</p>
 <p class="tableblock">Caters for detailed Material Sample properties; Specialised Sites modelling</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A profile of several ontologies and a Semantic Web implementation of the Sampling Features Schema described in clauses 9-11 of <a href="#ISO19156">[ISO19156]</a>.</p>
-<p class="tableblock">Directly inherits from:
-* SOSA <a href="#_sosa">SOSA</a>
-* <em>TERN Ontology</em> <a href="#TERN">[TERN]</a>
-* <em>SAM Lite ontology</em> <a href="#SAM">[SAM]</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A profile of several ontologies and a Semantic Web implementation of the Sampling Features Schema described in clauses 9-11 of <a href="#ISO19156">[ISO19156]</a>.</p>
+</div>
+<div class="paragraph">
+<p>Directly inherits from:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>SOSA <a href="#_sosa">SOSA</a></p>
+</li>
+<li>
+<p><em>TERN Ontology</em> <a href="#TERN">[TERN]</a></p>
+</li>
+<li>
+<p><em>SAM Lite ontology</em> <a href="#SAM">[SAM]</a></p>
+</li>
+</ul>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://surroundaustralia.github.io/ga-supermodel/sam-lite.html">SAM Lite ontology</a></p></td>
@@ -1344,37 +1385,56 @@ samples: rdfs:member &lt;http://pid.geoscience.gov.au/sample/&gt; .</code></pre>
 </div>
 <div class="sect3">
 <h4 id="_spatiality_domain"><a class="anchor" href="#_spatiality_domain"></a>4.5.4. Spatiality Domain</h4>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Main Model</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>GeoSPARQL 1.1 <a href="#GEO">[GEO]</a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
+<div class="sect4">
+<h5 id="_models_4"><a class="anchor" href="#_models_4"></a>Models</h5>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 28.5714%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Model</th>
+<th class="tableblock halign-left valign-top">Role</th>
+<th class="tableblock halign-left valign-top">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GeoSPARQL 1.1 <a href="#GEO">[GEO]</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Domain main model</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Supplies main modelling structures for this domain</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_theming_domain"><a class="anchor" href="#_theming_domain"></a>4.5.5. Theming Domain</h4>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Main Model</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Simple Knowledge Organization system (SKOS)</em> ontology <a href="#SKOS">[SKOS]</a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
+<div class="sect4">
+<h5 id="_models_5"><a class="anchor" href="#_models_5"></a>Models</h5>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 28.5714%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Model</th>
+<th class="tableblock halign-left valign-top">Role</th>
+<th class="tableblock halign-left valign-top">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Simple Knowledge Organization system (SKOS)</em> ontology <a href="#SKOS">[SKOS]</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Domain main model</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Supplies main modelling structures for this domain</p></td>
+</tr>
+</tbody>
+</table>
 <div id="fig-dd-sites-platforms" class="imageblock">
 <div class="content">
 <img src="https://surroundaustralia.github.io/ga-supermodel/img/dd-sites-platforms.png" alt="dd sites platforms">
@@ -1392,6 +1452,7 @@ samples: rdfs:member &lt;http://pid.geoscience.gov.au/sample/&gt; .</code></pre>
 </div>
 <div class="paragraph">
 <p>Additional classes in this domain cater for special forms of Sites and Samples. See the <a href="#_sampling_domain">Sampling Domain</a> detailed section below.</p>
+</div>
 </div>
 </div>
 </div>
@@ -1579,7 +1640,7 @@ samples: rdfs:member &lt;http://pid.geoscience.gov.au/sample/&gt; .</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-05-22 23:51:16 UTC
+Last updated 2022-05-23 01:43:59 UTC
 </div>
 </div>
 </body>
