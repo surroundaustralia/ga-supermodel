@@ -21,7 +21,7 @@ jobs:
         echo "Add README to docs/"
         asciidoctor README.adoc -o docs/index.html
         echo "Add supermodel to docs/"
-        asciidoctor 01-supermodel.adoc -o docs/supermodel.html
+        asciidoctor 00-supermodel.adoc -o docs/supermodel.html
         sed -i 's#img src="#img src="https://surroundaustralia.github.io/ga-supermodel/#' docs/supermodel.html        
         echo "Add supermodel RDF to docs/"
         cp rdf/*.ttl docs/

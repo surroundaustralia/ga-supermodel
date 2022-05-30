@@ -1,31 +1,33 @@
 == References
 
-* [[ABIS]] Department of Agriculture, Water and the Enviroment, _Australia Biodiversity Information Standard (ABIS)_, Australian government Semantic Web Standard (2022-01-14). https://linked.data.gov.au/def/abis
+* [[ABIS]] [ABIS] Department of Agriculture, Water and the Enviroment, _Australia Biodiversity Information Standard (ABIS)_, Australian government Semantic Web Standard (2022-01-14). https://linked.data.gov.au/def/abis
 
-* [[DCTERMS]] DCMI Usage Board, _DCMI Metadata Terms_, A DCMI Recommendation (2020-01-20). https://www.dublincore.org/specifications/dublin-core/dcmi-terms/
+* [[DCTERMS]] [DCTERMS] DCMI Usage Board, _DCMI Metadata Terms_, A DCMI Recommendation (2020-01-20). https://www.dublincore.org/specifications/dublin-core/dcmi-terms/
 
-* [[DCAT]] World Wide Web Consortium, _Data Catalog Vocabulary (DCAT) - Version 2_, W3C Working Group Note (04 February 2020). https://www.w3.org/TR/vocab-dcat/
+* [[DCAT]] [DCAT] World Wide Web Consortium, _Data Catalog Vocabulary (DCAT) - Version 2_, W3C Working Group Note (04 February 2020). https://www.w3.org/TR/vocab-dcat/
 
-* [[GEO]] Open Geospatial Consortium, _OGC GeoSPARQL - A Geographic Query Language for RDF Data, Version 1.1_ (2021). OGC Implementation Specification. http://www.opengis.net/doc/IS/geosparql/1.1
+* [[GAS]] [GAS] Geoscience Australia, _GA Samples Profile_ (2022). Geoscience Australia ontology. https://linked.data.gov.au/def/gas
 
-* [[ISO19156]] International Organization for Standardization, _ISO 19156: Geographic information — Observations and measurements_ (2011)
+* [[GEO]] [GEO] Open Geospatial Consortium, _OGC GeoSPARQL - A Geographic Query Language for RDF Data, Version 1.1_ (2021). OGC Implementation Specification. http://www.opengis.net/doc/IS/geosparql/1.1
 
-* [[OWL]] World Wide Web Consortium, _OWL 2 Web Ontology Language Document Overview (Second Edition)_, W3C Recommendation (11 December 2012). https://www.w3.org/TR/owl2-overview/
+* [[ISO19156]] [ISO19156] International Organization for Standardization, _ISO 19156: Geographic information — Observations and measurements_ (2011)
 
-* [[PROF]] World Wide Web Consortium, _The Profiles Vocabulary_, W3C Working Group Note (18 December 2019). https://www.w3.org/TR/dx-prof/
+* [[OWL]] [OWL] World Wide Web Consortium, _OWL 2 Web Ontology Language Document Overview (Second Edition)_, W3C Recommendation (11 December 2012). https://www.w3.org/TR/owl2-overview/
 
-* [[PROV]] World Wide Web Consortium, _PROV-O: The PROV Ontology_, W3C Working Group Note (18 December 2019). https://www.w3.org/TR/prov-o/
+* [[PROF]] [PROF] World Wide Web Consortium, _The Profiles Vocabulary_, W3C Working Group Note (18 December 2019). https://www.w3.org/TR/dx-prof/
 
-* [[SAM]] Cox, S.J.D., _OWL representation of ISO 19156 Sampling Features model_. (2014). Online at: https://surroundaustralia.github.io/ga-supermodel/sam-lite.html, accessed 2022-03-02
+* [[PROV]] [PROV] World Wide Web Consortium, _PROV-O: The PROV Ontology_, W3C Working Group Note (18 December 2019). https://www.w3.org/TR/prov-o/
 
-* [[SDO]] W3C Schema.org Community Group, _schema.org_. Community ontology (2015). https://schema.org
+* [[SAM]] [SAM] Cox, S.J.D., _OWL representation of ISO 19156 Sampling Features model_. (2014). Online at: https://surroundaustralia.github.io/ga-supermodel/sam-lite.html, accessed 2022-03-02
 
-* [[SSN]] World Wide Web Consortium, _Semantic Sensor Network Ontology_, W3C Recommendation (19 October 2017). https://www.w3.org/TR/vocab-ssn/
+* [[SDO]] [SDO] W3C Schema.org Community Group, _schema.org_. Community ontology (2015). https://schema.org
 
-* [[SKOS]] World Wide Web Consortium, _SKOS Simple Knowledge Organization System Reference_, W3C Recommendation (18 August 2009). https://www.w3.org/TR/skos-reference/
+* [[SSN]] [SSN] World Wide Web Consortium, _Semantic Sensor Network Ontology_, W3C Recommendation (19 October 2017). https://www.w3.org/TR/vocab-ssn/
 
-* [[TERN]] Terrestrinal Ecosystems Research Network, _TERN Ontology_, Organisation ontology (2022). https://linkeddata.tern.org.au/viewers/tern-ontology
+* [[SKOS]] [SKOS] World Wide Web Consortium, _SKOS Simple Knowledge Organization System Reference_, W3C Recommendation (18 August 2009). https://www.w3.org/TR/skos-reference/
 
-* [[TTL]] World Wide Web Consortium, _RDF 1.1 Turtle Terse RDF Triple Language_, W3C Recommendation (25 February 2014). https://www.w3.org/TR/turtle/
+* [[TERN]] [TERN] Terrestrinal Ecosystems Research Network, _TERN Ontology_, Organisation ontology (2022). https://linkeddata.tern.org.au/viewers/tern-ontology
 
-* [[VOCPUB]] SURROUND Australia Pty Ltd, _VocPub_, Profile of SKOS (14 June 2020). https://w3id.org/profile/vocpub
+* [[TTL]] [TTL] World Wide Web Consortium, _RDF 1.1 Turtle Terse RDF Triple Language_, W3C Recommendation (25 February 2014). https://www.w3.org/TR/turtle/
+
+* [[VOCPUB]] [VOCPUB] SURROUND Australia Pty Ltd, _VocPub_, Profile of SKOS (14 June 2020). https://w3id.org/profile/vocpub

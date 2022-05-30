@@ -1,0 +1,15 @@
+== Introduction
+
+This model described a set of <<#data-domain, Data Domains>> with <<#central-class, Central Classes>> that are associated using <<#linked-data, Linked Data>> principles. Specialisations of the Central Classes are made to cater for particular data needs.
+
+Altogether, these things form a <<#knowledge-graph, Knowledge Graph>> of data for Geoscience Australia that participates in the wider, international, <<#semantic-web, Semantic Web>>.
+
+This model is predicated on an assumption that GA is a data aggregation organisation and therefore data cataloguing is its major concern. At the centre of this model then is a domain of `Data Cataloguing`, the main elements of which are taken from the _Data Catalog Vocabulary_ (<<DCAT>>). The things that GA's data are mostly about are spatial things, hence a Data Domain of `Spatiality`, for which the _GeoSPARQL_ <<GEO>> is core. The way GA generates information about spatial things is via observations and various forms of sampling, hence a Data Domain of `Sampling` and for this one the _Sensor, Observation, Sample, and Actuator_ (SOSA) ontology <<SSN>> is mainly used as it which focuseses on observations and how they produce results, what the results are about and so on. GA's data is cetegorised in various ways and for this the Data Domain of `Theming` is indicated. Within it, taxonomy representation using <<SKOS>> is paramount. Finally, all organisations relate their data and processes to thus who are responsible for them, thus the final Data Domain is indeed `Organisations and People` which is modelled using a number of models such as <<DCTERMS>>, <<PROV>> and <<SDO>>.
+
+These models are also all Semantic Web models and they have been selected for their easy interoperability.
+
+All elements of this model are modelled using the _Web Ontology Language_ <<OWL>> and specailisations of it, such as the _Simple Knowledge Observation System_ <<SKOS>> which is used for modelling taxonomies of concepts. As well as the textual and image descriptions of the model here, in the next Section, a machine-readable version of this model is available (see <<Metadata, Metadata>>).
+
+=== Uses
+
+This model should be used to understand the broad relationships between any data elements within GA. It can also be used to inform policy that is based on GA's overall data structure, for example persistent identifier (PID) policy for which there is a dedicated Annex, <<Annex A: PID Policy, Annex A: PID Policy>>.

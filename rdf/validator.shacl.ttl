@@ -38,17 +38,19 @@
     sh:property [
         a sh:PropertyShape ;
         dcterms:source req:ms.z ;
-        sh:path gas:samplingLocation ;
-        sh:message "Req ms.z: Each Material Sample MAY indicate the Australian State they were aquired within and, if it does, it must indicate the state with its IRI taken from the ASGS2021 dataset"@en ;
-        sh:nodeKind sh:IRI ;
+        sh:path geo:sfWithin ;
+        sh:message "Req ms.z: Each Material Sample MAY indicate the Australian State they were aquired within with a geo:sfWithin property and, if it does, it must indicate the state with its IRI taken from the ASGS2021 dataset"@en ;
+        sh:nodeKind sh:IRI ;   
     ] ; 
     sh:property [
         a sh:PropertyShape ;
         dcterms:source req:ms.y ;
-        sh:path gas:samplingLocation ;
+        sh:path gas:dateAcquired ;
         sh:message "Req ms.y: Each Material Sample MUST indicate the date at which it was aquired with the gas:dateAcquired property with an literal object of datatype xsd:date"@en ;
         sh:nodeKind sh:BlankNodeOrIRI ;
         sh:class geo:Geometry ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;        
     ] ;    
     sh:property [
         a sh:PropertyShape ;
@@ -57,5 +59,7 @@
         sh:message "Req ms.x: Each Material Sample MUST indicate exactly one location at which it was aquired with the gas:samplingLocation property with an geo:Geometry type object"@en ;
         sh:nodeKind sh:BlankNodeOrIRI ;
         sh:class geo:Geometry ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
     ] ;
 .

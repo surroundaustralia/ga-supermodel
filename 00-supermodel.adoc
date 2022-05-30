@@ -1,0 +1,23 @@
+= Geoscience Australia Supermodel
+:toc: left
+:table-stripes: even
+:sectnums:
+:sectanchors:
+
+include::01-preamble.adoc[]
+
+include::02-introduction.adoc[]
+
+include::03-model.adoc[]
+
+include::04-domain-details.adoc[]
+
+include::05-component-models.adoc[]
+
+:sectnums!:
+
+include::97-annex-profile-requirements.adoc[]
+
+include::98-annex-pid-policy.adoc[]
+
+include::99-references.adoc[]
