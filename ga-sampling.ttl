@@ -206,9 +206,23 @@ gas:hasInclinationType
     a owl:DatatypeProperty ;
     skos:prefLabel "Inclination Type"@en ;
 .
+gas:hasDrillStartDate
+    a owl:DatatypeProperty ;
+    skos:prefLabel "Drill Start Date"@en ;
+    rdfs:range xsd:date ;
+.
+gas:hasDrillEndDate
+    a owl:DatatypeProperty ;
+    skos:prefLabel "Drill End Date"@en ;
+    rdfs:range xsd:date ;
+.
 gas:hasBoreholeLength
     a owl:DatatypeProperty ;
     skos:prefLabel "Borehole Length"@en ;
+.
+gas:hasBoreholeStatus
+    a owl:DatatypeProperty ;
+    skos:prefLabel "Borehole Status"@en ;
 .
 gas:hasKickoffDepth
     a owl:DatatypeProperty ;
