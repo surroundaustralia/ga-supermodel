@@ -92,7 +92,7 @@ samples: a geo:FeatureCollection,
 
 surveys: a geo:FeatureCollection,
         owl:Ontology ;
-    dcterms:description "xxx"@en ;
+    dcterms:description "A Feature Collection of surveys"@en ;
     dcterms:identifier "surveys"^^xsd:token ;
     dcterms:isPartOf dataset: ;
     dcterms:title "Surveys"@en ;
@@ -110,7 +110,7 @@ dataset: a owl:Ontology,
         dcat:Dataset ;
     dcterms:created "2022-03-03"^^xsd:date ;
     dcterms:creator <https://linked.data.gov.au/org/ga> ;
-    dcterms:description "xxx."@en ;
+    dcterms:description "A dataset containing Field Sites, Samples, Surveys, Gravity Stations, Mines, Mineral Occurences and Boreholes."@en ;
     dcterms:identifier "sites-samples-surveys"^^xsd:token ;
     dcterms:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
     dcterms:modified "2022-03-03"^^xsd:date ;
