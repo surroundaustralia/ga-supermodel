@@ -210,6 +210,10 @@ gas:hasBoreholeLength
     a owl:DatatypeProperty ;
     skos:prefLabel "Borehole Length"@en ;
 .
+gas:hasBoreholeStatus
+    a owl:DatatypeProperty ;
+    skos:prefLabel "Borehole Status"@en ;
+.
 gas:hasKickoffDepth
     a owl:DatatypeProperty ;
     skos:prefLabel "Kickoff Depth"@en ;
