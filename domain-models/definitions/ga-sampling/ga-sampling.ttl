@@ -273,6 +273,10 @@ gas:hasGroundwaterHydrochemistryAnalyses
     a owl:DatatypeProperty ;
     skos:prefLabel "Groundwater Hydrochemistry Analyses"@en ;
 .
+gas:hasGroundwaterHydrochemistry
+    a owl:DatatypeProperty ;
+    skos:prefLabel "Groundwater Hydrochemistry"@en ;
+.
 gas:hasRockPropertiesMeasurements
     a owl:DatatypeProperty ;
     skos:prefLabel "Rock Properties Measurements"@en ;
@@ -459,6 +463,10 @@ gas:hasRockProperties
     a owl:DatatypeProperty ;
     skos:prefLabel "Rock Properties"@en ;
 .
+gas:hasStructuralMeasurements
+    a owl:DatatypeProperty ;
+    skos:prefLabel "Structural Measurements"@en ;
+.
 gas:hasStratigraphy
     a owl:DatatypeProperty ;
     skos:prefLabel "Stratigraphy"@en ;
@@ -490,7 +498,36 @@ gas:hasOperatingStatus
 gas:hasProductionResults
     a owl:DatatypeProperty ;
     skos:prefLabel "Production Results"@en ;
-    .
+.
+gas:hasDateAcquired
+    a owl:DataTypeProperty ;
+    skos:prefLabel "Date Acquired"@en ;
+.
+gas:hasOrganicGeochemistry
+    a owl:DataTypeProperty ;
+    skos:prefLabel "Organic Geochemistry"@en ;
+.
+gas:hasState
+    a owl:DataTypeProperty ;
+    skos:prefLabel "State"@en ;
+.
+gas:hasCountry
+    a owl:DataTypeProperty ;
+    skos:prefLabel "Country"@en ;
+.
+gas:hasSampleRemark
+    a owl:DatatypeProperty ;
+    skos:preflabel "Sample Remark"@en ;
+.
+gas:hasStraigraphicUnit
+    a owl:DatatypeProperty ;
+    skos:prefLabel "Straigraphic Unit"@en ;
+.
+gas:hasIsotopes
+    a owl:DatatypeProperty ;
+    skos:prefLabel "Isotopes"@en ;
+.
+
 sosa:hasSampledFeature
     a owl:ObjectProperty ;
     rdfs:domain sosa:Sample ;
