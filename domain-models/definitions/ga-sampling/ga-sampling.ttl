@@ -454,6 +454,14 @@ gas:MineralOccurence
     rdfs:subClassOf geo:Feature ;
     skos:prefLabel "Mineral Occurence"@en ;
 .
+gas:hasSampleRemark
+    a owl:DatatypeProperty ;
+    skos:prefLabel "Sample Remark"@en ;
+.
+gas:hasGeochronology
+    a owl:ObjectProperty ;
+    skos:prefLabel "Geochronology"@en ;
+.
 gas:FieldSite
     a owl:Class ;
     rdfs:subClassOf geo:Feature ;
