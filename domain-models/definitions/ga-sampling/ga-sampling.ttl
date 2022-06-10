@@ -491,6 +491,10 @@ gas:hasAssociatedCompanies
     a owl:DatatypeProperty ;
     skos:prefLabel "Associated Companies"@en ;
 .
+gas:hasSampleID
+    a owl:DatatypeProperty ;
+    skos:prefLabel "Sample ID"@en ;
+.
 gas:hasOccurenceType
     a owl:DatatypeProperty ;
     skos:prefLabel "Occurence Type"@en ;
