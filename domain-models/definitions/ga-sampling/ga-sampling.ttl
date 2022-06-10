@@ -167,6 +167,10 @@ gas:hasSampleOriginator
     a owl:DatatypeProperty ;
     skos:prefLabel "Sample Originator"@en ;
 .
+gas:hasIGSN
+    a owl:DatatypeProperty ;
+    skos:prefLabel "IGSN"@en ;
+.
 gas:hasSampleType
     a owl:DatatypeProperty ;
     skos:prefLabel "Sample Type"@en ;
