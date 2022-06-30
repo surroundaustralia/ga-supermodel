@@ -499,6 +499,10 @@ gas:hasStratigraphy
     a owl:DatatypeProperty ;
     skos:prefLabel "Stratigraphy"@en ;
 .
+gas:hasStratigraphicUnit
+    a owl:DatatypeProperty ;
+    skos:prefLabel "Stratigraphic unit"@en ;
+.
 gas:measuredSectionType
     a owl:DatatypeProperty ;
     skos:prefLabel "Measured Section Type"@en ;
