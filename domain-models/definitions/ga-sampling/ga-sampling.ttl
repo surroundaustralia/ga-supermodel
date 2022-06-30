@@ -183,6 +183,14 @@ gas:hasPurpose
     a owl:DatatypeProperty ;
     skos:prefLabel "Purpose"@en ;
 .
+gas:hasLatitude
+    a owl:DatatypeProperty ;
+    skos:prefLabel "Latitude (EPSG:4326)"@en ;
+.
+gas:hasLongitude
+    a owl:DatatypeProperty ;
+    skos:prefLabel "Longitude (EPSG:4326)"@en ;
+.
 gas:hasOperator
     a owl:DatatypeProperty ;
     skos:prefLabel "Operator"@en ;
@@ -190,6 +198,10 @@ gas:hasOperator
 gas:hasDriller
     a owl:DatatypeProperty ;
     skos:prefLabel "Driller"@en ;
+.
+gas:hasENO
+    a owl:DatatypeProperty ;
+    skos:prefLabel "ENO"@en ;
 .
 gas:hasStartDate
     a owl:DatatypeProperty ;
@@ -410,9 +422,9 @@ gas:hasPlatformName
     a owl:DatatypeProperty ;
     skos:prefLabel "Platform Name"@en ;
 .
-gas:hasEarthMaterial
+gas:hasEarthMaterials
     a owl:DatatypeProperty ;
-    skos:prefLabel "Earth Material"@en ;
+    skos:prefLabel "Earth Materials"@en ;
 .
 gas:hasCondition
     a owl:DatatypeProperty ;
@@ -461,6 +473,10 @@ gas:MineralOccurence
 gas:hasSampleRemark
     a owl:DatatypeProperty ;
     skos:prefLabel "Sample Remark"@en ;
+.
+gas:hasSampleNo
+    a owl:DatatypeProperty ;
+    skos:prefLabel "SAMPLENO"@en ;
 .
 gas:hasGeochronology
     a owl:ObjectProperty ;
@@ -511,6 +527,14 @@ gas:hasOperatingStatus
     a owl:DatatypeProperty ;
     skos:prefLabel "Operating Status"@en ;
 .
+gas:hasSamplingFeatureName
+    a owl:DatatypeProperty ;
+    skos:prefLabel "Sampling Feature Name"@en ;
+.
+gas:hasSamplingFeatureType
+    a owl:DatatypeProperty ;
+    skos:prefLabel "Sampling Feature Type"@en ;
+.
 gas:hasProductionResults
     a owl:DatatypeProperty ;
     skos:prefLabel "Production Results"@en ;
@@ -522,6 +546,10 @@ gas:hasDateAcquired
 gas:hasOrganicGeochemistry
     a owl:DataTypeProperty ;
     skos:prefLabel "Organic Geochemistry"@en ;
+.
+gas:hasInorganicGeochemistry
+    a owl:DataTypeProperty ;
+    skos:prefLabel "Inorganic Geochemistry"@en ;
 .
 gas:hasState
     a owl:DataTypeProperty ;
