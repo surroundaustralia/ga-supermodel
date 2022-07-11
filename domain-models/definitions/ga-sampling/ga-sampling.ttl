@@ -185,11 +185,11 @@ gas:hasPurpose
 .
 gas:hasLatitude
     a owl:DatatypeProperty ;
-    skos:prefLabel "Latitude (EPSG:4326)"@en ;
+    skos:prefLabel "Latitude"@en ;
 .
 gas:hasLongitude
     a owl:DatatypeProperty ;
-    skos:prefLabel "Longitude (EPSG:4326)"@en ;
+    skos:prefLabel "Longitude"@en ;
 .
 gas:hasOperator
     a owl:DatatypeProperty ;
