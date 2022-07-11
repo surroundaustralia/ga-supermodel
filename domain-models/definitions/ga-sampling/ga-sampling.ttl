@@ -191,6 +191,14 @@ gas:hasLongitude
     a owl:DatatypeProperty ;
     skos:prefLabel "Longitude"@en ;
 .
+gas:hasLatitude4326
+    a owl:DatatypeProperty ;
+    skos:prefLabel "Latitude (EPSG:4326)"@en ;
+.
+gas:hasLongitude4326
+    a owl:DatatypeProperty ;
+    skos:prefLabel "Longitude (EPSG:4326)"@en ;
+.
 gas:hasOperator
     a owl:DatatypeProperty ;
     skos:prefLabel "Operator"@en ;
