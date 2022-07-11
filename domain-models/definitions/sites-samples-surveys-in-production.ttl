@@ -40,16 +40,6 @@ samples: a geo:FeatureCollection,
             geo:asGeoJSON "{\"type\": \"Polygon\", \"coordinates\": [[ [70.0,-69.41700],[70.0,-9.14250], [170.0,-9.14250], [170.0,-69.41700], [70.0,-69.41700]]]}"^^geo:geoJSONLiteral ;
             geo:asWKT "POLYGON ((70 -69.41700, 70 -9.14250, 170 -9.14250, 170 -69.41700, 70 -69.41700))"^^geo:wktLiteral ] .
 
-boreholes: a geo:FeatureCollection,
-        owl:Ontology ;
-    dcterms:description "This feature collection contains data from Geoscience Australia's Boreholes database (borehole header and directional survey data) and associated geological observations (lithostratigraphic data). The data includes records of boreholes drilled by Geoscience Australia and its predecessor organisations (BMR, AGSO), all boreholes drilled in Australian Commonwealth offshore marine jurisdictions, and a selection of onshore boreholes drilled by government and private entities."@en ;
-    dcterms:identifier "boreholes"^^xsd:token ;
-    dcterms:isPartOf dataset: ;
-    dcterms:title "Boreholes"@en ;
-    geo:hasBoundingBox [ a geo:Geometry ;
-            geo:asGeoJSON "{\"type\": \"Polygon\", \"coordinates\": [[ [70.0,-69.41700],[70.0,-9.14250], [170.0,-9.14250], [170.0,-69.41700], [70.0,-69.41700]]]}"^^geo:geoJSONLiteral ;
-            geo:asWKT "POLYGON ((70 -69.41700, 70 -9.14250, 170 -9.14250, 170 -69.41700, 70 -69.41700))"^^geo:wktLiteral ] .
-
 <https://linked.data.gov.au/dataset/sites-samples-surveys/provenance> a prov:Bundle ;
     dcterms:hasPart pwfs:ce51861d-e380-11eb-9522-5986ca540bea .
 
@@ -76,10 +66,7 @@ dataset: a owl:Ontology,
             vcard:hasEmail <mailto:david.habgood@surroundaustralia.com> ;
             vcard:hasName "David Habgood" ;
             sdo:affiliation <https://linked.data.gov.au/org/surround> ] ;
-    dcat:keyword "Boreholes",
-        "Measured Sections",
-        "Samples",
-        "Sites",
-        "Surveys" ;
+    dcat:keyword "Samples" ,
+        "Gravity Stations" ;
     prov:asInBundle <https://linked.data.gov.au/dataset/sites-samples-surveys/provenance> ;
     prov:wasDerivedFrom <http://pid.geoscience.gov.au/> .
