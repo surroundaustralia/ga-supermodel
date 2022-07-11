@@ -567,6 +567,22 @@ gas:hasSampleRemark
     a owl:DatatypeProperty ;
     skos:preflabel "Sample Remark"@en ;
 .
+gas:hasCity
+    a owl:DatatypeProperty ;
+    skos:prefLabel "City"@en ;
+.
+gas:hasSite
+    a owl:DatatypeProperty ;
+    skos:prefLabel "Site"@en ;
+.
+gas:hasStationNo
+    a owl:DatatypeProperty ;
+    skos:prefLabel "Station No"@en ;
+.
+gas:hasGeodeticDatum
+    a owl:DatatypeProperty ;
+    skos:prefLabel "Geodetic Datum"@en ;
+.
 gas:hasStraigraphicUnit
     a owl:DatatypeProperty ;
     skos:prefLabel "Straigraphic Unit"@en ;
