@@ -448,7 +448,7 @@ gas:hasGravityDatum
 .
 gas:hasGravityValue
     a owl:DatatypeProperty ;
-    skos:prefLabel "Gravity Value"@en ;
+    skos:prefLabel "Gravity Value (micrometres/sec/sec)"@en ;
 .
 gas:hasStationName
     a owl:DatatypeProperty ;
